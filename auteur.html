@@ -62,8 +62,6 @@ header h1 {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
-/* ===== CONTENT ===== */
 main {
   width: 100%;
   margin: 2rem auto;
@@ -112,8 +110,6 @@ details summary::before {
 details[open] > summary::before {
   content: "▾";
 }
-
-/* ===== STABILISER LES TITRES DANS SUMMARY ===== */
 details summary h2,
 details summary h3,
 details summary h4 {
@@ -121,11 +117,6 @@ details summary h4 {
   margin: 0;
   pointer-events: none;
 }
-
-/* =====================================================
-   LOGIQUE DEMANDÉE :
-   - h4 invisibles tant que le h3 parent est fermé
-   ===================================================== */
 
 /* masquer les h4 par défaut */
 details > details > summary h4 {
@@ -170,7 +161,22 @@ details[open] > details > summary h4 {
   left: 0;
   font-weight: bold;
 }
+.liste-alertes {
+  list-style: none;
+  padding-left: 0;
+  color: #c00000;
+}
 
+.liste-alertes li {
+  position: relative;
+  padding-left: 22px;
+}
+
+.liste-alertes li::before {
+  content: "⚠";
+  position: absolute;
+  left: 0;
+}
 /* ===== BON À SAVOIR ===== */
 .bon-a-savoir {
   color: #c00000;
@@ -408,3 +414,4 @@ document.querySelectorAll('.index a').forEach(link => {
 
 </body>
 </html>
+

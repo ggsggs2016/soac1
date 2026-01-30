@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>S’identifier en tant qu’auteur | Science ouverte au Collège de France</title>
+<title>Formation et accompagnements  | Science ouverte au Collège de France</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
@@ -21,10 +20,9 @@ body {
 a { color: #3f608a; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* ===== HEADER ===== */
 header {
   position: relative;
-  background: #2b2b2b url("1_homepage_background.png") center / cover no-repeat;
+  background: #2b2b2b url("2_homepage_background.png") center / cover no-repeat;
   min-height: 220px;
   display: flex;
   align-items: center;
@@ -63,10 +61,44 @@ header h1 {
   transform: translate(-50%, -50%);
 }
 
-/* ===== CONTENT ===== */
+/* ===== PAVÉ DE NAVIGATION ===== */
+nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fafafa;
+}
+
+nav svg {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+nav span {
+  font-weight: 600;
+}
+
 main {
+  display: block;
   width: 100%;
   margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.content {
+  min-width: 0;
 }
 
 section.chapitre {
@@ -79,65 +111,6 @@ h2, h3 {
   color: #3f608a;
 }
 
-/* ===== ACCORDÉON ===== */
-details {
-  margin-left: 0;
-}
-
-details details {
-  margin-left: 1.5rem;
-}
-
-details summary {
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-details summary::-webkit-details-marker {
-  display: none;
-}
-
-details summary::before {
-  content: "▸";
-  color: #3f608a;
-  font-weight: bold;
-  width: 1em;
-  flex-shrink: 0;
-  pointer-events: none;
-}
-
-details[open] > summary::before {
-  content: "▾";
-}
-
-/* ===== STABILISER LES TITRES DANS SUMMARY ===== */
-details summary h2,
-details summary h3,
-details summary h4 {
-  display: inline;
-  margin: 0;
-  pointer-events: none;
-}
-
-/* =====================================================
-   LOGIQUE DEMANDÉE :
-   - h4 invisibles tant que le h3 parent est fermé
-   ===================================================== */
-
-/* masquer les h4 par défaut */
-details > details > summary h4 {
-  display: none;
-}
-
-/* afficher les h4 uniquement si le h3 est ouvert */
-details[open] > details > summary h4 {
-  display: inline;
-}
-
-/* ===== LISTES ===== */
 .liste-loupe {
   list-style: none;
   padding-left: 0;
@@ -170,6 +143,22 @@ details[open] > details > summary h4 {
   left: 0;
   font-weight: bold;
 }
+.liste-tiret2 {
+  list-style: none;
+  padding-left: 2ch;   /* ← décalage horizontal */
+}
+
+.liste-tiret2 li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.liste-tiret2 li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
 .liste-alertes {
   list-style: none;
   padding-left: 0;
@@ -186,7 +175,6 @@ details[open] > details > summary h4 {
   position: absolute;
   left: 0;
 }
-/* ===== BON À SAVOIR ===== */
 .bon-a-savoir {
   color: #c00000;
   font-weight: bold;
@@ -197,12 +185,51 @@ details[open] > details > summary h4 {
   margin: 1rem 0;
 }
 
-/* ===== FOOTER ===== */
 footer {
   background: #f2f2f2;
   padding: 2rem;
   text-align: center;
   font-size: 0.9rem;
+}
+
+/* ===== ACCORDÉON ALIGNÉ ===== */
+details {
+  margin-left: 0;
+}
+
+details details {
+  margin-left: 1.5rem;
+}
+
+details summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::before {
+  content: "▸";
+  color: #3f608a;
+  font-weight: bold;
+  width: 1em;
+  flex-shrink: 0;
+}
+
+details[open] > summary::before {
+  content: "▾";
+}
+
+details summary h2,
+details summary h3,
+details summary h4 {
+  display: inline;
+  margin: 0;
 }
 </style>
 </head>
@@ -212,9 +239,88 @@ footer {
 <header>
   <div class="header-container">
     <img src="library-logo.png" alt="Logo Collège de France" class="logo">
-    <h1>S’identifier en tant qu’auteur</h1>
+    <h1>Formation et accompagnements </h1>
   </div>
 </header>
+
+<nav>
+  <a href="auteur.html">
+  <svg viewBox="0 0 24 24">
+    <path
+      d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2
+         c-3.3 0-10 1.7-10 5v3h20v-3
+         c0-3.3-6.7-5-10-5z"
+      fill="#3f608a"
+    />
+  </svg>
+  <span>S’identifier en tant qu’auteur</span>
+</a>
+
+  <a href="droit.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 3v18M4 7h16M6 7l-2 5a4 4 0 008 0l-2-5
+               M18 7l-2 5a4 4 0 008 0l-2-5"
+            fill="none" stroke="#3f608a" stroke-width="2"/>
+    </svg>
+    <span>Comprendre et protéger ses droits d’auteur</span>
+  </a>
+
+  <a href="ao.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M7 10V7a5 5 0 0110 0" fill="none" stroke="#3f608a" stroke-width="2"/>
+      <rect x="4" y="10" width="16" height="10" rx="2"
+            fill="none" stroke="#3f608a" stroke-width="2"/>
+    </svg>
+    <span>Comprendre l’accès ouvert (open access)</span>
+  </a>
+
+  <a href="deposer.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M6 15a4 4 0 010-8 5 5 0 019.7-1.5A4 4 0 1118 15H6z"
+            fill="none" stroke="#3f608a" stroke-width="2"/>
+      <path d="M12 16V10M9 13l3-3 3 3"
+            fill="none" stroke="#3f608a" stroke-width="2"/>
+    </svg>
+    <span>Déposer et diffuser dans une archive ouverte</span>
+  </a>
+
+  <a href="publierao.html">
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" fill="none" stroke="#3f608a" stroke-width="2"/>
+      <path d="M12 6l3 6-3 6-3-6z" fill="#3f608a"/>
+    </svg>
+    <span>Choisir où publier en accès ouvert</span>
+  </a>
+
+  <a href="bibliometrie.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M4 20h16" stroke="#3f608a" stroke-width="2"/>
+      <rect x="6" y="10" width="3" height="8" fill="#3f608a"/>
+      <rect x="11" y="6" width="3" height="12" fill="#3f608a"/>
+      <rect x="16" y="13" width="3" height="5" fill="#3f608a"/>
+    </svg>
+    <span>Bibliographies, bibliométrie et impact de la recherche</span>
+  </a>
+
+  <a href="formation.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3z" fill="#3f608a"/>
+      <path d="M6 12.5V15c0 2.2 3 4 6 4s6-1.8 6-4v-2.5l-6 3.2-6-3.2z"
+            fill="#3f608a"/>
+    </svg>
+    <span>Formation et accompagnements</span>
+  </a>
+
+  <a href="annexe.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M8 12l6-6a3 3 0 014 4l-8 8a5 5 0 11-7-7l7-7"
+            fill="none" stroke="#3f608a" stroke-width="2"/>
+    </svg>
+    <span>Annexe et crédits</span>
+  </a>
+</nav>
+
+
 
 <main>
   <div class="content">

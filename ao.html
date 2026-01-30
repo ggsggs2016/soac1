@@ -159,6 +159,22 @@ h2, h3 {
   left: 0;
   font-weight: bold;
 }
+  .liste-alertes {
+  list-style: none;
+  padding-left: 0;
+  color: #c00000;
+}
+
+.liste-alertes li {
+  position: relative;
+  padding-left: 22px;
+}
+
+.liste-alertes li::before {
+  content: "⚠";
+  position: absolute;
+  left: 0;
+}
 .bon-a-savoir {
   color: #c00000;
   font-weight: bold;
@@ -503,3 +519,4 @@ Rendre disponible en accès ouvert immédiat, sous une licence Creative Commons 
 
 </body>
 </html>
+

@@ -62,6 +62,8 @@ header h1 {
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+/* ===== CONTENT ===== */
 main {
   width: 100%;
   margin: 2rem auto;
@@ -110,6 +112,8 @@ details summary::before {
 details[open] > summary::before {
   content: "▾";
 }
+
+/* ===== STABILISER LES TITRES DANS SUMMARY ===== */
 details summary h2,
 details summary h3,
 details summary h4 {
@@ -117,6 +121,11 @@ details summary h4 {
   margin: 0;
   pointer-events: none;
 }
+
+/* =====================================================
+   LOGIQUE DEMANDÉE :
+   - h4 invisibles tant que le h3 parent est fermé
+   ===================================================== */
 
 /* masquer les h4 par défaut */
 details > details > summary h4 {
@@ -240,7 +249,7 @@ Règles de signature des publications scientifiques</a></b> (page accessible sur
       Les identifiants pérennes (Persistent IDentifier ou PID en anglais) sont des éléments structurants de la diffusion de données en accès ouvert, dans le respect des principes FAIR (Facile à trouver, Accessible, Interopérable, Réutilisable). Ils permettent en effet d’identifier de manière univoque les productions scientifiques, de les retrouver et de lier entre eux les auteurs, les institutions, les publications et les données qui y sont attachées. Deux types d’identifiants pérennes sont utilisés : les « identifiants contributeur » pour les auteurs et les institutions et les « identifiants objet » pour les productions scientifiques (publications, données de recherche et logiciels). 
 </p>
 <details id="chap2-sec1">
-<summary><h3>Les identifiants contributeur (ou identifiants auteur ou ou identifiants chercheur)</h3></summary>
+<summary><h3>Les identifiants contributeur (ou identifiants auteur ou ou identifiants chercheur</h3></summary>
 <p>
 Un identifiant contributeur, ou identifiant auteur, est un code alphanumérique unique pérenne, attribué à tout auteur de production scientifique (articles, brevets, jeux de données scientifiques, projets financés etc.). Ce code permet d’identifier de façon univoque l’auteur dans un environnement numérique donné, qu’il s’agisse d’une base de données institutionnelle, nationale ou internationale (entrepôt de données européen Zenodo, archive ouverte française HAL, etc.) ou d’une base de données bibliographique (OpenAlex, Web of Science, Scopus etc.)
 </p>
@@ -297,7 +306,7 @@ Une fois l’IdHAL créé, il est possible de le lier avec l’identifiant ORCID
 </details>
 </details>
 <details id="chap2-sec2">
-<summary><h3>Les identifiants contributeur liés à des bases bibliométriques</h3></summary>
+<summary><h3>Les identifiants liés aux bases bibliométriques</h3></summary>
   <div class="bon-a-savoir">Bon à savoir : bases bibliométriques et science ouverte :</div>
 <p>
 Le Collège de France a accès via l’abonnement de l’Université PSL, dont il est membre associé, aux bases de données bibliographiques des éditeurs commerciaux Clarivate Analytics (Web of Science®) et Elsevier (Scopus). 
@@ -414,6 +423,3 @@ document.querySelectorAll('.index a').forEach(link => {
 
 </body>
 </html>
-
-
-

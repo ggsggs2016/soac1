@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>S’identifier en tant qu’auteur | Science ouverte au Collège de France</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
@@ -20,6 +21,7 @@ body {
 a { color: #3f608a; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
+/* ===== HEADER ===== */
 header {
   position: relative;
   background: #2b2b2b url("1_homepage_background.png") center / cover no-repeat;
@@ -61,44 +63,10 @@ header h1 {
   transform: translate(-50%, -50%);
 }
 
-/* ===== PAVÉ DE NAVIGATION ===== */
-nav {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem;
-  margin: 2rem auto;
-  max-width: 1200px;
-}
-
-nav a {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 1rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  background: #fafafa;
-}
-
-nav svg {
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-}
-
-nav span {
-  font-weight: 600;
-}
-
+/* ===== CONTENT ===== */
 main {
-  display: block;
   width: 100%;
   margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-.content {
-  min-width: 0;
 }
 
 section.chapitre {
@@ -111,6 +79,65 @@ h2, h3 {
   color: #3f608a;
 }
 
+/* ===== ACCORDÉON ===== */
+details {
+  margin-left: 0;
+}
+
+details details {
+  margin-left: 1.5rem;
+}
+
+details summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::before {
+  content: "▸";
+  color: #3f608a;
+  font-weight: bold;
+  width: 1em;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+details[open] > summary::before {
+  content: "▾";
+}
+
+/* ===== STABILISER LES TITRES DANS SUMMARY ===== */
+details summary h2,
+details summary h3,
+details summary h4 {
+  display: inline;
+  margin: 0;
+  pointer-events: none;
+}
+
+/* =====================================================
+   LOGIQUE DEMANDÉE :
+   - h4 invisibles tant que le h3 parent est fermé
+   ===================================================== */
+
+/* masquer les h4 par défaut */
+details > details > summary h4 {
+  display: none;
+}
+
+/* afficher les h4 uniquement si le h3 est ouvert */
+details[open] > details > summary h4 {
+  display: inline;
+}
+
+/* ===== LISTES ===== */
 .liste-loupe {
   list-style: none;
   padding-left: 0;
@@ -144,6 +171,7 @@ h2, h3 {
   font-weight: bold;
 }
 
+/* ===== BON À SAVOIR ===== */
 .bon-a-savoir {
   color: #c00000;
   font-weight: bold;
@@ -154,51 +182,12 @@ h2, h3 {
   margin: 1rem 0;
 }
 
+/* ===== FOOTER ===== */
 footer {
   background: #f2f2f2;
   padding: 2rem;
   text-align: center;
   font-size: 0.9rem;
-}
-
-/* ===== ACCORDÉON ALIGNÉ ===== */
-details {
-  margin-left: 0;
-}
-
-details details {
-  margin-left: 1.5rem;
-}
-
-details summary {
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  align-items: baseline;
-  gap: 0.4rem;
-}
-
-details summary::-webkit-details-marker {
-  display: none;
-}
-
-details summary::before {
-  content: "▸";
-  color: #3f608a;
-  font-weight: bold;
-  width: 1em;
-  flex-shrink: 0;
-}
-
-details[open] > summary::before {
-  content: "▾";
-}
-
-details summary h2,
-details summary h3,
-details summary h4 {
-  display: inline;
-  margin: 0;
 }
 </style>
 </head>
@@ -212,84 +201,6 @@ details summary h4 {
   </div>
 </header>
 
-<nav>
-  <a href="auteur.html">
-  <svg viewBox="0 0 24 24">
-    <path
-      d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2
-         c-3.3 0-10 1.7-10 5v3h20v-3
-         c0-3.3-6.7-5-10-5z"
-      fill="#3f608a"
-    />
-  </svg>
-  <span>S’identifier en tant qu’auteur</span>
-</a>
-
-  <a href="droit.html">
-    <svg viewBox="0 0 24 24">
-      <path d="M12 3v18M4 7h16M6 7l-2 5a4 4 0 008 0l-2-5
-               M18 7l-2 5a4 4 0 008 0l-2-5"
-            fill="none" stroke="#3f608a" stroke-width="2"/>
-    </svg>
-    <span>Comprendre et protéger ses droits d’auteur</span>
-  </a>
-
-  <a href="ao.html">
-    <svg viewBox="0 0 24 24">
-      <path d="M7 10V7a5 5 0 0110 0" fill="none" stroke="#3f608a" stroke-width="2"/>
-      <rect x="4" y="10" width="16" height="10" rx="2"
-            fill="none" stroke="#3f608a" stroke-width="2"/>
-    </svg>
-    <span>Comprendre l’accès ouvert (open access)</span>
-  </a>
-
-  <a href="deposer.html">
-    <svg viewBox="0 0 24 24">
-      <path d="M6 15a4 4 0 010-8 5 5 0 019.7-1.5A4 4 0 1118 15H6z"
-            fill="none" stroke="#3f608a" stroke-width="2"/>
-      <path d="M12 16V10M9 13l3-3 3 3"
-            fill="none" stroke="#3f608a" stroke-width="2"/>
-    </svg>
-    <span>Déposer et diffuser dans une archive ouverte</span>
-  </a>
-
-  <a href="publierao.html">
-    <svg viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="10" fill="none" stroke="#3f608a" stroke-width="2"/>
-      <path d="M12 6l3 6-3 6-3-6z" fill="#3f608a"/>
-    </svg>
-    <span>Choisir où publier en accès ouvert</span>
-  </a>
-
-  <a href="bibliometrie.html">
-    <svg viewBox="0 0 24 24">
-      <path d="M4 20h16" stroke="#3f608a" stroke-width="2"/>
-      <rect x="6" y="10" width="3" height="8" fill="#3f608a"/>
-      <rect x="11" y="6" width="3" height="12" fill="#3f608a"/>
-      <rect x="16" y="13" width="3" height="5" fill="#3f608a"/>
-    </svg>
-    <span>Bibliographies, bibliométrie et impact de la recherche</span>
-  </a>
-
-  <a href="formation.html">
-    <svg viewBox="0 0 24 24">
-      <path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3z" fill="#3f608a"/>
-      <path d="M6 12.5V15c0 2.2 3 4 6 4s6-1.8 6-4v-2.5l-6 3.2-6-3.2z"
-            fill="#3f608a"/>
-    </svg>
-    <span>Formation et accompagnements</span>
-  </a>
-
-  <a href="annexe.html">
-    <svg viewBox="0 0 24 24">
-      <path d="M8 12l6-6a3 3 0 014 4l-8 8a5 5 0 11-7-7l7-7"
-            fill="none" stroke="#3f608a" stroke-width="2"/>
-    </svg>
-    <span>Annexe et crédits</span>
-  </a>
-</nav>
-
-  <!-- CONTENU -->
 <main>
   <div class="content">
 <!-- ===================== CHAPITRE 1 ===================== -->
@@ -323,7 +234,7 @@ Règles de signature des publications scientifiques</a></b> (page accessible sur
       Les identifiants pérennes (Persistent IDentifier ou PID en anglais) sont des éléments structurants de la diffusion de données en accès ouvert, dans le respect des principes FAIR (Facile à trouver, Accessible, Interopérable, Réutilisable). Ils permettent en effet d’identifier de manière univoque les productions scientifiques, de les retrouver et de lier entre eux les auteurs, les institutions, les publications et les données qui y sont attachées. Deux types d’identifiants pérennes sont utilisés : les « identifiants contributeur » pour les auteurs et les institutions et les « identifiants objet » pour les productions scientifiques (publications, données de recherche et logiciels). 
 </p>
 <details id="chap2-sec1">
-<summary><h3>Les identifiants contributeur</h3></summary>
+<summary><h3>Les identifiants contributeur (ou identifiants auteur ou ou identifiants chercheur</h3></summary>
 <p>
 Un identifiant contributeur, ou identifiant auteur, est un code alphanumérique unique pérenne, attribué à tout auteur de production scientifique (articles, brevets, jeux de données scientifiques, projets financés etc.). Ce code permet d’identifier de façon univoque l’auteur dans un environnement numérique donné, qu’il s’agisse d’une base de données institutionnelle, nationale ou internationale (entrepôt de données européen Zenodo, archive ouverte française HAL, etc.) ou d’une base de données bibliographique (OpenAlex, Web of Science, Scopus etc.)
 </p>
@@ -340,7 +251,6 @@ Un identifiant contributeur, ou identifiant auteur, est un code alphanumérique 
 Une chercheuse ou un chercheur peut posséder plusieurs identifiants (ORCID, Web of Science, Scopus, HAL, etc.) qu’il est possible de lier entre eux pour gagner du temps ou pour avoir plus de visibilité et plus de poids en bibliométrie.
 </li>
 </ul >
-
 <details id="orcid">
  <summary><h4>L’ID-ORCID</h4></summary>
 <p>ORCID (Open Researcher and Contributor ID) est une organisation internationale à but non lucratif dont le siège est aux États-Unis. ORCID gère un répertoire central (Registry) d’identifiants chercheurs (ORCID ID) qui rassemble, pour les chercheurs qui s’y sont inscrits, l’ensemble des données relatives à leurs profils : institutions successives d’affiliation (Emploi ou Employment en anglais), cursus d’enseignement (Education and qualifications), récompenses reçues (Invited positions and distinctions), adhésion à des organisations (Membership and service), projets financés (Financement ou Funding), ou encore publications (Travaux ou Works).</p>
@@ -386,7 +296,6 @@ Une fois l’IdHAL créé, il est possible de le lier avec l’identifiant ORCID
 <p>
 Le Collège de France a accès via l’abonnement de l’Université PSL, dont il est membre associé, aux bases de données bibliographiques des éditeurs commerciaux Clarivate Analytics (Web of Science®) et Elsevier (Scopus). 
 La place occupée par ces plateformes commerciales, utilisées depuis longtemps par les institutions de recherche pour analyser leurs productions scientifiques et se comparer, est aujourd’hui remise en question sous l’impulsion du mouvement en faveur de la science ouverte. En 2024, plus de 30 organisations impliquées dans le financement, l’évaluation ou la réalisation de la recherche ont ainsi signé la <a href="https://barcelona-declaration.org/downloads/barcelonadeclaration_fran%C3%A7ais.pdf"class="regles-signature">Déclaration de Barcelone</a> sur l’information de recherche ouverte, par laquelle elles se sont engagées à prendre l’initiative de transformer la manière dont l’information sur la recherche est produite et utilisée. Un nombre croissant d’universités et d’établissements de recherche, parmi lesquels Sorbonne Université et le CNRS, s’affranchissent depuis progressivement des produits bibliométriques propriétaires tels que Web of Science® et Scopus,  pour soutenir et consolider de nouveaux outils ouverts et participatifs, notamment l’outil <a href="https://openalex.org/"class="regles-signature">OpenAlex</a> En cohérence avec son engagement en faveur d’un accès ouvert aux données relatives à la recherche, le Collège de France accompagne l’amélioration du référencement des publications de sa communauté de recherche dans OpenAlex.</p>
-</details>
 <details id="researcherid">
 <summary><h4>ResearcherID (Web of Science® – WoS)</h4></summary>
 <p>
@@ -420,9 +329,9 @@ Le service des ressources en ligne, bibliométrie et appui à la recherche (Dire
 </p>
 <p>Grâce au lien établi entre l’IdHAL et l’ID-ORCID, le signalement des publications dans HAL permet d’en envoyer automatiquement les références dans la base ORCID à partir de laquelle les bases Web of Science® et Scopus peuvent à leur tour être synchronisées, via les liens établis entre l’ID-ORCID et les identifiants ResearchID d’une part et l’ID-Scopus d‘autre part. Le dépôt de ses publications dans HAL permet donc au chercheur, si ses différents identifiants sont liés entre eux, de synchroniser non seulement son profil ORCID, mais également les comptes qu’il a le cas échéant créés sur les bases Web of Science® et Scopus.</p>
 </details>
+</details>
 <details id="chap2-sec3">
 <summary><h3>Les identifiants objet</h3></summary>
-</details>
 <details id="doi">
 <summary><h4>Le DOI (Digital Object Identifier), identifiant numérique d’objet)</h4></summary>
 <p>Le DOI est un code alphanumérique associé à une production scientifique de manière permanente : il permet de l’identifier de façon fiable et durable et de la décrire sans ambigüité.</p>
@@ -467,6 +376,7 @@ La BnF intègre également à ses ressources des identifiants <b>ISNI (Internati
 </li>
 </ul>
 </p>
+</details>
 </details>
 </section>
     

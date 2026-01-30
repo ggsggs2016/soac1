@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Déposer et diffuser dans une archive ouverte  | Science ouverte au Collège de France</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  line-height: 1.6;
+  color: #1a1c1f;
+  background: #fff;
+  padding: 0 1rem;
+}
+
+a { color: #3f608a; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header {
+  position: relative;
+  background: #2b2b2b url("2_homepage_background.png") center / cover no-repeat;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.header-container {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  padding: 0 1rem;
+}
+
+header .logo {
+  height: 80px;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ===== PAVÉ DE NAVIGATION ===== */
+nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fafafa;
+}
+
+nav svg {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+nav span {
+  font-weight: 600;
+}
+
+main {
+  display: block;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.content {
+  min-width: 0;
+}
+
+section.chapitre {
+  margin-bottom: 4rem;
+  padding-top: 2rem;
+  border-top: 4px solid #3f608a;
+}
+
+h2, h3 {
+  color: #3f608a;
+}
+
+.liste-loupe {
+  list-style: none;
+  padding-left: 0;
+}
+
+.liste-loupe li {
+  position: relative;
+  padding-left: 28px;
+}
+
+.liste-loupe li::before {
+  content: "🔍";
+  position: absolute;
+  left: 0;
+}
+
+.liste-tiret {
+  list-style: none;
+  padding-left: 0;
+}
+
+.liste-tiret li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.liste-tiret li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+.liste-tiret2 {
+  list-style: none;
+  padding-left: 2ch;   /* ← décalage horizontal */
+}
+
+.liste-tiret2 li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.liste-tiret2 li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+.bon-a-savoir {
+  color: #c00000;
+  font-weight: bold;
+  background: #fff3f3;
+  padding: 0.4rem 0.6rem;
+  border-left: 4px solid #c00000;
+  display: inline-block;
+  margin: 1rem 0;
+}
+
+footer {
+  background: #f2f2f2;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ===== ACCORDÉON ALIGNÉ ===== */
+details {
+  margin-left: 0;
+}
+
+details details {
+  margin-left: 1.5rem;
+}
+
+details summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::before {
+  content: "▸";
+  color: #3f608a;
+  font-weight: bold;
+  width: 1em;
+  flex-shrink: 0;
+}
+
+details[open] > summary::before {
+  content: "▾";
+}
+
+details summary h2,
+details summary h3,
+details summary h4 {
+  display: inline;
+  margin: 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+    <img src="library-logo.png" alt="Logo Collège de France" class="logo">
+    <h1>Déposer et diffuser dans une archive ouverte </h1>
+  </div>
+</header>
+
+<nav>
+  <a href="auteur.html">
+  <svg viewBox="0 0 24 24">
+    <path
+      d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2
+         c-3.3 0-10 1.7-10 5v3h20v-3
+         c0-3.3-6.7-5-10-5z"
+      fill="#3f608a"
+    />
+  </svg>
+  <span>S’identifier en tant qu’auteur</span>
+</a>
+
+  <a href="droit.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 3v18M4 7h16M6 7l-2 5a4 4 0 008 0l-2-5
+               M18 7l-2 5a4 4 0 008 0l-2-5"
+            fill="none" stroke="#3f608a" stroke-width="2"/>
+    </svg>
+    <span>Comprendre et protéger ses droits d’auteur</span>
+  </a>
+
+  <a href="ao.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M7 10V7a5 5 0 0110 0" fill="none" stroke="#3f608a" stroke-width="2"/>
+      <rect x="4" y="10" width="16" height="10" rx="2"
+            fill="none" stroke="#3f608a" stroke-width="2"/>
+    </svg>
+    <span>Comprendre l’accès ouvert (open access)</span>
+  </a>
+
+  <a href="deposer.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M6 15a4 4 0 010-8 5 5 0 019.7-1.5A4 4 0 1118 15H6z"
+            fill="none" stroke="#3f608a" stroke-width="2"/>
+      <path d="M12 16V10M9 13l3-3 3 3"
+            fill="none" stroke="#3f608a" stroke-width="2"/>
+    </svg>
+    <span>Déposer et diffuser dans une archive ouverte</span>
+  </a>
+
+  <a href="publierao.html">
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" fill="none" stroke="#3f608a" stroke-width="2"/>
+      <path d="M12 6l3 6-3 6-3-6z" fill="#3f608a"/>
+    </svg>
+    <span>Choisir où publier en accès ouvert</span>
+  </a>
+
+  <a href="bibliometrie.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M4 20h16" stroke="#3f608a" stroke-width="2"/>
+      <rect x="6" y="10" width="3" height="8" fill="#3f608a"/>
+      <rect x="11" y="6" width="3" height="12" fill="#3f608a"/>
+      <rect x="16" y="13" width="3" height="5" fill="#3f608a"/>
+    </svg>
+    <span>Bibliographies, bibliométrie et impact de la recherche</span>
+  </a>
+
+  <a href="formation.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3z" fill="#3f608a"/>
+      <path d="M6 12.5V15c0 2.2 3 4 6 4s6-1.8 6-4v-2.5l-6 3.2-6-3.2z"
+            fill="#3f608a"/>
+    </svg>
+    <span>Formation et accompagnements</span>
+  </a>
+
+  <a href="annexe.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M8 12l6-6a3 3 0 014 4l-8 8a5 5 0 11-7-7l7-7"
+            fill="none" stroke="#3f608a" stroke-width="2"/>
+    </svg>
+    <span>Annexe et crédits</span>
+  </a>
+</nav>
+<main>
+  <div class="content">
+
+    <!-- ===================== CHAPITRE 1 ===================== -->
+
+  <div class="content">
+<section class="chapitre">
+<p>Une archive ouverte est une base de données documentaire accessible en ligne librement et gratuitement qui garantit un archivage pérenne des publications et répond aux exigences de la science ouverte en termes d’interopérabilité et de respect du droit d’auteur. Le dépôt dans une archive ouverte permet au chercheur d'élargir la visibilité de ses travaux, d'augmenter leur impact scientifique et de garantir la pérennité de ses fichiers. </p>
+<details id="chap1" open>
+<summary><h2>Connaître ses droits et obligations d’auteur-déposant</h2></summary>
+<p>La loi pour une République numérique ouvre à l’auteur le droit de diffuser en accès ouvert la version acceptée (postprint) de sa publication en respectant, s’il a cédé ses droits à un éditeur qui ne diffuse pas lui-même cette publication en accès ouvert, une période d’embargo de 6 mois après publication s’il appartient au domaine des Sciences, Technique et Médecine, et de 12 mois après publication pour le domaine des Sciences Humaines et Sociales.
+Ces dispositions sont d’ordre public et s’appliquent y compris dans les cas où un contrat est signé avec un éditeur étranger.
+</p>
+<details id="chap1-sec1">
+  <summary><h3>Connaître les politiques de libre accès des éditeurs</h3></summary>
+<p>Selon les cas, les éditeurs et les revues autorisent l’auteur à déposer un postprint en accès libre et immédiat dans une archive ouverte ou n’autorisent ce dépôt qu’après un embargo ou encore ne l’autorisent pas du tout.</p>
+<p><a href="https://openpolicyfinder.jisc.ac.uk/" target="_blank" rel="noopener"> Open Policy Finder (anciennement Sherpa/Romeo)</a> est une plateforme répertoriant les politiques de libre accès et d’autoarchivage des éditeurs et des revues scientifiques. Elle donne accès à des résumés clairs et précis des politiques des éditeurs pour les revues et les livres, ainsi que des exigences des bailleurs de fonds en matière d'archivage et de publication. Les recherches peuvent être effectuées par titre de revue, ISSN, nom d’éditeur, etc.</p>
+<p><a href="https://reseau-mirabel.info/" target="_blank" rel="noopener"> Mir@bel</a>Mir@bel est un réseau ayant pour vocation de valoriser les contenus des périodiques scientifiques accessibles en ligne ; elle permet également aux revues et éditeurs scientifiques français de déclarer leurs politiques de publication et d’autoarchivage.</p>
+<ul class="liste_loupe"
+<li>En application de la loi pour une République numérique, les auteurs sont autorisés à diffuser en accès ouvert leurs manuscrits acceptés pour publication (postprint) même après avoir cédé leurs droits à un éditeur. La consultation de la plateforme Open Policy Finder ne sert plus qu’à vérifier si les éditeurs ou les revues imposent des périodes d’embargos. La durée maximale de ces embargos est elle-même limitée à 6 mois pour les STM et 12 mois pour les SHS par la loi pour une République numérique. Lors du dépôt dans HAL, les types de dépôts autorisés par l’éditeur ou la revue s’affichent automatiquement.</li>
+</ul>
+</details>
+<details id="chap1-sec2">
+  <summary><h3>Comprendre son contrat d’éditeur (le Copyright Transfer Agreement ou CTA)</h3></summary>
+<p>Pour une publication en accès ouvert dans une revue disponible sur abonnement, la clause définissant les modalités de dépôt dans une archive ouverte figure le plus souvent dans le « Copyright Transfer Agreement » que l’éditeur demande à l’auteur de signer. 
+L'autorisation de dépôt peut en effet être assortie de certaines conditions (respect d’un embargo, version de la publication pouvant être déposée, obligation de citation du DOI, du titre de la revue et/ou des autres données de la publication, etc.). Les archives ouvertes peuvent être désignées selon les cas par plusieurs termes : open access repository, central repository, subject repository, insititutional repository, mais également preprint server, e-print server, electronic server, etc.</p>
+<ul class="liste-loupe">
+<li>Même dans l’hypothèse où un auteur français, ou appartenant à une structure de recherche française, aurait accordé des droits exclusifs à un éditeur qui ne permettrait pas le dépôt dans une archive ouverte, la loi pour une République numérique l’y autorise, limitant qui plus est l’embargo pouvant éventuellement être demandé par l’éditeur à 6 mois pour les STM et 12 mois pour les SHS.</li>
+</ul>
+<p>Pour une publication dans une revue nativement en accès ouvert, une licence Creative Commons, attribuée en fonction des utilisations que l’auteur et/ou l’éditeur souhaite(nt) autoriser, permet dans tous les cas le dépôt dans une archive ouverte. Il est recommandé d’informer l’éditeur de ce dépôt.</p>
+<ul class="liste-loupe">
+<li>L’ANR et l’ERC exigent désormais une diffusion du texte intégral (manuscrit accepté pour publication ou version éditeur) des publications en accès ouvert et immédiat, sans embargo, et demandent aux chercheurs d’appliquer pour cela une stratégie de non cession de droits impliquant l’attribution d’une licence Creative Commons « Attribution International Public Licence » (CC-BY), d’une licence équivalente ou, pour les ouvrages et textes longs, d’une licence excluant l'utilisation commerciale et les modifications (par exemple:   CC BY-NC, CC BY-ND), notamment pour réserver ces droits à un éditeur déterminé. L’attribution systématique d’une licence de diffusion est également devenue obligatoire au 1er janvier 2026 pour les dépôts dans HAL (les licences de diffusion n’impliquant pas forcément des autorisations de réutilisation), avec une incitation à utiliser les licences CC lorsque c’est possible (voir chapitre « Les modalités de dépôt dans HAL »).</li>
+</ul>
+<p>Pour toute question, contacter le service des ressources en ligne, bibliométrie et appui à la recherche (Direction des bibliothèques, archives et collections) à l’adresse suivante <a href="mailto:ressources.electroniques@college-de-france.fr">
+  ressources.electroniques@college-de-france.fr
+</a>
+</details>
+</details>
+</section>
+<section class="chapitre">
+<details id="chap2" open>
+<summary><h2>Le dépôt en pratique</h2></summary>
+<details id="chap2-sec1">
+  <summary><h3>Pourquoi déposer dans le portail HAL-Collège de France ?</h3></summary>
+<p>HAL (Hyper Article en Ligne) est l'archive ouverte multidisciplinaire française éditée et hébergée par le Centre pour la Communication Scientifique Directe (CCSD), unité d’appui à la recherche commune au Centre national de la recherche scientifique (CNRS), à l’Institut national de recherche pour l'agriculture, l'alimentation et l'environnement (INRAe), l’Institut national de la recherche en informatique et automatique (Inria), et l’Université de Lyon.</p>
+<p>Le <a href="https://college-de-france.hal.science/" target="_blank" rel="noopener"> Portail HAL – Collège de France</a> regroupe la production scientifique de l’établissement. </p>
+<p>Le Collège de France recommande le dépôt systématique, en texte intégral chaque fois que possible, de la production scientifique de sa communauté de recherche sur le portail HAL-Collège de France. Il vise ainsi l’exhaustivité du référencement de cette production scientifique.</p>
+<ul class="liste-tiret">
+<li><strong>Un dépôt obligatoire dans certains cas!</strong>
+<p>
+Le dépôt dans HAL revêt un caractère obligatoire dans certains cas. 
+Depuis 2019, le CNRS impose ainsi que toutes les productions citées dans leurs dossiers d’évaluation par les chercheuses et chercheurs qu’il emploie soient accessibles dans HAL.</p>
+<p>Les applications permettant la saisie des rapports annuels CRAC (compte rendu annuel des chercheurs et des chercheuses) et RIBAC (Recueil d'Informations pour un oBservatoire des Activités annuelles de recherche des Chercheurs et des chercheuses en SHS) sont reliées à HAL : la liste des publications déposées dans HAL n’a pas besoin d’y être re-saisie.</p>
+<p>L’agence nationale de la recherche (ANR) demande expressément depuis 2022 que le texte intégral (manuscrit accepté pour publication ou version éditeur) des publications issues des projets qu’elle finance soient déposées dans HAL. Le dépôt dans l’archive nationale HAL permet d’alimenter automatiquement la partie dédiée aux publications scientifiques des projets financés.</p> </li>
+  <div class="bon-a-savoir">Bon à savoir : HAL est compatible avec la plateforme européenne OpenAIRE.</div>
+<p>Le Conseil européen de la recherche (ERC) rend obligatoire la diffusion dans une archive ouverte des publications issues des projets qu’il finance. HAL étant compatible avec les exigences de diffusion en accès ouvert des résultats des projets financés sur fonds européens, toutes les publications (texte intégral) qui y sont déposées sont visibles sur la plateforme européenne OpenAIRE (Open Access Infrastructure for Research in Europe), et ce, même si elles ne sont pas associées à un financement européen.</p>
+<li><strong>Un dépôt complémentaire pour élargir la visibilité d’une publication</strong>:
+<p>Le dépôt d’une publication dans plusieurs archives ouvertes, thématiques (ArXiv, PubMed, RePeC, HAL-SHS, HAL-Inserm, HAL - INRIA), nationale et pluridisciplinaire (HAL) ou européenne (Zenodo), peut en élargir la visibilité.</p>
+<p>Pour identifier une archive ouverte, connaître sa politique d’auto-archivage, son volume et l’organisation qui la gère, des répertoires d’archives ouvertes sont accessibles en ligne, tels que <a href="https://opendoar.ac.uk/" target="_blank" rel="noopener"> OpenDOAR (Directory of Open Access Repositories)</a> ou <a href="https://roar.eprints.org/" target="_blank" rel="noopener">Registry of Open Access Repositories.</a></p></li>
+</ul>
+<ul class="liste-loupe">
+  <li>
+    Selon le domaine disciplinaire choisi lors du dépôt sur le portail HAL – Collège de France, et si l’éditeur l’autorise, il est possible de pousser les publications vers les archives ArXiv, PubMed Central ou RePeC (dernière étape du dépôt).
+
+    <div class="bon-a-savoir">
+      Bon à savoir : ne pas confondre archives ouvertes et réseaux sociaux académiques.
+    </div>
+    <p>
+      Les plateformes <a href="https://www.researchgate.net/" target="_blank" rel="noopener"> ResearchGate</a> et
+      <a href="https://www.academia.edu/" target="_blank" rel="noopener"> Academia.edu</a> sont des réseaux sociaux académiques portés par des sociétés commerciales, contrairement à HAL qui est financé par des fonds publics. Bien que d’accès a priori gratuit, il s’agit d’initiatives privées à but lucratif. Leur objet est de mettre en relation les chercheurs et de leur conférer une visibilité. Academia est plus orienté vers les sciences humaines et sociales, ResearchGate vers les sciences techniques, expérimentales et médicales.
+      Si ces réseaux scientifiques rendent les publications visibles à l’échelle internationale et permettent une connexion plus rapide entre chercheurs, ils n’offrent pas de garanties sur le respect des grands principes de la science ouverte, en termes de gratuité, d’archivage pérenne et d’interopérabilité des données ou de respect du droit d’auteur. Ainsi, l’ERC considère que ResearchGate, Academia.edu et les plateformes similaires n’autorisent pas le libre accès dans les conditions requises par les exigences de diffusion en accès ouvert des résultats des projets financés sur fonds européens.
+      ResearchGate et Academia.edu ne doivent ainsi pas être utilisées comme des plateformes de dépôt mais peuvent l’être de manière complémentaire à un dépôt dans HAL : il suffit pour cela de signaler les publications déposées dans HAL sur la page créé par l’auteur sur ResearchGate ou Academia.edu, en utilisant un lien HAL ou le DOI (Digital Object Identify) de la publication ou encore en ajoutant un fichier PdF contenant toutes ces informations (mais sans le texte intégral), préalablement exporté de HAL (en veillant à respecter le droit d’auteur).
+    </p>
+
+    <ul class="liste-tiret">
+      <li>
+        <strong>Les avantages associés à un dépôt dans HAL</strong>:
+        <ul class="liste-tiret2">
+          <li>La gratuité : l’accès à HAL est libre et gratuit sans qu’il soit nécessaire de créer un compte. L’inscription est également gratuite, la seule condition étant d’être affilié à une structure de recherche et/ou d’enseignement supérieur.</li>
+          <li>Le respect du droit d’auteur : les conditions d’accès demandent que l’auto-archivage respecte les règles de la propriété intellectuelle, concernant les textes comme les illustrations.</li>
+          <li>La vérification des dépôts avant leur mise en ligne : une « modération » des dépôts effectués dans HAL permet de garantir que les fichiers et les métadonnées qui les décrivent sont exploitables par tout utilisateur, en vérifiant qu’ils remplissent au mieux les conditions suivantes : possibilité de les ouvrir et/ou de les télécharger, de lire le texte intégral, de l’utiliser dans le respect de la propriété intellectuelle et de disposer des informations bibliographiques exactes. Par ailleurs, sans procéder à une évaluation scientifique des textes déposés avant leur mise en ligne, cette étape de vérification permet de repérer ceux qui ne correspondent pas aux standards des différentes communautés disciplinaires et de de s’assurer qu’il s’agit bien de documents scientifiques de niveau recherche, qui ont seuls vocation à figurer dans HAL.</li>
+          <li>L’interopérabilité, la visibilité et l’impact scientifique des publications : les données saisies dans HAL obéissent aux standards internationaux et peuvent être exportés dans de nombreux formats, évitant ainsi la ressaisie des données tout en permettant leur dissémination. Les travaux scientifiques déposés dans HAL sont ainsi indexés par les principaux moteurs de recherche (Google Scholar, Microsoft Academic, Unpaywall), répertoriés dans les bases de données bibliographiques (Pubmed) et visibles dans un certain nombre d’archives ouvertes spécialisées (OpenAIRE, PubMed Central, RePec, ArXiv). Les publications déposées dans HAL sont également visibles sur OpenAlex, catalogue d’articles scientifiques et base de données bibliographique en accès ouvert qui fait désormais concurrence à WoS (Clarivate) et Scopus (Elsevier).</li>
+          <li>L’archivage pérenne : l’archivage pérenne des publications déposées dans HAL et des métadonnées qui les accompagnent, est assuré au travers de leur dépôt dans Huma-num, la très grande infrastructure de recherche développée par le CNRS, le Campus Condorcet et l’Université d’Aix-Marseille, selon une procédure mise en place en 2010 avec le CINES (Centre informatique National de l’Enseignement Supérieur).</li>
+          <li>La gestion simplifiée des données personnelles : HAL attribue un IdHAL de type prénom-nom et donne la possibilité de récupérer automatiquement l’identifiant chercheur ORCID et d’indiquer d’autres identifiants (ArXiv, ResearcherID, IdRef).</li>
+          <li>Une diffusion conforme aux grands principes de la science ouverte : le dépôt dans HAL permet de répondre aux exigences des agences de financement de la recherche en termes de diffusion des publications savantes évaluées par des pairs et issues de la recherche financée par des subventions publiques et privées en accès libre, complet et immédiat, conformément aux préconisations du plan S.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="bon-a-savoir">
+  Bon à savoir : corrélation entre taux de citation et dépôt en archive ouverte ?
+</div>
+
+<p>
+  Des études scientifiques, tendent à démontrer qu’une publication visible en archive ouverte est plus citée qu’une publication qui ne l’est pas. …
+</p>
+
+<ul class="liste-tiret">
+  <li>
+    <strong>Les services associés à l’utilisation de HAL</strong>:
+    <ul class="liste-tiret2">
+      <li>MyHAL est un outil développé par l’Université de Rennes destiné à aider les auteurs à vérifier leur liste de publications dans HAL.</li>
+      <li>ExtraHAL, est un outil développé par l’Université de Rennes, qui permet d’afficher et d’exporter en RTF, CSV et/ou Bibtex des listes de publications HAL.</li>
+      <li>VizuHAL est un service développé par l’Université de Rennes, qui permet de générer des tableaux et des graphes statistiques à partir de HAL.</li>
+      <li>Hcéres est un formulaire qui permet aux unités de recherche qui déposent leur production scientifique dans HAL d’exporter un tableau.</li>
+      <li>HAL Monitor est un service qui permet de visualiser les données en temps réel.</li>
+      <li>CV HAL : HAL propose dans l'espace de chaque utilisateur connecté la fonctionnalité Mon CV/Mes publications.</li>
+      <li>La fonctionnalité <a href="https://doc.hal.science/suggestions-de-depot/" target="_blank" rel="noopener"> Suggestions de dépôts</a> récupère automatiquement les informations sur les publications à partir d'autres plateformes.</li>
+      <li>L’Import de lots de publications via <a href="https://doc.hal.science/x2hal/" target="_blank" rel="noopener"> X2HAL.</a></li>
+      <li>Statistiques de consultation et téléchargements.</li>
+    </ul>
+  </li>
+</ul>
+</details>
+<details id="chap2-sec2">
+  <summary><h3>Les modalités de dépôt sur le portail HAL-Collège de France</h3></summary>
+<ul class="liste-tiret">
+<li><strong>Créer un compte et un IdHAL:</strong>
+<p>Les dépôts dans le Portail HAL du Collège se font par autoarchivage en créant son <a href="https://doc.hal.science/identifiant-auteur-idhal-cv/" target="_blank" rel="noopener">  IdHAL</a> et/ou en contactant le Service de la documentation en ligne, bibliométrie et appui à la recherche à l’adresse suivante :<a href="mailto:ressources.electroniques@college-de-france.fr">
+  ressources.electroniques@college-de-france.fr
+</a>
+L’IdHAL est l'identifiant unique proposé par HAL, composé par défaut du prénom et du nom de l’auteur une fois son compte personnel créé sur la plateforme HAL. Il est possible de le modifier (rubrique « Mon profil ») et de gérer les « formes auteurs » (signatures) qui y sont associées (rubrique « Formes auteurs »). La création d’un compte personnel et d’un identifiant HAL s’effectue sur le <a href="https://college-de-france.hal.science/" target="_blank" rel="noopener">  Portail HAL-Collège de France</a>, via le bouton « se connecter », situé en haut à droite de la page d’accueil, en choisissant « créer un compte » dans le menu qui s’affiche.</p>
+</li>
+<li><strong>Les types et versions de documents éligibles au dépôt:</strong>
+<p>HAL permet de déposer de nombreux types de documents (articles, communications, ouvrages ou chapitres d'ouvrage, posters, cartes, vidéos, rapports, etc.), publiés ou non. La liste complète des types de publication acceptés dans HAL et leurs définitions sont consultables sur le portail <a href="https://doc.hal.science/" target="_blank" rel="noopener">  HAL Documentation</a>. 
+Pour ce qui concerne publications, en application de la loi pour une République numérique, c’est la version acceptée pour publication (postprint), incluant les révisions issues de la relecture par les pairs mais pas la mise en page finale de l’éditeur, qui doit être déposée, en respectant, si des droits ont été cédés à un éditeur qui ne diffuse pas lui-même cette publication en accès ouvert, une période d’embargo de 6 mois après publication s’il appartient au domaine des Sciences, Technique et Médecine, et de 12 mois après publication pour le domaine des Sciences Humaines et Sociales. Certains éditeurs autorisent toutefois le dépôt de la version finale publiée (consulter <a href="https://openpolicyfinder.jisc.ac.uk/" target="_blank" rel="noopener">  Open Policy Finder (anciennement Sherpa/Romeo)</a> pour vérifier les politiques des éditeurs sur ce point).
+Le Collège de France encourage également sa communauté de chercheuses et de chercheurs à déposer leurs prépublications (ou preprints) sur le portail HAL – Collège de France ou dans d’autres dépôts d’archives ouvertes le permettant, un lien pouvant dans certains cas être établi avec HAL (se reporter aux répertoires d’archives ouvertes <a href="https://opendoar.ac.uk/" target="_blank" rel="noopener">  OpenDOAR</a> ou <a href="https://openpolicyfinder.jisc.ac.uk/" target="_blank" rel="noopener">  Registry of Open Access Repositories</a> cités plus haut). La diffusion des preprints permet en effet non seulement de communiquer rapidement des résultats (sans attendre l’issue du processus de relecture), mais également de protéger ses recherches des risques de plagiats ou d’appropriation (en attribuant un DOI et une licence Creative Commons dès ce stade de publication). </p>
+</ul>
+<ul class="liste-loupe"
+<li>Si l'éditeur exige l’application d’un embargo pour la diffusion en accès ouvert, il est quand même possible de déposer sans attendre la publication dans HAL en paramétrant la date à laquelle l'article sera rendu visible. Avant cette date, les métadonnées seront visibles (titre, résumé, etc.) et il sera possible d’obtenir un tiré à part de la publication en cliquant sur le bouton "Request full text". Rappel : en application de la loi pour une République numérique, l'embargo ne peut excéder 6 mois après publication pour les STM et 12 mois pour les SHS.</li>
+</ul>
+<ul class="liste-tiret">
+<li><strong>La Direction des bibliothèques, archives et collections (DBAC) du Collège de France vous accompagne:</strong>
+<p>HAL propose aux auteurs de publications scientifiques ou aux tiers déposants (déposants pour le compte d'un auteur) de déposer le texte intégral de leurs publications ou simplement de les référencer. Le dépôt peut être effectué via un formulaire de dépôt qui permet de déposer manuellement du texte intégral ou seulement la référence de la publication.</p>
+<li><strong>Le référencement et le dépôt des publications dans le portail HAL Collège de France:</strong>
+<p>Pour le référencement bibliographique et la diffusion dans HAL de la production scientifique de la communauté de recherche du Collège de France, le <a href="https://www.college-de-france.fr/fr/services-la-recherche" target="_blank" rel="noopener"> service des ressources en ligne, bibliométrie et appui à la recherche (DBAC)</a> assure une veille sur différentes bases bibliographiques (OpenAlex, Web of Science®, Scopus), les sites web des laboratoires ou encore les catalogues des bibliothèques, lui permettant de valider les dépôts et de garantir la mise à jour du portail HAL de l’établissement. Les référents HAL, désignés au sein de chacune des unités de recherche du Collège de France ainsi que, dans la mesure du possible, auprès de chacune des Chaires, sont en outre chargés de lui transmettre régulièrement (chaque trimestre) des bibliographies actualisées.</p>
+</ul>
+<ul class="liste-loupe">
+<li>Le repérage exhaustif des publications des membres de la communauté de recherche du Collège de France implique que les affiliations des auteurs soient correctement rédigées, en respectant les règles de signature préconisées par le Collège de France.</li>
+</ul>
+<ul class="liste-loupe">
+<li>L’utilisation de la fonctionnalité HAL Suggestions de dépôts permet de récupérer automatiquement les informations sur les publications à partir d'autres plateformes (arXiv, etc.). HAL importe ainsi directement le texte intégral d’une publication dès lors qu’il est disponible en libre accès sur une autre plateforme. Si le texte intégral n’est pas disponible en libre accès, HAL préremplit les informations bibliographiques (titre, auteurs, etc.) et l’auteur n’a plus qu’à ajouter son fichier PDF</li>
+</ul>
+<div class="bon-a-savoir">Bon à savoir : l’utilisation des images trouvées sur le Web.</div>
+<p>Au 1er janvier 2026, HAL a rendu obligatoire pour tous types de fichiers l’attribution d’une licence précisant les conditions de leur diffusion et de leur réutilisation au moment de leur dépôt. La métadonnée « licence » doit ainsi obligatoirement être renseignée. 
+Ce nouveau cadre, défini pour clarifier les conditions de réutilisation des publications déposées dans HAL, a pour objectif de faciliter la réutilisation des données tout en respectant le cadre des droits d’auteur. 
+La mise en œuvre de ce nouveau cadre s’effectue selon les modalités suivantes :
+Pour les dépôts effectués avant le 1er janvier 2026 sans licence associée, la mention de licence laissée vide est remplacée par une « AUTORISATION HAL ». Cette autorisation précise que les fichiers déposés sont protégés par le droit d’auteur et atteste que le déposant a accordé à HAL l'autorisation de diffuser le document en ligne. Un fichier avec une autorisation HAL (mentionnée sur la page de garde) signifie donc pour l’utilisateur qu’il peut lire, consulter, citer (en mentionnant le ou les auteurs et la source) mais doit demander une autorisation à l’auteur ou à l’ayant droit pour reproduire, adapter ou utiliser l’œuvre au-delà des exceptions légales. Cette autorisation HAL peut ensuite être remplacée par l’auteur par l'une des licences proposées.
+L’auteur sélectionne dans un menu déroulant la licence ou la mention la plus adaptée, dans le respect des accords de diffusion conclus avec les éditeurs. Les licences et mentions proposées sont les six licences Creative Commons, la Licence Ouverte / Open license d’Etalab et la mention Copyright (qui équivaut à une non-licence de réutilisation) dans le cas où l’éditeur a autorisé le dépôt de la version publiée de la publication sous copyright (© nom de l’éditeur).
+L’attribution d’une licence Creative Commons CC-BY est recommandée, en accord avec les principes de la science ouverte.</p>
+</li>
+</ul>
+</details>
+<details id="chap2-sec3">
+  <summary><h3>Récapitulatif des recommandations associées au dépôt dans HAL</h3></summary>
+<ul class="liste-tiret">
+<li><strong>Vérifier préalablement les droits : </strong>
+<p>Quelle que soit la version de la publication, le dépôt doit être effectué avec l'accord de tous les co-auteurs ;</p>
+<p>Le dépôt de la version finale publiée (fichier produit par l’éditeur) peut être effectué sous certaines conditions (consulter <a href="https://openpolicyfinder.jisc.ac.uk/" target="_blank" rel="noopener">  Open Policy Finder (ex Sherpa/Romeo)</a> ou <a href="https://reseau-mirabel.info/" target="_blank" rel="noopener">  Mir@bel</a> pour vérifier les politiques des éditeurs sur ce point).</p></li>
+<li><strong>Utiliser un DOI pour faciliter la récupération des métadonnées :</strong>
+<p>Dans les cas où un DOI a été attribué à la publication par l’éditeur, l’interrogation des bases Crossref et Datacite permet de récupérer automatiquement dans HAL les métadonnées associées (formulaire de dépôt automatiquement pré-rempli).</p></li>
+<li><strong>Attribuer une licence de d’utilisation claire et accessible :</strong>
+<p>Au 1er janvier 2026, HAL a rendu obligatoire pour tous types de fichiers l’attribution d’une licence précisant les conditions de leur réutilisation au moment de leur dépôt ;</p>
+<p>En application de la stratégie de non-cession des droits, il est recommandé d’attribuer aux preprints ou postprints déposés une licence CC-BY, licence qui autorise toute personne qui le souhaite à lire, citer, télécharger, partager ou republier ce manuscrit, du moment que l’auteur est mentionné. Pour les ouvrages et textes longs, il est possible d'utiliser une licence excluant l'utilisation commerciale et les modifications (par exemple:   CC BY-NC, CC BY-ND). Le choix de telle ou telle licence, ou de la mention Copyright dépend de l’auteur, mais aussi de ses engagements contractuels éventuels avec un éditeur.</p></li>
+<li><strong>Veiller à s’identifier de manière univoque : </strong>
+<p>L’affiliation des auteurs doit être rédigée en respectant les règles de signature préconisées par le Collège de France.</p></li>
+</ul>
+<p>Pour toute question ou pour être accompagné pour déposer sur le portail HAL-Collège de France, contacter l’adresse suivante :ressources.electroniques@college-de-france.fr</p>
+</details>
+</details> 
+
+</section>
+    
+    <a href="#" class="back-link" onclick="history.back(); return false;">⬅ Retour à la page précédente</a>
+  </main>
+
+<footer>
+  <p>
+    <a href="#">Politique de confidentialité</a> |
+    <a href="#">Accessibilité</a> |
+    <a href="#">Mentions légales</a>
+  </p>
+  <p>&copy; 2026 Collège de France</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bibliographies, bibliométrie et impact de la recherche  | Science ouverte au Collège de France</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  line-height: 1.6;
+  color: #1a1c1f;
+  background: #fff;
+  padding: 0 1rem;
+}
+
+a { color: #3f608a; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header {
+  position: relative;
+  background: #2b2b2b url("2_homepage_background.png") center / cover no-repeat;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.header-container {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  padding: 0 1rem;
+}
+
+header .logo {
+  height: 80px;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ===== PAVÉ DE NAVIGATION ===== */
+nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fafafa;
+}
+
+nav svg {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+nav span {
+  font-weight: 600;
+}
+
+main {
+  display: block;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.content {
+  min-width: 0;
+}
+
+section.chapitre {
+  margin-bottom: 4rem;
+  padding-top: 2rem;
+  border-top: 4px solid #3f608a;
+}
+
+h2, h3 {
+  color: #3f608a;
+}
+
+.liste-loupe {
+  list-style: none;
+  padding-left: 0;
+}
+
+.liste-loupe li {
+  position: relative;
+  padding-left: 28px;
+}
+
+.liste-loupe li::before {
+  content: "🔍";
+  position: absolute;
+  left: 0;
+}
+
+.liste-tiret {
+  list-style: none;
+  padding-left: 0;
+}
+
+.liste-tiret li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.liste-tiret li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+.liste-tiret2 {
+  list-style: none;
+  padding-left: 2ch;   /* ← décalage horizontal */
+}
+
+.liste-tiret2 li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.liste-tiret2 li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+.bon-a-savoir {
+  color: #c00000;
+  font-weight: bold;
+  background: #fff3f3;
+  padding: 0.4rem 0.6rem;
+  border-left: 4px solid #c00000;
+  display: inline-block;
+  margin: 1rem 0;
+}
+
+footer {
+  background: #f2f2f2;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ===== ACCORDÉON ALIGNÉ ===== */
+details {
+  margin-left: 0;
+}
+
+details details {
+  margin-left: 1.5rem;
+}
+
+details summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::before {
+  content: "▸";
+  color: #3f608a;
+  font-weight: bold;
+  width: 1em;
+  flex-shrink: 0;
+}
+
+details[open] > summary::before {
+  content: "▾";
+}
+
+details summary h2,
+details summary h3,
+details summary h4 {
+  display: inline;
+  margin: 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+    <img src="library-logo.png" alt="Logo Collège de France" class="logo">
+    <h1>Bibliographies, bibliométrie et impact de la recherche </h1>
+  </div>
+</header>
+
+<nav>
+  <a href="auteur.html">
+  <svg viewBox="0 0 24 24">
+    <path
+      d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2
+         c-3.3 0-10 1.7-10 5v3h20v-3
+         c0-3.3-6.7-5-10-5z"
+      fill="#3f608a"
+    />
+  </svg>
+  <span>S’identifier en tant qu’auteur</span>
+</a>
+
+  <a href="droit.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 3v18M4 7h16M6 7l-2 5a4 4 0 008 0l-2-5
+               M18 7l-2 5a4 4 0 008 0l-2-5"
+            fill="none" stroke="#3f608a" stroke-width="2"/>
+    </svg>
+    <span>Comprendre et protéger ses droits d’auteur</span>
+  </a>
+
+  <a href="ao.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M7 10V7a5 5 0 0110 0" fill="none" stroke="#3f608a" stroke-width="2"/>
+      <rect x="4" y="10" width="16" height="10" rx="2"
+            fill="none" stroke="#3f608a" stroke-width="2"/>
+    </svg>
+    <span>Comprendre l’accès ouvert (open access)</span>
+  </a>
+
+  <a href="deposer.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M6 15a4 4 0 010-8 5 5 0 019.7-1.5A4 4 0 1118 15H6z"
+            fill="none" stroke="#3f608a" stroke-width="2"/>
+      <path d="M12 16V10M9 13l3-3 3 3"
+            fill="none" stroke="#3f608a" stroke-width="2"/>
+    </svg>
+    <span>Déposer et diffuser dans une archive ouverte</span>
+  </a>
+
+  <a href="publierao.html">
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" fill="none" stroke="#3f608a" stroke-width="2"/>
+      <path d="M12 6l3 6-3 6-3-6z" fill="#3f608a"/>
+    </svg>
+    <span>Choisir où publier en accès ouvert</span>
+  </a>
+
+  <a href="bibliometrie.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M4 20h16" stroke="#3f608a" stroke-width="2"/>
+      <rect x="6" y="10" width="3" height="8" fill="#3f608a"/>
+      <rect x="11" y="6" width="3" height="12" fill="#3f608a"/>
+      <rect x="16" y="13" width="3" height="5" fill="#3f608a"/>
+    </svg>
+    <span>Bibliographies, bibliométrie et impact de la recherche</span>
+  </a>
+
+  <a href="formation.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3z" fill="#3f608a"/>
+      <path d="M6 12.5V15c0 2.2 3 4 6 4s6-1.8 6-4v-2.5l-6 3.2-6-3.2z"
+            fill="#3f608a"/>
+    </svg>
+    <span>Formation et accompagnements</span>
+  </a>
+
+  <a href="annexe.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M8 12l6-6a3 3 0 014 4l-8 8a5 5 0 11-7-7l7-7"
+            fill="none" stroke="#3f608a" stroke-width="2"/>
+    </svg>
+    <span>Annexe et crédits</span>
+  </a>
+</nav>
+<main>
+  <div class="content">
+
+  <!-- CONTENU -->
+  <section class="chapitre">
+<details id="chap1" open>
+<summary><h2>Rassembler et éditer sa bibliographie avec HAL ou Zotero</h2></summary>
+<details id="chap1-sec1">
+  <summary><h3>Afficher ou exporter des listes de publication dans HAL ?</h3></summary>
+  <p>ExtraHAL, est un outil développé par l’Université de Rennes, qui permet d’afficher et d’exporter en RTF, CSV et/ou Bibtex des listes de publications HAL d’une unité, d’une équipe de recherche ou d’un auteur. Il est possible de sélectionner des périodes de publications (dates) ainsi que des types de documents et de choisir des options d’affichage et de style de citation (présentation des références d’articles).
+Pour plus d’information ou pour être accompagné dans cette démarche contacter le Service des ressources en ligne, bibliométrie et appui à la recherche (DBAC) à l’adresse suivante : ressources.electroniques@college-de-france.fr </p>
+  </details>
+  <details id="chap1-sec2">
+  <summary><h3>Rassembler sa bibliographie dans la bibliothèque Zotero ?</h3></summary>
+  <p>Zotero, est un logiciel de gestion de références bibliographiques, gratuit, libre et open source, développé par le Center for History and New Media (CHNM) de l'université George-Mason (Virginie). Cet outil permet de créer ou de récupérer automatiquement, à partir de ressources en lignes, et de conserver des données bibliographiques ainsi que des documents de recherche (fichiers PdF de résumé ou de texte intégral, images, etc.). Il facilite l'organisation, l'annotation, l'indexation, la recherche et le partage de ces données bibliographiques et permet de créer automatiquement des références bibliographiques (notes de bas de page ou citations dans le texte) ou de générer des bibliographies complètes (thématiques ou alphabétiques).</p>
+  <p>Le service des ressources en ligne, bibliométrie et appui à la recherche (DBAC) maintient la base bibliographique de la production scientifique des équipes de recherche et des professeurs du Collège de France dans la bibliothèque Zotero du Collège de France et veille à sa mise à jour régulière.  Cette bibliothèque contient les publications en ligne et imprimés (articles, livres, chapitres, vidéo, audio…) des professeurs en activité ou honoraires ainsi que des membres des unités de recherche hébergés au Collège de France. Elle permet de générer :</p>
+  <ul class="liste-tiret">
+  <li>-Les listes de publication dynamiques des professeurs et équipes sur le site du Collège de France, via la base bibliographique <a href="hhttps://ramus.college-de-france.fr/s/ramus/page/Accueil" target="_blank" rel="noopener"> Ramus : les références bibliographiques des publications des chaires et équipes du Collège de France</a>;</li>
+<li>Les listes de publications publiées dans l’Annuaire du Collège de France ;</li>
+<li>Les listes de publication pour des rapports et évaluations (ESGBU …) ;</li>
+<li>La base Ramus, bibliothèque numérique à interface publique permettant de rendre visibles sur le web les références des publications des chaires et équipes de recherche du Collège de France ; </li>
+<li>Le Portail HAL du Collège de France via l’outil X2HAL ou bibliographie par bibliographie. </li>
+  </ul>
+<p>Des référents désignés au sein de chacune des unités de recherche du Collège de France ainsi que, dans la mesure du possible, auprès de chacune des Chaires, peuvent être formés à leur demande par le service des ressources en ligne, bibliométrie et appui à la recherche (DBAC) pour contribuer à l’alimentation de cette base.</p>
+<p>Une formation complémentaire peut être proposée par les Éditions du Collège de France, pour rendre les listes de publications facilement exportables pour l’Annuaire.</p>
+<p>Pour plus d’information ou pour être accompagné et formé à l’utilisation de Zotero contacter le Service des ressources en ligne, bibliométrie et appui à la recherche (DBAC) à l’adresse suivante : ressources.electroniques@college-de-france.fr</p>
+<div class="bon-a-savoir">Bon à savoir : l’utilisation des images trouvées sur le Web.</div>
+<p>La base Ramus, conçue en collaboration avec le pôle Éditions (DACRE), la Direction des Systèmes d’Information (notamment le pôle Web), est gérée par le Service des ressources en ligne, bibliométrie et appui à la recherche de la Direction des bibliothèques, archives et collections (DBAC). Elle permet de rendre visibles sur le web les références bibliographiques stockées dans le logiciel Zotero concernant l’ensemble de la production scientifique de la communauté de recherche du Collège de France.
+La base Ramus utilise le logiciel libre Omeka S, outil développé par le Center for History and New Media (CHNM) de l'Université George Mason (Virginie), qui offre des fonctionnalités répondant aux principes FAIR (Faciles à trouver, Accessibles, Interopérables et Réutilisables) pour la diffusion de contenus multimédias. Cet outil permet de créer, à partir de données brutes de recherche et de leurs métadonnées, des bases de données thématiques visibles sur le web pour les valoriser et les partager. 
+Les données bibliographiques recensées dans la base Ramus sont classées selon la typologie suivante :
+<ul cless="liste-tiret">
+<li>Articles publiés dans des revues scientifiques, livres, chapitres de livres ;</li>
+<li>Présentations rédigées dans le cadre de conférences ou de cours ;</li>
+<li>Vidéos, émissions de radio ;</li>
+<li>Articles d’encyclopédie.</li>
+</ul>
+<p>Pour plus d’information, contacter le Service des ressources en ligne, bibliométrie et appui à la recherche à l’adresse suivante : ressources.electroniques@college-de-france.fr </p>
+  </details>
+  </details>
+</section>
+
+    <!-- ===================== CHAPITRE 2 ===================== -->
+<section class="chapitre">
+  <details id="chap2" open>
+<summary><h2>Comprendre la bibliométrie</h2></summary>
+<p>La bibliométrie est l’application de méthodes statistiques et mathématiques pour mesurer et évaluer la production et la diffusion de publications : il s’agit d’un outil permettant non seulement de quantifier la production scientifique, mais également d’en évaluer l’impact. </p>
+<p>La notoriété scientifique d’une publication et/ou de son auteur se mesure ainsi par le nombre de citations qu’elle/il reçoit, correspondant au nombre de publications qui la/le citent dans leur bibliographie. </p>
+<p>L’impact d’une institution en tant que communauté scientifique productrice de connaissances peut également être mesuré à l’aune des indicateurs de notoriété obtenus par l’ensemble des publications émanant des auteurs qui y sont affiliés.</p>
+<ul class="liste-loupe">
+<li>Cette mesure d’impact dépend cependant de l’outil et de la base de données utilisés : elle est en règle générale limitée à un périmètre donné correspondant à l’internet « visible », c’est-à-dire directement accessible par les moteurs de recherche, ou au corpus de publications indexées par la base de données en fonction des sources d’information qu’elle analyse et indexe (revues, éditeurs d’ouvrages, congrès, etc.). Il n’existe ainsi pas de base unique qui regrouperait toutes les publications des chercheuses et des chercheurs. </li>
+</ul>
+<details id="chap2-sec1">
+  <summary><h3>L’évaluation de la recherche, un frein à la transformation amorcée par la science ouverte ?</h3></summary>
+  <p>Le principe d’une évaluation de la recherche, des chercheuses et des chercheurs, de leur carrière et de leurs projets, fondé uniquement sur des indicateurs chiffrés est controversée. Le paradigme « Publier ou périr » (« Publish or Perish ») engendre en effet des maux qui sont bien connus de la communauté scientifique mondiale : augmentation disproportionnée du nombre de publications scientifiques, usage de bibliothèque pirate, absence de prise en compte des résultats négatifs, difficulté à trouver des reviewers, crise de qualité des études, augmentation des fraudes et du plagiat interrogeant l’intégrité scientifique etc.</p>
+  <p>Publiée en 2013, la Déclaration de San-Francisco sur l'évaluation de la recherche (« San Francisco Declaration on Research Assessment », DORA) ou « Déclaration de San-Francisco », a notamment remis en question l'usage d’indicateurs basés sur les revues pour évaluer la recherche et les chercheuses et les chercheurs. À sa suite, le manifeste de Leiden (2015) a énoncé dix principes visant à améliorer les pratiques d’évaluation de la recherche, alertant notamment sur le mauvais usage de certains indicateurs bibliométriques, et l’Appel de Jussieu pour la science ouverte et la bibliodiversité (2017) a insisté sur la nécessité d’une profonde réforme des systèmes d’évaluation de la recherche (article 4). Depuis lors, les organismes de recherche s’accordent sur la nécessité de faire évoluer l’évaluation des chercheuses et des chercheurs, d’abandonner un certain nombre d’indicateurs et de prendre en compte une activité scientifique plus diverse que la simple publication des travaux. Après avoir signé la déclaration DORA en 2018, le CNRS a ainsi publié en 2019 sa feuille de route pour la science ouverte dont l’évaluation constitue un axe important, l’objectif affiché étant d’accélérer la transition vers un système d’évaluation plus équitable et favorable à l’essor des pratiques de science ouverte</p>
+  <p>En 2022, l’appel de Paris sur l’évaluation de la recherche, lancé dans le cadre de la Présidence Française de l’Union Européenne lors de la première conférence européenne sur la science ouverte, a ensuite été à l’origine de la création de la Coalition for Advancing Research Assessment (CoARA) quelques mois après. Plus de 800 institutions réparties dans le monde - organismes de recherche, bailleurs de fonds, autorités d'évaluation, universités dont, en France, le CNRS et l’ANR - ont rejoint cette coalition, s’accordant sur une orientation commune et des principes directeurs pour mettre en œuvre une réforme de l'évaluation de la recherche, des chercheurs et des organismes de recherche, tels que décrits dans l'Accord sur la réforme de l'évaluation de la recherche publié en juillet 2022. CoARA prend ainsi la suite de la Déclaration de San Francisco (DORA), en y ajoutant un volet opérationnel, ses adhérents devant s’engager à publier un plan d’action précis.</p>
+  <p>En dépit de ces remises en cause profondes, liées aux imperfections des outils ou au mauvais usage qui en est fait, l‘évaluation de l’impact de la recherche reste encore dominée par le prestige des journaux, le nombre d’articles publiés et la valeur de l’indice h de la chercheuse ou du chercheur (voir ci-après, h-index) : le caractère concurrentiel de la recherche rend en effet nécessairement complexe la question de son évaluation. </p>
+  </details>
+  <details id="chap2-sec2">
+  <summary><h3>Identifier les outils bibliométriques et les indicateurs d’impact</h3></summary>
+  <ul class="liste-tiret">
+  <li><strong>Les outils d’analyse « traditionnels » et leurs limites</strong>
+  <p>Des services d’analyse bibliométrique (ou de mesure d’impact) sont proposées par des outils spécialisés, des moteurs de recherche spécialisés ainsi que par des bases de données bibliographiques, en accès ouvert ou en accès restreint et payant. Les outils les plus utilisés sont encore aujourd’hui les suivants :</p>
+  <p><strong>Publish or Perish (PoP)</strong> est un logiciel propriétaire gratuit développé par la société commerciale britannique Tarma Software Research Pty Limited, qui recherche et analyse les références bibliographiques indexées par les moteurs de recherche spécialisés Google Scholar et Microsoft Academic Search. Le logiciel peut être téléchargé gratuitement à partir du site www.harzing.com. </p>
+  <p><strong>Web of Science Core Collection</strong> est le service d’analyse bibliométrique payant proposé par la société commerciale Thomson Reuters et intégré à la base de données Web of Science® (WoS) de l’éditeur commercial Clarivate Analytics.</p>
+  <p>La plateforme permet de calculer des indicateurs de visibilité, d’effectuer des recherches selon plusieurs critères (sujet, auteur, titre de l’article, ou de la publication, etc.), de générer des indicateurs bibliométriques et d’effectuer des recherches par citations (nombre d’articles citant la référence et nombre d’articles cités par les auteurs). 
+L’analyse d’impact des publications effectué par Web of Science® porte sur les citations émises par les publications indexées dans ses bases de données. Les indicateurs de citations dépendent de la période couverte par l’abonnement à la base Web of Science® : si l’abonnement est par exemple limité à 10 ans de publication, le corpus analysé sera de fait limité à ces 10 années et les mesures de citations ne se rapporteront qu’aux publications de ce corpus restreint.
+Seules les publications dans les périodiques, ouvrages ou communications indexés par WoS apparaissent sur cette plateforme : les auteurs ne peuvent ainsi pas signaler directement leurs productions scientifiques si elles ne relèvent pas de publications qui y sont référencées. Dans ces limites, la création d’un profil WoS ResearcherID permet à un auteur de gérer la liste de ses publications et l’alimenter à partir de WoS.
+</p>
+<p><strong>Scopus</strong> base de données bibliographique de l’éditeur commercial Elsevier propose également un outil de mesure d’impact en accès payant.</p>
+<p>Scopus permet le calcul d’indicateurs de visibilité et propose des outils bibliométriques additionnels pour analyser les références bibliographiques selon différents critères : auteur, organisme d’affiliation, pays d’affiliation, type de documents, langue, année de publication, revue et thématique. Elle propose également des outils de parangonnage (benchmarking) permettant aux institutions d’analyser leurs stratégies de recherche sous différents aspects (classements, partenariats, impacts sur la société, financement etc.). </p>
+<p>L’analyse d’impact des publications effectué par Scopus prend uniquement en compte les publications indexées dans sa base de données. Scopus calcule les indicateurs de visibilité pour un intervalle de temps correspondant à la période d’abonnement à la base de données.</p>
+<ul class="liste-loupe">
+<li>Le Collège de France a accès via l’abonnement de l’Université PSL, dont il est membre associé, aux bases de données bibliographiques des éditeurs commerciaux Clarivate Analytics (Web of Science®) et Elsevier (Scopus). </li>
+</ul>
+  <div class="bon-a-savoir">Bon à savoir : une hégémonie contestée.</div>
+  <p>La place occupée par ces plateformes commerciales, utilisées depuis longtemps par les institutions de recherche pour analyser leurs productions scientifiques et se comparer, est aujourd’hui remise en question sous l’impulsion, notamment, du mouvement en faveur de la science ouverte mais également en raison des reproches formulées à leur encontre en termes d’absence de transparence, de manque de diversité et/ou de taux de couverture insatisfaisant. Les biais privilégiant les articles, les disciplines relevant des sciences, des techniques et de la médecine, la littérature anglophone ou plus globalement le monde occidental (« global north ») et les gros éditeurs ont ainsi pu être mis en exergue.</p>
+  <p>En 2024, plus de 30 organisations impliquées dans le financement, l’évaluation ou la réalisation de la recherche ont ainsi signé la déclaration de Barcelone sur l’information de recherche ouverte, par laquelle elles se sont engagées à prendre l’initiative de transformer la manière dont l’information sur la recherche est produite et utilisée. Un nombre croissant d’universités et d’établissements de recherche, parmi lesquels Sorbonne Université et le CNRS, s’affranchissent depuis progressivement des produits bibliométriques propriétaires tels que Web of Science® et Scopus, pour soutenir et consolider de nouveaux outils ouverts et participatifs, notamment l’outil OpenAlex (voir le chapitre « Les solutions alternatives : vers une bibliométrie plus ouverte et représentative »). </p>
+  </li>
+  <li><strong>Les principaux indicateurs d’impact et leurs limites</strong>
+  <p>Les indicateurs de mesure d’impact les plus couramment utilisés sont les suivants :</p>
+  <p><strong>Le facteur d’impact (FI) (ou Impact Factor (IF)) d’une revue correspond, pour une année donnée, au nombre moyen de citations reçues par l’ensemble des articles publiés dans la revue au cours des deux années précédentes (facteur d’impact à 2 ans) ou des cinq années précédentes (facteur d’impact à 5 ans) rapporté au nombre total d’articles publiés par la revue pendant la même période. Il prend en compte toutes les citations, y compris les « autocitations » d’articles de la revue effectuées par des articles de la même revue. </p>
+  <p>Cet indicateur a été créé en 1955 par la société Thomson Reuters (US). Il est calculé par le service d’analyse bibliométrique d’accès payant Web of Science Core Collection proposé par la société commerciale Thomson Reuters et intégré à la base de données Web of Science (WoS). Il est également accessible sur abonnement à la plateforme du Journal Citations Reports (JCR). Il concerne ainsi uniquement les revues indexées dans la base de données Web of Science (WoS).</p>
+  <p>Le SCImago journal ranking (SJR) un indicateur similaire au facteur d’impact proposé par Scopus. Il mesure l’impact en accordant un poids relatif aux citations en fonction du prestige ou de l’importance des revues. Le SJR se base sur trois ans de données de citations provenant de Scopus.</p>
+  <ul class="liste-loupe">
+ <li> Le facteur d’impact évalue ainsi indirectement la visibilité d’une revue scientifique. Il lui est reproché de ne pas être corrélé à la qualité intrinsèque des avancées scientifiques liées à une publication en particulier : le facteur d’impact n’évalue en effet pas les résultats de la recherche en eux-mêmes, mais le fait qu’ils aient été publiés dans une revue prestigieuse. C’est pourquoi la Déclaration de San Francisco sur l’Evaluation de la Recherche (DORA) suggère d’abandonner cet indicateur lors de l’évaluation individuelle des chercheurs. </li>
+  </ul>
+  </li>
+  <li><strong>Le h-index ou facteur h </strong> d’un auteur est le nombre d’articles de cet auteur, qui ont reçu au moins h citations chacun. Il a pour but de quantifier la productivité scientifique et l'impact d'un auteur en fonction du niveau de citation de ses publications</li>
+  <p>Le h-index a été créé en 2005 par Jorge Hirsch du Max Planck Institute for Solid State Research (Allemagne). Il peut porter sur les revues indexées dans les bases de données Web of Science® (WoS) ou Scopus, ou sur les publications indexées par Google Scholar. </p>
+  <p>L’analyse est accessible sur abonnement sur les plateformes Journal Citations Reports (JCR), Web of Science Core Collection ou Scopus. Pour les publications indexées par Google Scholar, l’accès s’effectue via le logiciel Publish or Perish (PoP).</p>
+  <ul class="liste-loupe">
+  <li>Des biais importants ont été détectés dans l’utilisation de l’Indice h : il dépend de la durée de la carrière des chercheurs, favorisant ceux ayant déjà une longue carrière, et ne tient pas compte des autres types de documents produits, des pratiques de publication du domaine ni de la place de l’auteur dans la liste des auteurs. Les chercheurs actifs dans les disciplines pour lesquelles la fréquence des citations est élevée se trouvent ainsi par exemple favorisés. C’est pourquoi le Manifeste de Leiden recommande de ne pas l’utiliser. </li>
+  </ul>
+  <li><strong>Les autres indicateurs courants de mesure d’impact des publications d’un auteur sont :</strong>
+  <ul class="liste-tiret2">
+<li>Le nombre total de citations reçues par publication ou pour un ensemble de publications : Cites (Publish or Perish - PoP), Times Cited (Web Of Science - WoS), Citations (Scopus) ;</li>
+<li>Le nombre moyen de citations reçues par publication : Cites/Paper (Publish or Perish - PoP), Average Citations per Item (Web Of Science - WoS), Citations/Document (Scopus)</li>
+<li>nombre moyen de citations reçues pour une publication ou un ensemble de publications par année : Cites/Year (Publish or Perish - PoP), Average Citations per Year (Web Of Science - WoS), Citations/Year (Scopus).
+</li>
+</ul>
+<ul class="liste-loupe">
+<li>La fiabilité des indicateurs d’impact dépend également de la façon dont les auteurs s’identifient (utilisation d’identifiants pérennes et rédaction correcte de leurs affiliations).</li>
+</ul> 
+  </li>   
+  </ul>
+  <div class="bon-a-savoir">Bon à savoir : le Collège de France participe au programme IPERU.</div>
+  <p>L’observatoire des sciences et techniques (OST) du Haut Conseil de l’évaluation de la recherche et de l’enseignement supérieur (Hcéres) produit depuis une dizaine d’années des indicateurs de production des établissements de recherche universitaire (IPERU) qui servent à caractériser leurs productions scientifiques et technologiques, suivre leur évolution et les positionner dans des espaces territoriaux de référence. Ils s’appuient sur trois sources de données : les publications, les brevets et les participations aux projets du programme-cadre de recherche et d'innovation de l’Union européenne.
+Pour ce qui concerne les publications, la source des données utilisée par le programme IPERU est la base bibliographique Web of Science® (WoS) de l’éditeur commercial Clarivate Analytics. L’analyse porte ainsi uniquement sur les publications indexées par cette base de données. L’observatoire des sciences et techniques (OST) explore toutefois la possibilité de diversifier ses sources de données bibliométriques, en élargissant en particulier les repérages effectuées aux bases HAL et OpenAlex.
+Le Collège de France reçoit chaque année dans le cadre de ce programme un rapport sur son positionnement dans le monde de l’enseignement supérieur et de la recherche national et international. Afin de bien faire remonter sa publication dans la liste des publications recensées pour IPERU, il faut que les chercheuses et les chercheurs respectent les règles de signature des publications scientifiques du Collège.
+</p>
+<ul class="liste-loupe">
+<li>Pour que les publications puissent être recensées dans le cadre du programme IPERU, les affiliations des auteurs soient doivent être correctement rédigées, en respectant les règles de signature préconisées par le Collège de France</li>
+</ul>
+</details>
+<details id="chap2-sec3">
+  <summary><h3>Les solutions alternatives : vers une bibliométrie plus ouverte et représentative</h3></summary>
+  <p>Depuis quelques années, de nouveaux moteurs de recherche académique ouverts viennent compléter l'offre dominée jusqu’à présent par Google Scholar, Scopus et Web of Science®. Un nombre croissant d’universités et d’établissements de recherche, parmi lesquels Sorbonne Université et le CNRS, s’affranchissent ainsi progressivement de ces produits bibliométriques propriétaires pour soutenir et consolider de nouveaux outils ouverts et participatifs, favorisant la « bibliodiversité ». </p>
+  <p><strong>OpenAlex</strong>, est une base de données présentée comme une alternative ouverte et gratuite aux bases commerciales Web of Science® (Clarivate) et Scopus (Elsevier). Nommée ainsi en référence à la bibliothèque d’Alexandrie et gérée par l’organisation à but non lucratif OurResearch, OpenAlex exploite des données provenant de nombreuses sources ouvertes (Crossref, HAL, PubMed, PubMed Central, Unpaywall, ROR, ORCID, etc.). OpenAlex présenterait ainsi un taux de couverture supérieur aux bases concurrentes et une meilleure représentativité de la recherche (types de contenus, aires géographiques et linguistiques cf. global South). </p>
+  <p>L’utilisation d’OpenAlex à des fins d’analyses bibliométriques est à ce jour possible mais nécessite encore un travail important pour améliorer la qualité des métadonnées. Dans le cadre d’un partenariat pluriannuel avec OpenAlex mis en place en 2023, le ministère de de l’Enseignement supérieur et de la Recherche français s’est engagé à apporter une contribution financière à son fonctionnement et à contribuer à l’amélioration des données, en particulier celles liées à la recherche française. Les décisions prises par plusieurs universités et établissements de recherche, parmi lesquels Sorbonne Université et le CNRS, de s’affranchir progressivement des produits bibliométriques propriétaires tels que Web of Science® et Scopus, pour soutenir et consolider l’outil OpenAlex, devraient également contribuer à en améliorer les données.</p>
+  <ul class="liste-loupe">
+  <li>OpenAlex est utilisé par les universités pour mesurer les progrès réalisés par leurs équipes de recherche en matière d'“ouverture” des publications : OpenAlex s'appuie sur les données du DOAJ ainsi que celles d'Unpaywall pour indiquer le statut (fermeture ou ouverture) et la voie utilisée pour la mise en accès ouvert (accès ouvert en voie dorée ou verte).</li>
+  </ul>
+  <p><strong>Matilda<strong> est un moteur de recherche académique multidisciplinaire basé sur des données ouvertes et sur un logiciel open-source. Son objectif est de faciliter l’accès et l’utilisation des données de références et de citations. Il ne s’agit pas d’une base de données bibliométriques permettant de réaliser des analyses poussées mais d’un outil pour aider les scientifiques à découvrir des références bibliographiques.</p>
+  <p>Le développement de Matilda est porté par le Centre de sociologie de l’innovation et Huma-Num et a bénéficié d’un appui financier de l’ANR et du CNRS. Matilda compile des données provenant de nombreuses sources ouvertes : ArXiv, PubMed, Crossref, RePEc, HAL, Unpaywall et Orcid.</p>
+  <p>Matilda se limite aux documents textuels académiques (cela exclut les logiciels, vidéos, photos, images, audio, etc.) mais revendique des principes d'égal traitement des textes scientifiques et de leurs métadonnées, en cohérence avec les engagements de la déclaration DORA. Aucune exclusion ou hiérarchisation en fonction de la langue, du type de document n’est ainsi effectuée, ce qui lui permet d’offrir une couverture potentiellement plus étendue que les autres moteurs de recherche pour les langues autres que l’anglais.</p>
+  <p>La couverture temporelle de Matilda est pour le moment limitée : les documents référencés dans Matilda sont ceux ayant été publiés au plus tôt en 2019 sur les sources Matilda ou ayant été cités par un document lui-même publié après 2019. Seule la source HAL comprend aujourd’hui l’ensemble de l’historique, mais Matilda contiendra à terme la totalité de chacune des sources.</p>
+  <p>Pour plus d’information sur la bibliométrie, les rapports et le programme IPERU, contacter le Service des ressources en ligne, bibliométrie et appui à la recherche (DBAC) à l’adresse suivante : ressources.electroniques@college-de-france.fr  </p>
+</details>
+</details>
+</section>
+    
+    <a href="#" class="back-link" onclick="history.back(); return false;">⬅ Retour à la page précédente</a>
+  </main>
+
+<footer>
+  <p>
+    <a href="#">Politique de confidentialité</a> |
+    <a href="#">Accessibilité</a> |
+    <a href="#">Mentions légales</a>
+  </p>
+  <p>&copy; 2026 Collège de France</p>
+</footer>
+
+</body>
+</html>

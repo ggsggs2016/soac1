@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comprendre l’accès ouvert (open access) | Science ouverte au Collège de France</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  line-height: 1.6;
+  color: #1a1c1f;
+  background: #fff;
+  padding: 0 1rem;
+}
+
+a { color: #3f608a; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header {
+  position: relative;
+  background: #2b2b2b url("2_homepage_background.png") center / cover no-repeat;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.header-container {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  padding: 0 1rem;
+}
+
+header .logo {
+  height: 80px;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ===== PAVÉ DE NAVIGATION ===== */
+nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fafafa;
+}
+
+nav svg {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+nav span {
+  font-weight: 600;
+}
+
+main {
+  display: block;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.content {
+  min-width: 0;
+}
+
+section.chapitre {
+  margin-bottom: 4rem;
+  padding-top: 2rem;
+  border-top: 4px solid #3f608a;
+}
+
+h2, h3 {
+  color: #3f608a;
+}
+
+.liste-loupe {
+  list-style: none;
+  padding-left: 0;
+}
+
+.liste-loupe li {
+  position: relative;
+  padding-left: 28px;
+}
+
+.liste-loupe li::before {
+  content: "🔍";
+  position: absolute;
+  left: 0;
+}
+
+.liste-tiret {
+  list-style: none;
+  padding-left: 0;
+}
+
+.liste-tiret li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.liste-tiret li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+.liste-tiret2 {
+  list-style: none;
+  padding-left: 2ch;   /* ← décalage horizontal */
+}
+
+.liste-tiret2 li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.liste-tiret2 li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+.bon-a-savoir {
+  color: #c00000;
+  font-weight: bold;
+  background: #fff3f3;
+  padding: 0.4rem 0.6rem;
+  border-left: 4px solid #c00000;
+  display: inline-block;
+  margin: 1rem 0;
+}
+
+footer {
+  background: #f2f2f2;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ===== ACCORDÉON ALIGNÉ ===== */
+details {
+  margin-left: 0;
+}
+
+details details {
+  margin-left: 1.5rem;
+}
+
+details summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::before {
+  content: "▸";
+  color: #3f608a;
+  font-weight: bold;
+  width: 1em;
+  flex-shrink: 0;
+}
+
+details[open] > summary::before {
+  content: "▾";
+}
+
+details summary h2,
+details summary h3,
+details summary h4 {
+  display: inline;
+  margin: 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+    <img src="library-logo.png" alt="Logo Collège de France" class="logo">
+    <h1>Comprendre l’accès ouvert (open access)</h1>
+  </div>
+</header>
+
+<nav>
+ <a href="auteur.html">
+  <svg viewBox="0 0 24 24">
+    <path
+      d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2
+         c-3.3 0-10 1.7-10 5v3h20v-3
+         c0-3.3-6.7-5-10-5z"
+      fill="#3f608a"
+    />
+  </svg>
+  <span>S’identifier en tant qu’auteur</span>
+</a>
+
+  <a href="droit.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 3v18M4 7h16M6 7l-2 5a4 4 0 008 0l-2-5
+               M18 7l-2 5a4 4 0 008 0l-2-5"
+            fill="none" stroke="#3f608a" stroke-width="2"/>
+    </svg>
+    <span>Comprendre et protéger ses droits d’auteur</span>
+  </a>
+
+  <a href="ao.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M7 10V7a5 5 0 0110 0" fill="none" stroke="#3f608a" stroke-width="2"/>
+      <rect x="4" y="10" width="16" height="10" rx="2"
+            fill="none" stroke="#3f608a" stroke-width="2"/>
+    </svg>
+    <span>Comprendre l’accès ouvert (open access)</span>
+  </a>
+
+  <a href="deposer.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M6 15a4 4 0 010-8 5 5 0 019.7-1.5A4 4 0 1118 15H6z"
+            fill="none" stroke="#3f608a" stroke-width="2"/>
+      <path d="M12 16V10M9 13l3-3 3 3"
+            fill="none" stroke="#3f608a" stroke-width="2"/>
+    </svg>
+    <span>Déposer et diffuser dans une archive ouverte</span>
+  </a>
+
+  <a href="publierao.html">
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" fill="none" stroke="#3f608a" stroke-width="2"/>
+      <path d="M12 6l3 6-3 6-3-6z" fill="#3f608a"/>
+    </svg>
+    <span>Choisir où publier en accès ouvert</span>
+  </a>
+
+  <a href="bibliometrie.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M4 20h16" stroke="#3f608a" stroke-width="2"/>
+      <rect x="6" y="10" width="3" height="8" fill="#3f608a"/>
+      <rect x="11" y="6" width="3" height="12" fill="#3f608a"/>
+      <rect x="16" y="13" width="3" height="5" fill="#3f608a"/>
+    </svg>
+    <span>Bibliographies, bibliométrie et impact de la recherche</span>
+  </a>
+
+  <a href="formation.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3z" fill="#3f608a"/>
+      <path d="M6 12.5V15c0 2.2 3 4 6 4s6-1.8 6-4v-2.5l-6 3.2-6-3.2z"
+            fill="#3f608a"/>
+    </svg>
+    <span>Formation et accompagnements</span>
+  </a>
+
+  <a href="annexe.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M8 12l6-6a3 3 0 014 4l-8 8a5 5 0 11-7-7l7-7"
+            fill="none" stroke="#3f608a" stroke-width="2"/>
+    </svg>
+    <span>Annexe et crédits</span>
+  </a>
+</nav>
+<main>
+  <div class="content">
+
+    <!-- ===================== CHAPITRE 1 ===================== -->
+
+   <div class="content">
+<section class="chapitre">
+<details id="chap1" open>
+<summary><h2>Comprendre les modèles de diffusion en accès ouvert et gratuit</h2></summary>
+<details id="chap1-sec1">
+  <summary><h3>Quelques repères</h3></summary>
+<details id="chap1-sec1-sousec1">
+    <summary><h4>La loi pour une République numérique (7 octobre 2016)</h4></summary>
+      <p><a href="https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000033202841" target="_blank" rel="noopener">
+  L’article 30 de la Loi pour une République numérique</a> confère aux auteurs le droit de diffuser leurs productions scientifiques en accès ouvert, « même après avoir accordé des droits exclusifs à un éditeur ».
+</p>
+<p>Ce droit concerne :</p>
+<ul class="liste-tiret">
+<li>les écrits scientifiques issus « d'une activité de recherche financée au moins pour moitié par des dotations de l'Etat, des collectivités territoriales ou des établissements publics, par des subventions d'agences de financement nationales ou par des fonds de l'Union européenne ».</li>
+<ul class="liste-loupe">
+<li>
+Il s’applique à tous les auteurs d’écrits scientifiques et comprend les publications produites dans le cadre de projets de recherche financés au moins à 50% par de l’argent public ainsi que celles produites par les chercheurs dans le cadre de leur travail quotidien. </li>
+</ul>
+<li>les écrits scientifiques publiés « dans un périodique paraissant au moins une fois par an ».</li>
+<ul class="liste-loupe">
+<li>
+Cette condition exclut les monographies et les chapitres de monographies ainsi que les actes de colloque publiés sous forme de monographie.</li>
+</ul>
+<li>la mise à disposition par l’auteur « gratuitement dans un format ouvert, par voie numérique, sous réserve de l’accord des éventuels coauteurs, la version finale de son manuscrit acceptée pour publication (…), dès lors que l'éditeur met lui-même celle-ci gratuitement à disposition par voie numérique ou, à défaut, à l'expiration d'un délai courant à compter de la date de la première publication. Ce délai est au maximum de six mois pour une publication dans le domaine des sciences, de la technique et de la médecine et de douze mois dans celui des sciences humaines et sociales ».</li>
+<ul class="liste-loupe">
+<li>
+La loi permet ainsi l’archivage de la version incluant les modifications issues du processus d’évaluation par les pairs, mais elle ne permet pas la mise en ligne de la version éditeur, la mise en page et la pagination, sans son autorisation. Les images et illustrations associées le cas échéant aux écrits scientifiques ne sont pas couvertes par cette loi (voir le chapitre « Comprendre et protéger ses droits d’auteur en accès ouvert »).</li>
+</ul>
+</ul>
+<p>Selon les termes de la loi pour une République numérique, un auteur a donc le droit (et non l’obligation) de diffuser en accès ouvert la version acceptée pour publication (postprint) de son écrit scientifique (article, communication, recension, compte-rendu, intervention etc.) en respectant, s’il a cédé ses droits à un éditeur qui ne diffuse pas lui-même cette publication en accès ouvert, une période d’embargo de <strong>6 mois après publication s’il appartient au domaine des Sciences, Technique et Médecine, et de 12 mois après publication pour le domaine des Sciences Humaines et Sociales.</strong>
+La loi autorise également la fouille de textes et de données en ligne, une pratique essentielle, jusque-là interdite, dans le cadre notamment de recherches en sciences humaines et sociales.
+</details>
+<details id="chap1-sec1-sousec2">
+    <summary><h4>L’appel de Jussieu pour la science ouverte et la bibliodiversité (2017)</h4></summary>
+<p>En 2017, un collectif français représentatif des chercheurs et des professionnels de l’édition scientifique a lancé l'<a href="https://jussieucall.org/" target="_blank" rel="noopener">
+  Appel de Jussieu pour la Science ouverte et la bibliodiversité</a>, signé par 74 institutions de recherche, 20 organismes professionnels de l’information scientifique et technique et 25 éditeurs scientifiques et sociétés savantes. Le but n’est plus de défendre l’accès ouvert, mais de trouver les moyens de l’atteindre. S’appuyant sur la déclaration commune de l’Unesco et de la <a href="https://coar-repositories.org/" target="_blank" rel="noopener">
+  Confederation of Open Access Repositories (COAR)</a>, le texte appelle au soutien de « la diversité des acteurs de la publication scientifique », au développement de modèles innovants et d’expérimentations, à une réforme de l’évaluation de la recherche, à des investissement pour le développement d’outils open source, à l’adoption d’un cadre juridique stable pour la fouille de texte, à la mise en place d’infrastructures pour préserver et faire circuler les connaissances, dans le cadre de modèles économiques soutenables, avec une priorité donnée aux « modèles de publication qui n’impliquent le paiement ni par les auteurs pour publier, ni par les lecteurs pour accéder aux textes » - ce qui correspond au modèle « diamant » largement promu aujourd’hui. Cet appel a joué un rôle important de sensibilisation et de mobilisation pour l’accès ouvert en France. 
+</details>
+<details id="chap1-sec1-sousec3">
+    <summary><h4>Les préconisations du plan S (2018) et le 2ème plan national pour la science ouverte (2021-2024)</h4></summary>
+<p>Non imposée par la loi, l’obligation de diffuser en accès ouvert tend à s’imposer de manière indirecte :</p>
+<ul class="liste-tiret">
+<li>Lancé par plusieurs agences européennes de financement de la recherche regroupées au sein de la cOAlition S, le <a href="https://www.coalition-s.org/orientations-sur-la-mise-en-oeuvre-du-plan-s/" target="_blank" rel="noopener">
+ plan S</a> vise « l’accès libre, complet et immédiat aux publications savantes évaluées par des pairs et issues de la recherche financée par des subventions publiques et privées. » Pour atteindre cet objectif, le consortium décline une série de mesures visant à accélérer la transition vers un modèle de publication scientifique en accès ouvert immédiat, parmi lesquelles l’obligation, pour les chercheurs, de se conformer à cette exigence en contrepartie des financements obtenus et de conserver pour cela leurs droits d’auteur, en attribuant à leurs publications une licence de diffusion ouverte de type CC-BY  (voir rubrique « Bon à savoir : la stratégie de non cession de droits »).</li>
+<li>Le <a href="https://www.enseignementsup-recherche.gouv.fr/sites/default/files/content_migration/document/2e-plan-national-pour-la-science-ouverte-2021-2024-7794.pdf" target="_blank" rel="noopener">
+2ème plan national pour la science ouverte</a> se fixe comme objectif d’atteindre 100% des publications en accès ouvert en s’appuyant notamment sur la généralisation de l’obligation de publication en accès ouvert des articles comme des livres issus de recherches financées par appel à projets. Il affiche le soutien de la France à la stratégie de non cession des droits définie dans le plan S.</li>
+</ul>
+<p>Dans sa <a href="https://www.cnrs.fr/sites/default/files/press_info/2019-11/Plaquette_ScienceOuverte.pdf" target="_blank" rel="noopener">
+ feuille de route pour la science ouverte (2019)</a>, le CNRS s’assigne également comme objectif une mise en accessibilité totale (100%) des publications scientifiques produites par le travail de ses chercheurs et chercheuses et financées en majorité sur des fonds publics. À cet effet, l’organisme de recherche impose que toutes les productions citées par les chercheuses et chercheurs dans leurs dossiers d’évaluation soient accessibles dans HAL.</p>
+<p>S’inscrivant dans le cadre ainsi fixé, les politiques institutionnelles des établissements d’enseignement supérieur en matière de science ouverte tendent de la même façon à rendre quasiment obligatoire le libre accès aux publications scientifiques.</p>
+</details>
+</details>
+
+<details id="chap1-sec2">
+  <summary><h3>Les différents modèles de diffusion en accès ouvert et gratuit</h3></summary>
+<details id="chap1-sec2-sousec1">
+    <summary><h4>La voie verte (green open access) ou accès ouvert par l’auteur</h4></summary>
+<p>La voie verte correspond à l’autoarchivage (ou dépôt) par l’auteur dans une archive ouverte. Une archive ouverte est un réservoir où sont déposées des publications issues de la recherche scientifique et de l’enseignement dont l’accès est libre et gratuit. Elle peut être institutionnelle, thématique (ArXiv, HAL-SHS ou HAL-Inserm), nationale et pluridisciplinaire (HAL), européenne (Zenodo), etc.  
+<strong>HAL ouvre la possibilité de créer des portails institutionnels dont le Collège de France s’est emparé en ouvrant le <a href="https://college-de-france.hal.science/" target="_blank" rel="noopener">
+Portail HAL-Collège de France</a>.</strong></p>
+<p><strong>Rappel</strong> : selon les termes de l’article 30 de la loi pour une République numérique, un auteur a le droit de diffuser en accès ouvert la version acceptée pour publication (postprint) de son manuscrit en respectant, s’il a cédé ses droits à un éditeur qui ne diffuse pas lui-même cette publication en accès ouvert, une période d’embargo de 6 mois après publication s’il appartient au domaine des Sciences, Technique et Médecine,  et de 12 mois après publication pour le domaine des Sciences Humaines et Sociales.</p>
+  </details>
+<details id="chap1-sec2-sousec2">
+    <summary><h4>La voie dorée (gold open access) ou accès ouvert par l’éditeur</h4></summary>
+<p>La voie dorée correspond aux publications diffusées nativement en accès gratuit et immédiat par l’éditeur quel que soit le mode de financement de ce dernier. Elle recouvre une pluralité de modèles économiques, qui reposent tous sur un principe de financement de la publication en amont et peuvent être rassemblés en 2 groupes : </p>
+<ul class="liste-tiret">
+<li>La voie dorée sans APC (Gold road no APC), appelée encore voie platine (Platinum road) ou voie diamant (Diamond road) correspond aux publications en libre accès total et immédiat pour les lecteurs et sans frais de publication directement associés à la publication pour les auteurs (Article Processing Charges, APC ou Book Processing Charges BPC), leurs institutions d’appartenance ou leurs financeurs.
+Ce modèle, financé en règle générale par de la subvention publique (hébergement de revues par un organisme, maisons d’édition publique ou presses universitaires) peut revêtir diverses formes :
+<ul class="liste-tiret2">
+<li>Le modèle <strong>Freemium</strong> s’inspire de l’économie du logiciel dans laquelle des fonctions de base sont accessibles gratuitement tandis que des fonctions avancées requièrent un abonnement. C’est le modèle retenu par le portail de publication en sciences humaines et sociales OpenEdition qui propose un accès libre et gratuit à la version html et commercialise des services (statistiques d’usage) ou les fichiers détachables, PdF et/ou ePub.</li>
+<li>Le modèle <strong>Subscribe-to-open (S2O)</strong> est utilisé par certains éditeurs de revues pour les convertir en accès ouvert, dès lors qu’un nombre suffisant d’abonnements par les bibliothèques est maintenu. Tant qu’un nombre suffisant d’abonnés à une revue souscrit à l’offre S2O (simplement en ne se retirant pas), l’éditeur donne librement accès à son contenu, couvert par l’abonnement de l’année. Si le nombre d’abonnés devient insuffisant, le contenu de la revue pour l’année en question reste verrouillé.</li>
+</li>
+</ul>
+</ul>
+<ul class="liste-tiret">
+<li>La <strong>voie dorée avec APC (Gold road APC) ou modèle auteur-payeur</strong> : l’accès à la publication est libre pour le lecteur mais l’auteur ou son institution paie des frais appelés Article processing charges (APC) ou Book processing charges (BPC) pour la financer. Pour ce qui concerne les articles, deux types de revues sont susceptibles de demander le paiement d’APC :</li>
+</ul>
+<ul class ="liste-tiret2">
+<li>Les <strong>revues intégralement en libre accès</strong> pour lesquelles le paiement d’APC est obligatoire ;</li>
+<li>Les <strong>revues hybrides</strong>, accessibles sous abonnement payant et conditionnant l’ouverture de l’accès à un article donné au paiement d’APC. Les APC sont en ce cas optionnels, l’auteur ayant toujours la possibilité d’opter pour une publication en accès « fermé », sous abonnement payant (ce que n’autorisent en règle générale plus les principaux bailleurs des projets de recherche).</li>
+</ul>
+<p>Les <strong>accords transformants (transformative agreements)</strong>, négociés par les institutions ou groupements d’institutions, comme le consortium Couperin en France, avec des éditeurs de revues, intègrent les frais de publication au calcul des coûts d’abonnements pour éviter un double paiement.  Ces accords prévoient une prise en charge totale ou partielle des frais de publication, grâce à des APC prépayées ou à des remises sur le prix public des APC : l’institution (ou le consortium auquel elle s’est associé) paie ainsi à l’avance des frais de publication pour que ses chercheurs puissent publier un certain nombre d’articles en accès ouvert dans les revues hybrides concernées par l’accord transformant négocié avec un éditeur donné. Ces accords ont pour objectif affiché d’organiser la transition du modèle de l’abonnement aux revues vers celui de l’accès ouvert, en opérant une réaffectation des budgets des bibliothèques qui y sont consacrés. L’efficacité de ces accords est cependant remise en cause : une étude conduite par le <a href="https://www.ouvrirlascience.fr/contracter-a-lheure-de-la-publication-en-acces-ouvert-une-analyse-systematique-des-accords-transformants/" target="_blank" rel="noopener">Comité pour la science ouverte (CoSO)</a> en 2021, soulignait ainsi la disparité de ces accords, leur caractère temporaire ainsi que le fait qu’aucune clause contractuelle ne garantit une transformation des revues vers un modèle ouvert, le taux de transformation s’avérant médiocre (0,5% des revues hybrides de l’éditeur Wiley, 3,5% pour l’éditeur Elsevier). À ces problématiques s’ajoutent les questions budgétaires des institutions et leur volonté de ne plus être dépendantes des tarifs et augmentations décidés par les éditeurs commerciaux.</p>
+<ul class="liste-loupe">
+<li>Les organismes de la cOAlition S ont ainsi mis fin au financement des accords dits « transformants » après 2024, faisant le constat d’une multiplication de ces outils et considérant que le maintien de leur soutien augmenterait le risque qu’ils deviennent permanents. L’objectif est désormais, de leur point de vue, d’encourager de préférence les initiatives innovantes, ainsi que le développement des accords en accès libre complet.</li>
+</ul>
+<p>Accéder à la liste des accords permettant aux membres de la communauté de recherche du Collège de France de bénéficier des APC prépayés ou de remises sur les APC demandées (chapitre « Publier en accès ouvert »).</p>
+<div class="bon-a-savoir">Bon à savoir : l’éligibilité des dépenses correspondant aux frais de publication.</div>
+<p>Les organismes de financement de la cOAlition S, parmi lesquels l’ERC et l’ANR, considèrent a priori comme inéligibles les dépenses correspondant aux frais de publication dans des revues hybrides. Seuls peuvent à ce jour être financés les frais de publication dans une revue nativement en accès ouvert ainsi que, dans certains cas, les frais de publication dans une revue faisant partie d’un accord transformant (ou revue transformative). Le programme Horizon Europe (2021-2027) financé par l’ERC ne permet ainsi plus aucun remboursement des frais de publication dans les revues hybrides : la tolérance du programme H2020, auquel il succède, à l’égard des revues hybrides qui faisaient partie d’un accord transformant a été supprimée.</p>
+<ul class="liste-alertes">
+<li>Le modèle du libre accès avec frais de publication pour les auteurs a encouragé la multiplication d’éditeurs au fonctionnement éditorial, financier et scientifique opaque, qui ont créé des revues dites « prédatrices », ou douteuses, ou parasites (predatory ou deceptive journals). Ces revues, qui publient rapidement, se soucient peu ou pas de qualité et d’intégrité scientifiques et ont un but mercantile, doivent être évitées (voir ci-après, chapitre « Choisir où publier »).</li>
+</ul>
+<p><strong style="color:red">Glossaire : les différentes versions d’une publication:</strong></p>
+<ul class="liste-tiret">
+<li><strong>Embargo</strong> : période pendant laquelle le texte intégral d’une publication ne peut pas être diffusé en accès libre et gratuit. Le délai court à partir de la date de publication de l’article. Les politiques d’ouverture varient d’un éditeur à l’autre : elles peuvent être consultées sur les bases de données <a href="https://openpolicyfinder.jisc.ac.uk/" target="_blank" rel="noopener">Open Policy Finder (anciennement Sherpa/Romeo)</a> et/ou <a href="https://reseau-mirabel.info/" target="_blank" rel="noopener"> Mir@bel</a> (voir ci-après chapitre « Choisir où publier ») ; </li>
+<li><strong>Manuscrit (ou version) auteur accepté(e) pour publication (postprint ou accepted author manuscript)</strong> : version de la publication incluant les révisions issues de la relecture par les pairs, validée par l’auteur, validée et acceptée par la revue, mais n’intégrant pas la mise en page finale de l’éditeur (logo, numérotation de pages, etc.) ;</li>
+<li><strong>Prépublication / manuscrit (ou version) soumis(e) pour publication / version auteur (preprint ou submitted version)</strong> :  version de la publication non encore soumise à un éditeur ou soumise à un éditeur avant révision par les pairs ;</li>
+<li><strong>Version finale publiée ou version éditeur (publisher version ou definitive version)</strong> : version définitive de la publication, diffusée par l’éditeur avec sa mise en page finale et disponible via la plateforme éditeur. La diffusion en accès ouvert de cette version n’est généralement autorisée qu’après une période d’embargo définie par l’éditeur ; elle peut aussi être interdite par l’éditeur.</li>
+</ul>
+<div class="bon-a-savoir">Glossaire pour l’analyse des contrats d’édition scientifique.</div>
+<p>Le groupe de travail Ouvrir la Science a établi un glossaire, mis à jour régulièrement, destiné à permettre aux chercheurs et à ceux et celles qui les accompagnent dans leur pratique de publication scientifique de mieux comprendre un contrat d'édition. <a href="https://www.ouvrirlascience.fr/category/science-ouverte/glossaire/" target="_blank" rel="noopener"> Consulter en ligne</a>
+</details>
+</details>
+
+<details id="chap1-sec3">
+  <summary><h3>Science ouverte et accessibilité</h3></summary>
+<p>Les politiques engagées en matière d’ouverture des publications et des données selon des principes FAIR (« Faciles à trouver, Accessibles, Interopérables et Réutilisables ») partagent des objectifs communs avec les ambitions affichées par le ministère en charge de l’Enseignement supérieur et de la Recherche en faveur de l’accessibilité universelle</p>
+<p>Il est ainsi recommandé aux chercheuses et chercheurs d’être attentives et attentifs aux modalités selon lesquelles elles et ils peuvent faciliter l’accès à leurs travaux de recherche aux personnes en situation de handicap, dans une démarche d’accessibilité globale. En particulier, il leur est recommandé de s’informer auprès de l’éditeur, au moment du dépôt du manuscrit, au sujet de sa politique en matière d’accessibilité numérique.</p>
+<p>Pour accompagner les chercheuses et chercheurs, un guide <a href="https://www.ouvrirlascience.fr/memoires-theses-publications-soyons-accessibles-guide-pratique-pour-les-productions-scientifiques/" target="_blank" rel="noopener"> Mémoires, thèses, publications : soyons accessibles !</a>, a été publié par le ministère en charge de l’Enseignement supérieur et de la Recherche. Il propose de sensibiliser aux moyens existants pour favoriser l’accessibilité numérique des publications scientifiques tout au long de leur conception et jusqu’à leur diffusion. Il s’agit concrètement de lever les obstacles susceptibles d’empêcher les personnes en situation de handicap de naviguer, consulter et interagir avec des contenus numériques, en toute autonomie. Ces obstacles peuvent être liés à une mise en page, à un format ou une incompatibilité de logiciels empêchant l’utilisation de technologies d'assistance telles que les lecteurs d'écran, la navigation par clavier ou les commandes vocales pour parcourir et interagir avec le contenu. Par exemple, pour rendre accessible aux personnes déficientes visuelles un schéma ou une image inséré dans un document, sa description peut y être associée via la fonction « texte de remplacement ».</p>
+<ul class="liste-loupe">
+<li>
+Pour ce qui concerne les livres numériques, la Directive européenne sur l’Accessibilité, transposée en droit français, est entrée en vigueur le 28 juin 2025 pour les nouveautés et entrera en vigueur le 28 juin 2030 pour les ouvrages du fonds. Elle rend obligatoire la production de livres numériques nativement accessibles, dans un format qui répond aux besoins des personnes en situation de handicap, ce que permet notamment la chaîne d’édition structurée MÉTOPES, utilisée par les Éditions du Collège de France (voir Chapitre « La politique d’accès ouvert des Éditions du Collège de France »).</li>
+Pour toute question, contacter : </li>
+</details>
+</details>
+</section>
+<section class="chapitre">
+<details id="chap2" open>
+<summary><h2>Répondre aux exigences de libre accès des principaux financeurs</h2></summary>
+<details id="chap2-sec1">
+  <summary><h3>ERC - Horizon Europe & Euratom (2021-2027)</h3></summary>
+<p>Depuis avril 2021, Horizon Europe a succédé au programme de financement européen H2020.</p>
+<p>Les chercheurs qui bénéficient de ce type de financement ont l'obligation de diffuser en libre accès toutes leurs publications (articles de revue relus par les pairs) selon les modalités suivantes :</p>
+<ul class="liste-tiret">
+<li>Application de la stratégie de non cession des droits d’auteur par l’attribution d’une licence Creative Commons « Attribution International Public Licence » (CC-BY) ou licence équivalente. Pour les ouvrages et textes longs, il est possible d'utiliser une licence excluant l'utilisation commerciale et les modifications (par exemple :  CC-BY-NC, CC-BY-ND).</li>
+<li>Accès ouvert immédiat et sans embargo : dépôt dans une archive ouverte de la version publiée ou de la version auteur acceptée pour publication (author accepted manuscript) au plus tard au moment de la publication. La référence ERC du projet de recherche doit être mentionnée. L’archive ouverte choisie doit être compatible avec les exigences de diffusion en accès ouvert des résultats des projets financés sur fonds européens.</li>
+<li>Le lien doit être fait vers toute autre publication ou autres outils permettant de valider les conclusions de la publication scientifique.</li>
+</ul>
+<<ul class="liste-alertes">
+<li>
+Seuls les frais de publication (APC) dans des revues nativement en accès ouvert sont éligibles à un remboursement grâce au financement européen. Les frais de publication dans des revues dites hybrides sont donc exclus.</li>
+</details>
+<details id="chap2-sec2">
+  <summary><h3>ERC - H2020 (2014-2020)</h3></summary>
+<p>Les chercheurs qui ont bénéficié d'un financement dans le cadre des programmes H2020 ont l'obligation de diffuser en libre accès, dans une archive ouverte les publications (articles de revue relus par les pairs) relatives aux résultats générés dans le cadre du projet financé selon les modalités suivantes :</p>
+<ul class="liste-tiret">
+<li>Si la publication n’est pas publiée en accès ouvert par l’éditeur, la version auteur acceptée pour publication (author accepted manuscript) doit être déposée dans une archive ouverte et rendue accessible après une période d’embargo après publication de 6 mois maximum en Sciences, Technique et Médecine, et de 12 mois maximum pour le domaine des Sciences Humaines et Sociales.</li>
+<li>Si la publication est diffusée en accès ouvert par l'éditeur (voie dorée, après paiement d'APC le cas échéant), le dépôt de la version éditeur dans une archive ouverte doit être effectué au moment de la publication.
+La référence ERC du projet de recherche doit être mentionnée lors du dépôt.</li>
+</ul>	
+Les frais de publication éventuellement supportés par les auteurs donnent droit à remboursement pendant la durée du projet.
+</details>
+<details id="chap2-sec3">
+  <summary><h3>ANR – Plan d’action 2022 et suivants</h3></summary>
+<p>Conformément au cadre fixé par le plan S, l’Agence nationale de la recherche (ANR) demande au coordinateur ou à la coordinatrice ainsi qu’aux partenaires des projets qu’elle finance à partir de 2022 de :</p>
+<ul class="liste-tiret">
+<li>
+Rendre disponible en accès ouvert immédiat, sous une licence Creative Commons CC-BY ou équivalente, toute publication scientifique issue d’un projet, en utilisant l’une des voies de publications suivantes :
+<ul class="liste-tiret2"
+<li>Publication dans une revue nativement en accès ouvert ;</li>
+<li>Publication dans une revue disponible sur abonnement faisant partie d’un accord dit transformant ou journal transformatif ;</li>
+<li>Publication dans une revue disponible sur abonnement en utilisant la Stratégie de Non-Cession des droits (SNCD) : la version éditeur ou le manuscrit accepté pour publication doit en ce cas être déposé dans l’archive ouverte HAL par les auteurs sous une licence CC-BY.</li>
+</li>
+</ul>
+</ul>
+<ul class="liste-tiret">
+<li>2.	Déposer, au plus tard au moment de la publication, le texte intégral (manuscrit accepté pour publication ou version éditeur) dans l’archive ouverte HAL avec mention de la référence ANR du projet de recherche dont elle est issue, en associant un identifiant pérenne (un IdHAL ou un DOI par exemple). </li>
+<p>Par ailleurs, l’ANR recommande que les chapitres d’ouvrage et les ouvrages de recherche évalués par les pairs issus de projets ANR soient rendus disponibles en accès ouvert sous une licence Creative Commons ou équivalente (la licence CC-BY est recommandée). L’ANR encourage le coordinateur ou la coordinatrice du projet à déposer le texte intégral du chapitre ou de l’ouvrage de recherche dans l’archive ouverte nationale HAL (version acceptée pour publication ou version éditeur) et à mentionner la référence ANR du projet de recherche en associant un identifiant pérenne (IdHAL ou DOI Crossref).</p>
+<p>Enfin, l’ANR recommande le dépôt des preprints dans des archives ou plateformes ouvertes.</p>
+<ul class="liste-alertes">
+<li>Seuls les frais de publication (APC) dans des revues nativement en accès ouvert ou dans une revue impliquée dans un accord transformant sont éligibles à un remboursement grâce au financement ANR. Les frais de publication dans des revues dites hybrides sont donc exclus. </li>
+</ul>
+<ul class="liste-loupe">
+<li>Le dépôt dans l’archive nationale HAL permet d’alimenter automatiquement la partie dédiée aux publications scientifiques des projets financés. Dans le cadre de sa politique de simplification et des mesures déjà déployées pour alléger la charge de travail des scientifiques, l’ANR met également à la disposition des coordinateurs et coordinatrices des projets de l'Appel à projets générique (AAPG) un nouvel outil de suivi scientifique des projets, OASIS, qui permet la saisie en ligne de leurs avancées.</li>
+</ul>
+</details> 
+<details id="chap2-sec4">
+<summary><h3>ANR – Plans d’action 2019-2021</h3></summary>
+<p>Les chercheuses et les chercheurs qui bénéficient de financements ANR ont l’obligation de diffuser leurs publications en accès ouvert depuis 2019 selon les modalités suivantes :</p>
+<ul class="liste-tiret">
+<li>Si la publication n’est pas publiée en accès ouvert par l’éditeur, la version auteur acceptée pour publication (author accepted manuscript) doit être déposée dans une archive ouverte et rendue accessible après une période d’embargo après publication de 6 mois maximum en Sciences, Technique et Médecine, et de 12 mois maximum pour le domaine des Sciences Humaines et Sociales.</li>
+<li>Si la publication est diffusée en accès ouvert par l'éditeur (voie dorée, après paiement d'APC le cas échéant), le dépôt de la version éditeur dans une archive ouverte doit être effectué au moment de la publication.</li>
+</ul>
+<p>La référence ANR du projet de recherche doit être mentionnée lors du dépôt. Les frais de publication éventuellement supportés par les auteurs donnent droit à remboursement pendant la durée du projet.</p>
+<p><strong style="color:red">Contact : </strong>pour toute question, contacter le service des ressources en ligne, bibliométrie et appui à la recherche (Direction des bibliothèques, des archives et des collections) à l’adresse suivante :<a href="mailto:ressources.electroniques@college-de-france.fr">
+  ressources.electroniques@college-de-france.fr
+</a> 
+</details> 
+</details> 
+
+</section>
+    
+    <a href="#" class="back-link" onclick="history.back(); return false;">⬅ Retour à la page précédente</a>
+  </main>
+
+<footer>
+  <p>
+    <a href="#">Politique de confidentialité</a> |
+    <a href="#">Accessibilité</a> |
+    <a href="#">Mentions légales</a>
+  </p>
+  <p>&copy; 2026 Collège de France</p>
+</footer>
+
+</body>
+</html>

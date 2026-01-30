@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Science ouverte au Collège de France</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: "Noto Sans Display", sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #1a1c1f;
+    }
+
+    header {
+      background-image: url('1_homepage_background.png');
+      background-size: cover;
+      background-position: center;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 1rem;
+      position: relative;
+      color: #fff;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 1;
+    }
+
+    header .logo {
+      height: 80px;
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      white-space: nowrap;
+      z-index: 2;
+    }
+
+    nav {
+      background: #ffffff;
+      padding: 3rem 1rem 1.5rem;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      width: 168px;
+      height: 160px;
+      background: #F3F3F3;
+      color: #3f608a;
+      border: 1px solid #3f608a;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+      text-align: center;
+      padding: 1rem;
+    }
+
+    nav a:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 14px rgba(0,0,0,0.25);
+    }
+
+    nav a svg {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 12px;
+      fill: #3f608a;
+    }
+
+    nav a span {
+      font-size: 1.1rem;
+      line-height: 1.3;
+    }
+
+    nav a:hover span {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .intro {
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1em;
+      background-color: #f2f2f2;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <img src="library-logo.png" alt="Logo du Collège de France" class="logo">
+  <h1>La science ouverte au Collège de France</h1>
+</header>
+
+<nav>
+  <a href="auteur.html">
+  <svg viewBox="0 0 24 24">
+    <path
+      d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2
+         c-3.3 0-10 1.7-10 5v3h20v-3
+         c0-3.3-6.7-5-10-5z"
+      fill="#3f608a"
+    />
+  </svg>
+  <span>S’identifier en tant qu’auteur</span>
+</a>
+
+  <a href="droit.html">
+    <svg viewBox="0 0 24 24">
+  <path d="M12 3v18M4 7h16M6 7l-2 5a4 4 0 008 0l-2-5
+           M18 7l-2 5a4 4 0 008 0l-2-5"
+        fill="none" stroke="#3f608a" stroke-width="2"/>
+</svg>
+
+    <span>Comprendre et protéger ses droits d’auteur</span>
+  </a>
+
+  <a href="ao.html">
+    <svg viewBox="0 0 24 24">
+  <path d="M7 10V7a5 5 0 0110 0" fill="none" stroke="#3f608a" stroke-width="2"/>
+  <rect x="4" y="10" width="16" height="10" rx="2" fill="none" stroke="#3f608a" stroke-width="2"/>
+</svg>
+    <span>Comprendre l’accès ouvert (open access)</span>
+  </a>
+
+  <a href="deposer.html">
+    <svg viewBox="0 0 24 24">
+  <path d="M6 15a4 4 0 010-8 5 5 0 019.7-1.5A4 4 0 1118 15H6z"
+        fill="none" stroke="#3f608a" stroke-width="2"/>
+  <path d="M12 16V10M9 13l3-3 3 3"
+        fill="none" stroke="#3f608a" stroke-width="2"/>
+</svg>
+
+    <span>Déposer et diffuser dans une archive ouverte</span>
+  </a>
+
+  <a href="publierao.html">
+    <svg viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="10" fill="none" stroke="#3f608a" stroke-width="2"/>
+  <path d="M12 6l3 6-3 6-3-6z" fill="#3f608a"/>
+</svg>
+
+    <span>Choisir où publier en accès ouvert</span>
+  </a>
+
+  <a href="bibliometrie.html">
+   <svg viewBox="0 0 24 24">
+  <path d="M4 20h16" stroke="#3f608a" stroke-width="2"/>
+  <rect x="6" y="10" width="3" height="8" fill="#3f608a"/>
+  <rect x="11" y="6" width="3" height="12" fill="#3f608a"/>
+  <rect x="16" y="13" width="3" height="5" fill="#3f608a"/>
+</svg>
+
+    <span>Bibliographies, bibliométrie et impact de la recherche</span>
+  </a>
+
+  <a href="formation.html">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+  <path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3z"
+        fill="#3f608a"/>
+  <path d="M6 12.5V15c0 2.2 3 4 6 4s6-1.8 6-4v-2.5l-6 3.2-6-3.2z"
+        fill="#3f608a"/>
+</svg>
+
+    <span>Formation et accompagnements</span>
+  </a>
+
+ <a href="annexe.html">
+    <svg viewBox="0 0 24 24">
+  <path d="M8 12l6-6a3 3 0 014 4l-8 8a5 5 0 11-7-7l7-7"
+        fill="none" stroke="#3f608a" stroke-width="2"/>
+</svg>
+  <span>Annexe et crédits</span>
+  </a>
+
+</nav>
+
+<main>
+  <section class="intro">
+    <p>
+      Le libre accès à la connaissance (Open Access) est un mouvement mondial dont l’objectif est l'accès immédiat, libre et gratuit et sans restriction d'usage pour tous, mais dans le respect du droit d’auteur, aux résultats originaux des recherches scientifiques, aux données brutes, aux métadonnées, aux documents sources, aux images et documents multimédia
+    </p>
+
+    <p>
+     En France, dans la continuité de la loi pour la république numérique (2016) et de l’Appel de Jussieu pour la science ouverte et la bibliodiversité (2017), le plan national pour la science ouverte (2018-2021 puis 2021-2024), crée les conditions pour une « diffusion sans entrave des résultats, des méthodes et des produits de la recherche scientifique », en particulier quand elle est financée sur fonds publics. Le terme de science ouverte désigne non seulement l’accès ouvert aux travaux scientifiques, incluant les processus, les codes et les méthodes, mais également le partage et la réutilisation des résultats.
+    </p>
+
+    <p>
+      A l’échelle de l’Union européenne, le Plan S publié en 2018 par une coalition de bailleurs nationaux, dont l’Agence nationale de la recherche (ANR), vise à rendre accessibles dans des revues ou sur des plateformes en libre accès les résultats des recherches qu’ils financent. L’accès immédiat (sans aucun délai ou « embargo »), libre et gratuit, au contenu intégral des articles scientifiques est ainsi désormais le plus souvent une exigence des bailleurs de projets de recherche.
+    </p>
+
+    <p>
+      En accord avec ses valeurs et ses missions, le Collège de France est naturellement engagé en faveur d’un accès ouvert et gratuit à la recherche. 
+    </p>  
+    <p>
+      Cet engagement est porté par la Professeure Vinciane Pirenne-Delforge en sa qualité de référente « science ouverte ». Il se décline en un panel de services et d’outils que ce guide vise à rassembler, de même qu’un certain nombre d’autres informations utiles aux membres de la communauté de recherche du collège de France pour gérer, publier, diffuser et valoriser leurs productions scientifiques (articles, chapitres, livres, présentations, données brutes, métadonnées, etc.). 
+    </p>
+</section>
+</main>
+
+<footer>
+  <p>
+    <a href="/privacy-policy.html">Politique de confidentialité</a> |
+    <a href="/accessibility-statement.html">Accessibilité</a> |
+    <a href="/terms-of-use.html">Mentions légales</a>
+  </p>
+  <p>&copy; 2026 Collège de France</p>
+</footer>
+
+<script>
+  document.title =
+    document.querySelector("h1")?.innerText +
+    " | Science ouverte au Collège de France";
+</script>
+
+</body>
+</html>

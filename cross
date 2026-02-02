@@ -372,8 +372,8 @@ Une chercheuse ou un chercheur peut posséder plusieurs identifiants (ORCID, Web
 </ul >
 <details id="orcid">
  <summary><h4>L’ID-ORCID</h4></summary>
-<p>ORCID (Open Researcher and Contributor ID) est une organisation internationale à but non lucratif dont le siège est aux États-Unis. ORCID gère un répertoire central (Registry) d’identifiants chercheurs (ORCID ID) qui rassemble, pour les chercheurs qui s’y sont inscrits, l’ensemble des données relatives à leurs profils : institutions successives d’affiliation (Emploi ou Employment en anglais), cursus d’enseignement (Education and qualifications), récompenses reçues (Invited positions and distinctions), adhésion à des organisations (Membership and service), projets financés (Financement ou Funding), ou encore publications (Travaux ou Works).</p>
-<p><b>Le système d’identifiant ID-ORCID est pérenne, international et gratuit.</b></p>
+<p><a href="https://orcid.org/" target="_blank" rel="noopener"> ORCID</a> (Open Researcher and Contributor ID) est une organisation internationale à but non lucratif dont le siège est aux États-Unis. ORCID gère un répertoire central (Registry) d’identifiants chercheurs<a href="https://orcid.org/" target="_blank" rel="noopener"> ORCIDID</a> qui rassemble, pour les chercheurs qui s’y sont inscrits, l’ensemble des données relatives à leurs profils : institutions successives d’affiliation (Emploi ou Employment en anglais), cursus d’enseignement (Education and qualifications), récompenses reçues (Invited positions and distinctions), adhésion à des organisations (Membership and service), projets financés (Financement ou Funding), ou encore publications (Travaux ou Works).</p>
+<p><b>Le système d’identifiant ORCID est pérenne, international et gratuit.</b></p>
 <p>
 Il est relié à de multiples sources d’information telles que : 
 <ul class="liste-tiret">
@@ -398,9 +398,9 @@ Le service des ressources en ligne, bibliométrie et appui à la recherche (Dire
 <details id="idhal">
 <summary><h4>L’IdHAL</h4></summary>
 <p>
-HAL (Hyper Article en Ligne) est un portail institutionnel, archive ouverte multidisciplinaire française maintenue et hébergée par le Centre pour la Communication Scientifique Directe (CCSD), unité d’appui à la recherche commune au Centre national de la recherche scientifique (CNRS), à l’Institut national de recherche pour l'agriculture, l'alimentation et l'environnement (INRAe), l’Institut national de la recherche en informatique et automatique (Inria) et l’Université de Lyon.</p>
+<a href="https://hal.science/" target="_blank" rel="noopener"> HAL (Hyper Article en Ligne)</a> est un portail institutionnel, archive ouverte multidisciplinaire française maintenue et hébergée par le Centre pour la Communication Scientifique Directe (CCSD), unité d’appui à la recherche commune au Centre national de la recherche scientifique (CNRS), à l’Institut national de recherche pour l'agriculture, l'alimentation et l'environnement (INRAe), l’Institut national de la recherche en informatique et automatique (Inria) et l’Université de Lyon.</p>
 <p>HAL permet de partager en accès libre tous types de publications. HAL est accessible gratuitement et librement pour tous.
-L’IdHAL est l'identifiant unique proposé par HAL, composé par défaut du prénom et du nom de l’auteur une fois son compte personnel créé sur la plateforme HAL. Il est possible de le modifier (rubrique « Mon profil ») et de gérer les « formes auteurs » (signatures) qui y sont associées (rubrique « Formes auteurs »). La création d’un compte personnel et d’un identifiant HAL s’effectue sur le site HAL, via le bouton « connexion » situé en haut à droite de la page d’accueil, accessible en cliquant sur le lien suivant Connexion HAL.</p>
+L’<a href="https://doc.hal.science/identifiant-auteur-idhal-cv/" target="_blank" rel="noopener"> IdHAL</a> est l'identifiant unique proposé par HAL, composé par défaut du prénom et du nom de l’auteur une fois son compte personnel créé sur la plateforme HAL. Il est possible de le modifier (rubrique « Mon profil ») et de gérer les « formes auteurs » (signatures) qui y sont associées (rubrique « Formes auteurs »). La création d’un compte personnel et d’un identifiant HAL s’effectue sur le site HAL, via le bouton « connexion » situé en haut à droite de la page d’accueil, accessible en cliquant sur le lien suivant Connexion HAL.</p>
 <ul class="liste-loupe">
 <li>
 Une fois l’IdHAL créé, il est possible de le lier avec l’identifiant ORCID qui doit pour cela être saisi dans l’espace de gestion IdHAL via le bouton de connexion à ORCID qui s’affiche. Il est également possible pour un chercheur de créer un compte ORCID à partir d’un compte HAL et d’envoyer à partir de HAL les références de ses publications dans son profil ORCID. Le service des ressources en ligne, bibliométrie et appui à la recherche (Direction des bibliothèques, des archives et des collections) peut vous accompagner dans l’ensemble de ces démarches.
@@ -418,7 +418,7 @@ La place occupée par ces plateformes commerciales, utilisées depuis longtemps 
 <details id="researcherid">
 <summary><h4>ResearcherID (Web of Science® – WoS)</h4></summary>
 <p>
-Web of Science® est une plateforme commerciale (sur abonnement) de bases de données bibliographiques scientifiques gérée par la société américaine Clarivate Analytics. Web of Science® signale tous types de littérature scientifique (articles scientifiques, actes de colloque, chapitres de livre, etc.). 
+<a href="https://clarivate.com/academia-government/scientific-and-academic-research/research-discovery-and-referencing/web-of-science/" target="_blank" rel="noopener"> Web of Science®</a> est une plateforme commerciale (sur abonnement) de bases de données bibliographiques scientifiques gérée par la société américaine Clarivate Analytics. Web of Science® signale tous types de littérature scientifique (articles scientifiques, actes de colloque, chapitres de livre, etc.). 
 La plateforme permet de calculer des indicateurs de visibilité, d’effectuer des recherches selon plusieurs critères (sujet, auteur, titre de l’article ou de la publication, etc.), de générer des indicateurs bibliométriques et d’effectuer des recherches par citations (nombre d’articles citant la référence et nombre d’articles cités par les auteurs). 
 </p>
 <p>
@@ -434,7 +434,7 @@ Le service des ressources en ligne, bibliométrie et appui à la recherche (Dire
 </details>
 <details id="scopusid">
 <summary><h4>L’ID-Scopus</h4></summary>
-<p>Scopus est une base de données bibliographique scientifique de l’éditeur commercial néerlandais Elsevier accessible sur abonnement payant, un accès gratuit étant toutefois ouvert aux pays les moins avancés via le portail Research4Life. Scopus signale tous types de littérature scientifique (articles scientifiques, actes de colloque, chapitres de livre, etc.) et offre a priori une meilleure couverture des sciences humaines et sociales et des journaux non anglophones que Web of Science®.</p>
+<p><a href="https://www.elsevier.com/fr-fr/products/scopus" target="_blank" rel="noopener"> Scopus</a> est une base de données bibliographique scientifique de l’éditeur commercial néerlandais Elsevier accessible sur abonnement payant, un accès gratuit étant toutefois ouvert aux pays les moins avancés via le portail Research4Life. Scopus signale tous types de littérature scientifique (articles scientifiques, actes de colloque, chapitres de livre, etc.) et offre a priori une meilleure couverture des sciences humaines et sociales et des journaux non anglophones que Web of Science®.</p>
 <p>La plateforme propose le calcul d’indicateurs de visibilité, ainsi que des outils bibliométriques additionnels pour analyser les références bibliographiques selon différents critères : auteur, organisme d’affiliation, pays d’affiliation, type de documents, langue, année de publication, revue, thématique. Elle propose également des outils de parangonnage (benchmarking) permettant aux institutions d’analyser leurs stratégies de recherche sous différents aspects (classements, partenariats, impacts sur la société, financement, etc.).</p>
 <p><b>Scopus crée automatiquement un identifiant chercheur (Author Identifier Number)</b> pour chaque chercheur-auteur identifié à partir des références bibliographiques enregistrées dans sa base de données. Un chercheur est ainsi susceptible de se voir attribuer plusieurs identifiants, dès lors que la signature de ses publications ne serait pas normalisée (prénom unique ou plusieurs prénoms, changement de nom pour les femmes, etc.). Il est en ce cas possible de demander à Scopus de les regrouper.</p>
 <ul class="liste-loupe">
@@ -454,7 +454,7 @@ Le service des ressources en ligne, bibliométrie et appui à la recherche (Dire
 <details id="doi">
 <summary><h4>Le DOI (Digital Object Identifier), identifiant numérique d’objet)</h4></summary>
 <p>Le DOI est un code alphanumérique associé à une production scientifique de manière permanente : il permet de l’identifier de façon fiable et durable et de la décrire sans ambigüité.</p>
-<p>Le DOI fournit un lien durable à des ressources de tous types : publications, données ou collections issues de la recherche (tableaux ou bases de données herbiers, banques de gênes, zoothèques). Stable, il ne changera pas si la ressource est renommée ou déplacée.</p>
+<p>Le <a href="https://archibibscdf.hypotheses.org/7340" target="_blank" rel="noopener"> DOI</a> fournit un lien durable à des ressources de tous types : publications, données ou collections issues de la recherche (tableaux ou bases de données herbiers, banques de gênes, zoothèques). Stable, il ne changera pas si la ressource est renommée ou déplacée.</p>
 <p>Le DOI facilite l’identification et la citation d’une ressource en lui associant des métadonnées (auteur ou créateur, titre, mots-clés, résumé, éditeur, langue, date de publication, source, droits de propriété de la ressource, localisation, conditions d’accès, etc.).</p>
 <p>
 Le DOI d’une ressource peut uniquement être attribué par une entité juridique, publique ou privée (organisme déclarant) qui peut être :
@@ -471,8 +471,8 @@ La demande de DOI doit ainsi être effectuée de manière institutionnelle : aut
 </ul>
 <p>
 Pour obtenir des DOI, l’organisme déclarant doit être abonné (adhésion payante) à une agence d’enregistrement de DOI (DOI Registration Agencies, RAs) déclarée auprès de l’organisation à but non lucratif IDF (International DOI Foundation), organe de gouvernance de ces agences. 
-L’abonné s’engage à la gratuité et à l’intégrité des métadonnées fournies, à l’accès à une page web donnant des informations sur la ressource et ses conditions d'accès, et à la disponibilité des métadonnées enregistrées.
-CrossRef (agence d’attribution des DOI), mEDRA ou Datacite sont les principales agences ou plateformes qui dès les années 2000 ont été chargées de délivrer ces identifiants pérennes. 
+L’abonné s’engage à la gratuité et à l’intégrité des métadonnées fournies, à l’accès à une page web donnant des informations sur la ressource et ses conditions d'accès, et à la disponibilité des métadonnées enregistrées.</p>
+<p><a href="https://www.crossref.org/" target="_blank" rel="noopener"> CrossRef</a> (agence d’attribution des DOI), <a href="https://www.medra.org/" target="_blank" rel="noopener"> mEDRA</a> ou <a href="https://datacite.org/" target="_blank" rel="noopener"> Datacite</a> sont les principales agences ou plateformes qui dès les années 2000 ont été chargées de délivrer ces identifiants pérennes. 
 En France, l’Institut de l’information scientifique et technique (Inist) représentant le CNRS est le relais français de l’agence Datacite. Une demande d’attribution d’un DOI peut ainsi être effectuée sur le portail PID OPIDoR de l’Inist, qui permet également d’identifier les autres plateformes d’attribution.
 </p>
 <ul class="liste-loupe">
@@ -527,3 +527,4 @@ document.querySelectorAll('.index a').forEach(link => {
 
 </body>
 </html>
+

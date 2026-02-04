@@ -36,7 +36,10 @@
       background: rgba(0,0,0,0.4);
       z-index: 1;
     }
-
+.logo-link {
+  display: inline-block;
+  z-index: 2;
+}
     header .logo {
       height: 120px;
       position: relative;
@@ -125,8 +128,11 @@
 
 <body>
 
-<header>
-  <img src="library-logo.png" alt="Logo du Collège de France" class="logo">
+ <header>
+  <a href="https://www.college-de-france.fr/fr" class="logo-link">
+    <img src="library-logo.png" alt="Collège de France" class="logo">
+  </a>
+</header>
   <h1>La science ouverte au Collège de France</h1>
 </header>
 
@@ -253,5 +259,6 @@
 
 </body>
 </html>
+
 
 

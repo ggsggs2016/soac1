@@ -21,7 +21,7 @@ a { color: #3f608a; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
  header {
-      background-image: url('1	navarre.png');
+      background-image: url('1navarre.png');
       background-size: cover;
       background-position: center;
       min-height: 300px;
@@ -34,23 +34,23 @@ a:hover { text-decoration: underline; }
     }
 
     header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    rgba(0, 60, 120, 0.45),
-    rgba(0, 60, 120, 0.25)
-  );
-  z-index: 1;
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+.logo-link {
+  display: inline-block;
+  z-index: 2;
 }
-
     header .logo {
-      height: 80px;
+      height: 120px;
       position: relative;
+      top: -50px; /* monte le logo */
       z-index: 2;
     }
-
-    header h1 {
+	  header h1 {
       font-size: 2.8rem;
       margin: 0;
       position: absolute;
@@ -61,7 +61,6 @@ a:hover { text-decoration: underline; }
       white-space: nowrap;
       z-index: 2;
     }
-
 
 /* ===== PAVÉ DE NAVIGATION ===== */
 nav {
@@ -374,6 +373,7 @@ details summary h4 {
 
 </body>
 </html>
+
 
 
 

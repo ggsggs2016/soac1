@@ -34,33 +34,40 @@ a:hover { text-decoration: underline; }
     }
 
     header::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.2);
-      z-index: 1;
-    }
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 60, 120, 0.45),
+    rgba(0, 60, 120, 0.25)
+  );
+  z-index: 1;
+}
+
 .logo-link {
   display: inline-block;
   z-index: 2;
 }
-    header .logo {
-      height: 120px;
-      position: relative;
-      top: -50px; /* monte le logo */
-      z-index: 2;
-    }
-	  header h1 {
-      font-size: 2.8rem;
-      margin: 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      white-space: nowrap;
-      z-index: 2;
-    }
+
+header .logo {
+  height: 120px;
+  position: relative;
+  top: -50px; /* monte le logo */
+  z-index: 2;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  white-space: nowrap;
+  z-index: 2;
+}
+
 
 /* ===== PAVÉ DE NAVIGATION ===== */
 nav {
@@ -236,14 +243,13 @@ details summary h4 {
 </head>
 
 <body>
+<header class="site-header">
+  <a href="https://www.college-de-france.fr/fr" class="logo-link">
+    <img src="library-logo.png" alt="Collège de France" class="logo">
+  </a>
 
-<header>
-  <div class="header-container">
-    <img src="library-logo.png" alt="Logo Collège de France" class="logo">
-    <h1>Choisir où publier en accès ouvert </h1>
-  </div>
+  <h1 class="site-title">Choisir où publier en accès ouvert</h1>
 </header>
-
 <nav>
   <a href="auteur.html">
   <svg viewBox="0 0 24 24">
@@ -513,5 +519,6 @@ Les bibliothèques et archives du Collège de France souscrivent un abonnement S
 
 </body>
 </html>
+
 
 

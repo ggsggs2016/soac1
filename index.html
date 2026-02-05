@@ -63,7 +63,23 @@ header h1 {
   white-space: nowrap;
   z-index: 2;
 }
+@media (max-width: 768px) {
 
+  header {
+    min-height: 180px;
+    padding: 0.5rem;
+  }
+
+  header .logo {
+    height: 70px;
+    top: -20px; /* même logique, mais moins agressif */
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+    white-space: normal;      /* autorise les retours à la ligne */
+    padding: 0 1rem;
+  }
 
     nav {
       background: #ffffff;
@@ -265,6 +281,7 @@ header h1 {
 
 </body>
 </html>
+
 
 
 

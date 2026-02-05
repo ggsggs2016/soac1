@@ -46,34 +46,23 @@
 }
 
 header .logo {
-  height: clamp(70px, 10vw, 120px);
+  height: 120px;
   position: relative;
-  top: -50px;
+  top: -50px; /* monte le logo */
   z-index: 2;
 }
 
 header h1 {
-  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  font-size: 2.8rem;
   margin: 0;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-
-  white-space: normal;     /* ✅ autorise retour à la ligne */
-  max-width: 90%;          /* ✅ empêche débordement */
+  white-space: nowrap;
   z-index: 2;
 }
-@media (max-width: 600px) {
-  header {
-    min-height: 220px;
-  }
-
-  header .logo {
-    top: -20px; /* moins de décalage sur petit écran */
-  }
-
 
 
     nav {
@@ -276,7 +265,6 @@ header h1 {
 
 </body>
 </html>
-
 
 
 

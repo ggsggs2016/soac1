@@ -17,23 +17,17 @@
     }
 
     header {
-  background-image: url('1navarre.png');
-  background-size: cover;
-  background-position: center;
-  min-height: 300px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-
-  padding: 2rem 1rem;
-  position: relative;
-  color: #fff;
-  text-align: center;
-}
-
+      background-image: url('1navarre.png');
+      background-size: cover;
+      background-position: center;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 1rem;
+      position: relative;
+      color: #fff;
+    }
 
     header::before {
   content: '';
@@ -52,16 +46,22 @@
 }
 
 header .logo {
-  height: clamp(70px, 12vw, 120px);
+  height: 120px;
+  position: relative;
+  top: -50px; /* monte le logo */
   z-index: 2;
 }
 
-
 header h1 {
-  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  font-size: 2.8rem;
   margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  white-space: nowrap;
   z-index: 2;
-  line-height: 1.2;
 }
 
 
@@ -265,7 +265,6 @@ header h1 {
 
 </body>
 </html>
-
 
 
 

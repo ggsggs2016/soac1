@@ -22,7 +22,7 @@ a:hover { text-decoration: underline; }
 
 /* ========================================
    CSS RESPONSIVE BANDEAU COMPLET
-   Logo en haut à gauche + Titre centré
+   Logo en haut à gauche + Titre centré + Liens en haut à droite
    ======================================== */
 
 /* DESKTOP - Style de base */
@@ -64,6 +64,30 @@ header .logo {
   width: auto;
 }
 
+/* LIENS EN HAUT À DROITE - SUR LA MÊME LIGNE */
+.header-links {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+}
+
+.header-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.header-links a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
 /* Titre H1 centré */
 header h1 {
   font-size: 2.8rem;
@@ -93,6 +117,16 @@ header h1 {
     height: 80px;
   }
   
+  .header-links {
+    top: 15px;
+    right: 15px;
+    gap: 12px;
+  }
+  
+  .header-links a {
+    font-size: 0.9rem;
+  }
+  
   header h1 {
     font-size: 2rem;
   }
@@ -114,6 +148,16 @@ header h1 {
   
   header .logo {
     height: 70px;
+  }
+  
+  .header-links {
+    top: 12px;
+    right: 12px;
+    gap: 10px;
+  }
+  
+  .header-links a {
+    font-size: 0.85rem;
   }
   
   header h1 {
@@ -140,10 +184,25 @@ header h1 {
     height: 60px;
   }
   
+  /* Liens restent en haut à droite sur mobile */
+  .header-links {
+    top: 10px;
+    right: 10px;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-end;
+  }
+  
+  .header-links a {
+    font-size: 0.7rem;
+    text-align: right;
+    line-height: 1.2;
+  }
+  
   header h1 {
     font-size: 1.4rem;
     max-width: 90%;
-    padding-top: 50px; /* Pour éviter que le titre chevauche le logo */
+    padding-top: 60px;
   }
 }
 
@@ -152,7 +211,7 @@ header h1 {
    ======================================== */
 @media (max-width: 480px) {
   header {
-    min-height: 200px;
+    min-height: 260px;
   }
   
   .logo-link {
@@ -164,10 +223,13 @@ header h1 {
     height: 50px;
   }
   
+  .header-links a {
+    font-size: 0.75rem;
+  }
+  
   header h1 {
     font-size: 1.2rem;
     line-height: 1.3;
-    padding-top: 40px;
   }
 }
 
@@ -176,7 +238,7 @@ header h1 {
    ======================================== */
 @media (max-width: 360px) {
   header {
-    min-height: 180px;
+    min-height: 240px;
   }
   
   header .logo {
@@ -185,7 +247,6 @@ header h1 {
   
   header h1 {
     font-size: 1.1rem;
-    padding-top: 35px;
   }
 }
 /* ===== PAVÉ DE NAVIGATION ===== */
@@ -362,14 +423,16 @@ details summary h4 {
 </head>
 
 <body>
-<header class="site-header">
+<header>
   <a href="https://www.college-de-france.fr/fr" class="logo-link">
     <img src="library-logo.png" alt="Collège de France" class="logo">
   </a>
-
-  <h1 class="site-title">Bibliographies, bibliométrie et impact de la recherche</h1>
+    <div class="header-links">
+    <a href="https://college-de-france.hal.science/" target="_blank">HAL-Collège de France</a>
+    <a href="https://www.college-de-france.fr/fr/regles-de-signature-des-publications-scientifiques" target="_blank">Règles de signature des publications scientifiques</a>
+  </div>  
+  <h1>Bibliographies, bibliométrie et impact de la recherche</h1>
 </header>
-
 <nav>
   <a href="auteur.html">
   <svg viewBox="0 0 24 24">
@@ -592,6 +655,7 @@ Le Collège de France reçoit chaque année dans le cadre de ce programme un rap
 
 </body>
 </html>
+
 
 
 

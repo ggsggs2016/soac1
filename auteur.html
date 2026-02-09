@@ -20,55 +20,174 @@ body {
 a { color: #3f608a; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
- header {
-      background-image: url('1navarre.png');
-      background-size: cover;
-      background-position: center;
-      min-height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 1rem;
-      position: relative;
-      color: #fff;
-    }
+ /* ========================================
+   CSS RESPONSIVE BANDEAU COMPLET
+   Logo en haut à gauche + Titre centré
+   ======================================== */
 
-    header::before {
+/* DESKTOP - Style de base */
+header {
+  background-image: url('navarresanscpy.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  color: #fff;
+}
+
+/* Overlay sombre */
+header::before {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    rgba(0, 60, 120, 0.45),
-    rgba(0, 60, 120, 0.25)
+    rgba(0, 60, 120, 0.75),
+    rgba(0, 60, 120, 0.55)
   );
   z-index: 1;
 }
 
+/* Logo en haut à gauche - POSITION ABSOLUE */
 .logo-link {
-  display: inline-block;
+  position: absolute;
+  top: 20px;
+  left: 20px;
   z-index: 2;
 }
 
 header .logo {
-  height: 120px;
-  position: relative;
-  top: -50px; /* monte le logo */
-  z-index: 2;
+  height: 100px;
+  width: auto;
 }
 
+/* Titre H1 centré */
 header h1 {
   font-size: 2.8rem;
+  font-weight: 700;
   margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
-  white-space: nowrap;
   z-index: 2;
+  line-height: 1.2;
+  max-width: 80%;
 }
 
+/* ========================================
+   TABLETTES (max 900px)
+   ======================================== */
+@media (max-width: 900px) {
+  header {
+    min-height: 250px;
+    padding: 1.5rem;
+  }
+  
+  .logo-link {
+    top: 15px;
+    left: 15px;
+  }
+  
+  header .logo {
+    height: 80px;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+}
 
+/* ========================================
+   TABLETTES PETITES (max 768px)
+   ======================================== */
+@media (max-width: 768px) {
+  header {
+    min-height: 220px;
+    padding: 1.5rem 1rem;
+  }
+  
+  .logo-link {
+    top: 12px;
+    left: 12px;
+  }
+  
+  header .logo {
+    height: 70px;
+  }
+  
+  header h1 {
+    font-size: 1.6rem;
+    max-width: 85%;
+  }
+}
+
+/* ========================================
+   MOBILES (max 600px)
+   ======================================== */
+@media (max-width: 600px) {
+  header {
+    min-height: 220px;
+    padding: 1rem;
+  }
+  
+  .logo-link {
+    top: 10px;
+    left: 10px;
+  }
+  
+  header .logo {
+    height: 60px;
+  }
+  
+  header h1 {
+    font-size: 1.4rem;
+    max-width: 90%;
+    padding-top: 50px; /* Pour éviter que le titre chevauche le logo */
+  }
+}
+
+/* ========================================
+   PETITS MOBILES (max 480px)
+   ======================================== */
+@media (max-width: 480px) {
+  header {
+    min-height: 200px;
+  }
+  
+  .logo-link {
+    top: 8px;
+    left: 8px;
+  }
+  
+  header .logo {
+    height: 50px;
+  }
+  
+  header h1 {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    padding-top: 40px;
+  }
+}
+
+/* ========================================
+   TRÈS PETITS MOBILES (max 360px)
+   ======================================== */
+@media (max-width: 360px) {
+  header {
+    min-height: 180px;
+  }
+  
+  header .logo {
+    height: 45px;
+  }
+  
+  header h1 {
+    font-size: 1.1rem;
+    padding-top: 35px;
+  }
+}
 /* ===== PAVÉ DE NAVIGATION ===== */
 nav {
   display: grid;
@@ -264,14 +383,14 @@ details summary h4 {
   <span>S’identifier en tant qu’auteur</span>
 </a>
 
-  <a href="droit.html">
-    <svg viewBox="0 0 24 24">
-      <path d="M12 3v18M4 7h16M6 7l-2 5a4 4 0 008 0l-2-5
-               M18 7l-2 5a4 4 0 008 0l-2-5"
-            fill="none" stroke="#3f608a" stroke-width="2"/>
-    </svg>
-    <span>Comprendre et protéger ses droits d’auteur</span>
-  </a>
+ <a href="droit.html">
+  <svg viewBox="0 0 24 24">
+    <path d="M12 2v18M3 6h18M5 6l-1 4a3 3 0 006 0l-1-4
+             M15 6l-1 4a3 3 0 006 0l-1-4"
+          fill="none" stroke="#3f608a" stroke-width="2"/>
+  </svg>
+  <span>Comprendre et protéger ses droits d'auteur</span>
+</a>
 
   <a href="ao.html">
     <svg viewBox="0 0 24 24">
@@ -534,6 +653,7 @@ document.querySelectorAll('.index a').forEach(link => {
 
 </body>
 </html>
+
 
 
 

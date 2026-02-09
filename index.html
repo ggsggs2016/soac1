@@ -167,7 +167,7 @@ header h1 {
    ======================================== */
 @media (max-width: 600px) {
   header {
-    min-height: 280px;
+    min-height: 220px;
     padding: 1rem;
   }
   
@@ -180,25 +180,25 @@ header h1 {
     height: 60px;
   }
   
-  /* Liens passent en colonne sur mobile */
+  /* Liens restent en haut à droite sur mobile */
   .header-links {
-    position: static;
+    top: 10px;
+    right: 10px;
     flex-direction: column;
-    width: 100%;
-    align-items: center;
-    margin-top: 70px;
-    gap: 6px;
+    gap: 5px;
+    align-items: flex-end;
   }
   
   .header-links a {
-    font-size: 0.8rem;
-    text-align: center;
+    font-size: 0.7rem;
+    text-align: right;
+    line-height: 1.2;
   }
   
   header h1 {
     font-size: 1.4rem;
     max-width: 90%;
-    padding-top: 10px;
+    padding-top: 60px;
   }
 }
 
@@ -245,7 +245,6 @@ header h1 {
     font-size: 1.1rem;
   }
 }
-
     nav {
       background: #ffffff;
       padding: 3rem 1rem 1.5rem;
@@ -449,5 +448,6 @@ header h1 {
 
 </body>
 </html>
+
 
 

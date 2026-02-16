@@ -29,7 +29,13 @@ document.addEventListener('DOMContentLoaded', function() {
     "Plan S": "ao.html",
     "loi pour la République Numérique": "droit.html",
     "ANR": "ao.html",
-    "embargo": "ao.html"
+    "embargo": "ao.html",
+    
+    // Nouveaux mots-clés ajoutés
+    "OpenAlex": "bibliometrie.html",
+    "APC": "publierao.html",
+    "Web of Science": "bibliometrie.html",
+    "Scopus": "bibliometrie.html"
   };
   
   // Sélectionner la zone de contenu principal

@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Pages principales du menu
     "identifier en tant qu'auteur": "auteur.html",
     "identifiant": "auteur.html",
+    "ORCID": "auteur.html",
     "droits d'auteur": "droit.html",
     "droit d'auteur": "droit.html",
     "accès ouvert": "ao.html",
@@ -86,4 +87,31 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Ne lier que la première occurrence de chaque mot-clé
         if (!linkedWords.has(keyLower)) {
-          const regex = new RegExp(`\\b(${keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\
+          const regex = new RegExp(`\\b(${keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})\\b`, 'i');
+          
+          if (regex.test(newHTML)) {
+            newHTML = newHTML.replace(regex, `<a href="${autoLinks[keyword]}" class="auto-link" title="En savoir plus sur ${keyword}">$1</a>`);
+            linkedWords.add(keyLower);
+            modified = true;
+          }
+        }
+      });
+      
+      if (modified) {
+        const span = document.createElement('span');
+        span.innerHTML = newHTML;
+        
+        // Remplacer le nœud de texte par le nouveau contenu
+        const fragment = document.createDocumentFragment();
+        while (span.firstChild) {
+          fragment.appendChild(span.firstChild);
+        }
+        node.parentNode.replaceChild(fragment, node);
+      }
+    });
+  }
+  
+  if (contentArea) {
+    linkifyContent(contentArea);
+  }
+});

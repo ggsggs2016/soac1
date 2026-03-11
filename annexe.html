@@ -13,7 +13,7 @@ body {
   line-height: 1.6;
   color: #1a1c1f;
   background: #fff;
-  padding: 0;  /* ← padding: 0 */;
+  padding: 0;
 }
 
 a { color: #3f608a; text-decoration: none; }
@@ -170,8 +170,9 @@ header h1 {
    ======================================== */
 @media (max-width: 600px) {
   header {
-    min-height: 220px;
+    min-height: 300px;                  /* ← augmenté pour voir la photo */
     padding: 1rem;
+    background-position: center center; /* ← centré sur le personnage du milieu */
   }
   
   .logo-link {
@@ -210,7 +211,8 @@ header h1 {
    ======================================== */
 @media (max-width: 480px) {
   header {
-    min-height: 260px;
+    min-height: 280px;                  /* ← légèrement réduit */
+    background-position: 55% center;   /* ← légèrement décalé vers le personnage central */
   }
   
   .logo-link {
@@ -463,7 +465,7 @@ details summary h4 {
       fill="#3f608a"
     />
   </svg>
-  <span>S’identifier en tant qu’auteur</span>
+  <span>S'identifier en tant qu'auteur</span>
 </a>
 
  <a href="droit.html">
@@ -481,7 +483,7 @@ details summary h4 {
       <rect x="4" y="10" width="16" height="10" rx="2"
             fill="none" stroke="#3f608a" stroke-width="2"/>
     </svg>
-    <span>Comprendre l’accès ouvert (open access)</span>
+    <span>Comprendre l'accès ouvert (open access)</span>
   </a>
 
   <a href="deposer.html">
@@ -537,23 +539,23 @@ details summary h4 {
   <div class="content">
 <section class="chapitre">
 <details id="chap1" open>
-<summary><h2>Annexe : le soutien du Collège de France à l’édition en accès ouvert diamant et aux infrastructures de la science ouverte</h2></summary>
+<summary><h2>Annexe : le soutien du Collège de France à l'édition en accès ouvert diamant et aux infrastructures de la science ouverte</h2></summary>
 <p>Les bibliothèques et archives du Collège de France soutiennent les initiatives suivantes :</p>
 <ul class="liste-tiret">
 <li>SPARC Europe : un des principaux acteurs de longue date en Europe d'un accès libre à la recherche et à l'éducation, tant pour la communauté universitaire et éducative que pour l'ensemble de la société.</li>
 <li>Directory of Open Access Books (DOAB : répertorie et donne accès à des ouvrages scientifiques en libre accès évalués par des pairs, et aide les utilisateurs à trouver des éditeurs d'ouvrages en libre accès fiables. Tous les services DOAB sont gratuits et toutes les données sont librement accessibles.</li>
 <li>Directory of Open Access Journals (DOAJ) : index regroupant diverses revues en libre accès du monde entier. Il s'engage à garantir que des contenus de qualité soient accessibles gratuitement en ligne à tous.</li>
 <li>Open Access Publishing in European Networks (OAPEN) : Bibliothèque numérique proposant l'accès en ligne à des ouvrages en libre accès, de niveau universitaire dans le domaine des sciences humaines et sociales.</li>
-<li>Episciences : plateforme qui propose un outil complet pour la gestion de la revue, son hébergement et la diffusion en libre accès de ses contenus. Les articles sont déposés dans une archive ouverte pour être soumis à l’épi-revue. Plateforme développée par le CCSD.</li>
+<li>Episciences : plateforme qui propose un outil complet pour la gestion de la revue, son hébergement et la diffusion en libre accès de ses contenus. Les articles sont déposés dans une archive ouverte pour être soumis à l'épi-revue. Plateforme développée par le CCSD.</li>
 <li>Openedition Journals : bouquet de revues scientifiques en ligne privilégiant le texte intégral et le libre accès, et couvrant le domaine des sciences humaines et sociales (principalement en langue française). </li>
 <li>Portail HAL-Collège de France : via ce portail le Collège de France soutient HAL et les politiques en science ouverte</li>
-<li>La communauté des usagers francophones d'Omeka : Omeka Classic et Omeka S sont des logiciels libres de gestion et de publication de fonds d’archives, de corpus scientifiques et de collections de documents ou d’objets.</li>
+<li>La communauté des usagers francophones d'Omeka : Omeka Classic et Omeka S sont des logiciels libres de gestion et de publication de fonds d'archives, de corpus scientifiques et de collections de documents ou d'objets.</li>
 </ul>
 <p>Les Éditions du Collège de France :</p>
 <ul class="liste-tiret">
-<li>sont partenaires d’OpenEdition depuis 2009 et s’appuient sur ce partenariat pour publier en accès ouvert « diamant » (diffusion en accès ouvert Freemium sur OpenEdition, sans « Book Processing Charges - BPC» ; </li>
-<li>recourent à l’infrastructure nationale de recherche Métopes, outil éditorial au service de la science ouverte, pour la production des ouvrages, et collaborent à son développement ; </li>
-<li>sont membres de l’Alef, Alliance des éditeurs scientifiques français, créée en 2024, dont l’un des objectifs principaux est le développement de l’accès ouvert. </li>
+<li>sont partenaires d'OpenEdition depuis 2009 et s'appuient sur ce partenariat pour publier en accès ouvert « diamant » (diffusion en accès ouvert Freemium sur OpenEdition, sans « Book Processing Charges - BPC» ; </li>
+<li>recourent à l'infrastructure nationale de recherche Métopes, outil éditorial au service de la science ouverte, pour la production des ouvrages, et collaborent à son développement ; </li>
+<li>sont membres de l'Alef, Alliance des éditeurs scientifiques français, créée en 2024, dont l'un des objectifs principaux est le développement de l'accès ouvert. </li>
 </ul>
 </details>
 </section>
@@ -564,7 +566,7 @@ details summary h4 {
 <li><a href="https://www.ouvrirlascience.fr/accueil" target="_blank" rel="noopener"> Ouvrir la science</a></li>
 <li><a href="https://www.cirad.fr/collaborer-avec-nous/science-ouverte" target="_blank" rel="noopener"> CIRAD La science ouverte </a></li>
 <li><a href="https://www.science-ouverte.cnrs.fr/" target="_blank" rel="noopener"> CNRS science ouverte </a></li>
-<li> <a href="https://openscience.pasteur.fr/a-propos/" target="_blank" rel="noopener"> Open Science, évolutions, enjeux et pratiques, un blog de l'Institut Pasteur, bibliothèque du CeRIS (Centre de Ressources en Information Scientifique) de l’Institut Pasteur</a></li>
+<li> <a href="https://openscience.pasteur.fr/a-propos/" target="_blank" rel="noopener"> Open Science, évolutions, enjeux et pratiques, un blog de l'Institut Pasteur, bibliothèque du CeRIS (Centre de Ressources en Information Scientifique) de l'Institut Pasteur</a></li>
 </details>
 </section>
     
@@ -582,30 +584,3 @@ details summary h4 {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -172,7 +172,8 @@ header h1 {
   header {
     min-height: 300px;
     padding: 1rem;
-    background-size: 200%;              /* ← zoom arrière pour voir les 3 personnages */
+    background-size: contain;           /* ← toute la photo visible */
+    background-repeat: no-repeat;       /* ← pas de répétition */
     background-position: center center;
   }
   
@@ -213,8 +214,9 @@ header h1 {
 @media (max-width: 480px) {
   header {
     min-height: 280px;
-    background-size: 200%;             /* ← zoom arrière pour voir les 3 personnages */
-    background-position: 55% center;
+    background-size: contain;          /* ← toute la photo visible */
+    background-repeat: no-repeat;      /* ← pas de répétition */
+    background-position: center center;
   }
   
   .logo-link {

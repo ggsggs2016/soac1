@@ -170,8 +170,11 @@ header h1 {
    ======================================== */
 @media (max-width: 600px) {
   header {
-    min-height: 220px;
+    min-height: 300px;
     padding: 1rem;
+     background-size: contain;           /* ← toute la photo visible */
+    background-repeat: no-repeat;       /* ← pas de répétition */
+    background-position: center center;
   }
   
   .logo-link {
@@ -210,7 +213,10 @@ header h1 {
    ======================================== */
 @media (max-width: 480px) {
   header {
-    min-height: 260px;
+    min-height: 280px;
+     background-size: contain;           /* ← toute la photo visible */
+    background-repeat: no-repeat;       /* ← pas de répétition */
+    background-position: center center;
   }
   
   .logo-link {
@@ -772,6 +778,7 @@ Il s’agit d’une licence ouverte, libre et gratuite, qui apporte la sécurit�
 <script src="auto-links.js"></script>
 </body>
 </html>
+
 
 
 

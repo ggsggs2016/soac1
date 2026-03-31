@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Annexes et crédits  | Science ouverte au Collège de France</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Science ouverte au Collège de France</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
 <style>
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
-  margin: 0;
-  line-height: 1.6;
-  color: #1a1c1f;
-  background: #fff;
-  padding: 0;
-}
-
-a { color: #3f608a; text-decoration: none; }
-a:hover { text-decoration: underline; }
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #1a1c1f;
+    }
 
 /* ========================================
    CSS RESPONSIVE BANDEAU COMPLET
@@ -172,7 +168,7 @@ header h1 {
   header {
     min-height: 300px;
     padding: 1rem;
-    background-size: contain;           /* ← toute la photo visible */
+     background-size: contain;           /* ← toute la photo visible */
     background-repeat: no-repeat;       /* ← pas de répétition */
     background-position: center center;
   }
@@ -214,8 +210,8 @@ header h1 {
 @media (max-width: 480px) {
   header {
     min-height: 280px;
-    background-size: contain;          /* ← toute la photo visible */
-    background-repeat: no-repeat;      /* ← pas de répétition */
+     background-size: contain;           /* ← toute la photo visible */
+    background-repeat: no-repeat;       /* ← pas de répétition */
     background-position: center center;
   }
   
@@ -257,177 +253,72 @@ header h1 {
     font-size: 1.1rem;
   }
 }
-/* ===== PAVÉ DE NAVIGATION ===== */
-nav {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin: 2rem auto;
-  max-width: 1200px;
-}
+    nav {
+      background: #ffffff;
+      padding: 3rem 1rem 1.5rem;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-nav a {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 1rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  background: #F5F4EF;
-}
+    nav a {
+      width: 168px;
+      height: 160px;
+      background: #F5F4EF;
+      color: #3f608a;
+      border: 1px solid #3f608a;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+      text-align: center;
+      padding: 1rem;
+    }
 
-nav svg {
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-}
+    nav a:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 14px rgba(0,0,0,0.25);
+    }
 
-nav span {
-  font-weight: 600;
-}
+    nav a svg {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 12px;
+      fill: #3f608a;
+    }
 
-main {
-  display: block;
-  width: 100%;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
+    nav a span {
+      font-size: 1.1rem;
+      line-height: 1.3;
+    }
 
-.content {
-  min-width: 0;
-}
+    nav a:hover span {
+      text-decoration: underline;
+    }
 
-section.chapitre {
-  margin-bottom: 4rem;
-  padding-top: 2rem;
-  border-top: 4px solid #3f608a;
-}
+    main {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
 
-h2, h3 {
-  color: #3f608a;
-}
+    .intro {
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
 
-.liste-loupe {
-  list-style: none;
-  padding-left: 0;
-}
-
-.liste-loupe li {
-  position: relative;
-  padding-left: 28px;
-}
-
-.liste-loupe li::before {
-  content: "🔍";
-  position: absolute;
-  left: 0;
-}
-
-.liste-tiret {
-  list-style: none;
-  padding-left: 0;
-}
-
-.liste-tiret li {
-  position: relative;
-  padding-left: 20px;
-}
-
-.liste-tiret li::before {
-  content: "–";
-  position: absolute;
-  left: 0;
-  font-weight: bold;
-}
-.liste-tiret2 {
-  list-style: none;
-  padding-left: 2ch;   /* ← décalage horizontal */
-}
-
-.liste-tiret2 li {
-  position: relative;
-  padding-left: 20px;
-}
-
-.liste-tiret2 li::before {
-  content: "–";
-  position: absolute;
-  left: 0;
-  font-weight: bold;
-}
-.liste-alertes {
-  list-style: none;
-  padding-left: 0;
-  color: #c00000;
-}
-
-.liste-alertes li {
-  position: relative;
-  padding-left: 22px;
-}
-
-.liste-alertes li::before {
-  content: "⚠";
-  position: absolute;
-  left: 0;
-}
-.bon-a-savoir {
-  color: #c00000;
-  font-weight: bold;
-  background: #fff3f3;
-  padding: 0.4rem 0.6rem;
-  border-left: 4px solid #c00000;
-  display: inline-block;
-  margin: 1rem 0;
-}
-
-footer {
-  background: #f2f2f2;
-  padding: 2rem;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-/* ===== ACCORDÉON ALIGNÉ ===== */
-details {
-  margin-left: 0;
-}
-
-details details {
-  margin-left: 1.5rem;
-}
-
-details summary {
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  align-items: baseline;
-  gap: 0.4rem;
-}
-
-details summary::-webkit-details-marker {
-  display: none;
-}
-
-details summary::before {
-  content: "▸";
-  color: #3f608a;
-  font-weight: bold;
-  width: 1em;
-  flex-shrink: 0;
-}
-
-details[open] > summary::before {
-  content: "▾";
-}
-
-details summary h2,
-details summary h3,
-details summary h4 {
-  display: inline;
-  margin: 0;
-}
-  /* À ajouter */
+    footer {
+      text-align: center;
+      padding: 1em;
+      background-color: #f2f2f2;
+      font-size: 0.9em;
+    }
+    /* À ajouter */
 
 .auto-link {
   color: #0066cc;
@@ -446,7 +337,7 @@ details summary h4 {
 .auto-link:visited {
   color: #551a8b;
 }
-</style>
+  </style>
 </head>
 
 <body>
@@ -459,11 +350,11 @@ details summary h4 {
     <a href="https://college-de-france.hal.science/" target="_blank">HAL-Collège de France</a>
     <a href="https://www.college-de-france.fr/fr/regles-de-signature-des-publications-scientifiques" target="_blank">Règles de signature des publications scientifiques</a>
   </div>  
-  <h1>Annexes et crédit</h1>
+  <h1>Le Collège de France et la science ouverte</h1>
 </header>
 
 <nav>
- <a href="auteur.html">
+  <a href="auteur.html">
   <svg viewBox="0 0 24 24">
     <path
       d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2
@@ -472,10 +363,10 @@ details summary h4 {
       fill="#3f608a"
     />
   </svg>
-  <span>S'identifier en tant qu'auteur</span>
+  <span>S’identifier en tant qu’auteur</span>
 </a>
 
- <a href="droit.html">
+  <a href="droit.html">
   <svg viewBox="0 0 24 24">
     <path d="M12 2v18M3 6h18M5 6l-1 4a3 3 0 006 0l-1-4
              M15 6l-1 4a3 3 0 006 0l-1-4"
@@ -486,30 +377,30 @@ details summary h4 {
 
   <a href="ao.html">
     <svg viewBox="0 0 24 24">
-      <path d="M7 10V7a5 5 0 0110 0" fill="none" stroke="#3f608a" stroke-width="2"/>
-      <rect x="4" y="10" width="16" height="10" rx="2"
-            fill="none" stroke="#3f608a" stroke-width="2"/>
-    </svg>
-    <span>Comprendre l'accès ouvert (open access)</span>
+  <path d="M7 10V7a5 5 0 0110 0" fill="none" stroke="#3f608a" stroke-width="2"/>
+  <rect x="4" y="10" width="16" height="10" rx="2" fill="none" stroke="#3f608a" stroke-width="2"/>
+</svg>
+    <span>Comprendre l’accès ouvert (open access)</span>
   </a>
 
   <a href="deposer.html">
     <svg viewBox="0 0 24 24">
-      <path d="M6 15a4 4 0 010-8 5 5 0 019.7-1.5A4 4 0 1118 15H6z"
-            fill="none" stroke="#3f608a" stroke-width="2"/>
-      <path d="M12 16V10M9 13l3-3 3 3"
-            fill="none" stroke="#3f608a" stroke-width="2"/>
-    </svg>
+  <path d="M6 15a4 4 0 010-8 5 5 0 019.7-1.5A4 4 0 1118 15H6z"
+        fill="none" stroke="#3f608a" stroke-width="2"/>
+  <path d="M12 16V10M9 13l3-3 3 3"
+        fill="none" stroke="#3f608a" stroke-width="2"/>
+</svg>
     <span>Déposer et diffuser dans une archive ouverte</span>
   </a>
 
   <a href="publierao.html">
     <svg viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="10" fill="none" stroke="#3f608a" stroke-width="2"/>
-      <path d="M12 6l3 6-3 6-3-6z" fill="#3f608a"/>
-    </svg>
+  <circle cx="12" cy="12" r="10" fill="none" stroke="#3f608a" stroke-width="2"/>
+  <path d="M12 6l3 6-3 6-3-6z" fill="#3f608a"/>
+</svg>
     <span>Choisir où publier en accès ouvert</span>
   </a>
+
 <a href="edcdf.html">
   <svg viewBox="0 0 24 24">
     <!-- Livre 1 -->
@@ -522,83 +413,77 @@ details summary h4 {
   <span>La politique d'accès ouvert des éditions du Collège de France</span>
 </a>
 
+
   <a href="bibliometrie.html">
-    <svg viewBox="0 0 24 24">
-      <path d="M4 20h16" stroke="#3f608a" stroke-width="2"/>
-      <rect x="6" y="10" width="3" height="8" fill="#3f608a"/>
-      <rect x="11" y="6" width="3" height="12" fill="#3f608a"/>
-      <rect x="16" y="13" width="3" height="5" fill="#3f608a"/>
-    </svg>
+   <svg viewBox="0 0 24 24">
+  <path d="M4 20h16" stroke="#3f608a" stroke-width="2"/>
+  <rect x="6" y="10" width="3" height="8" fill="#3f608a"/>
+  <rect x="11" y="6" width="3" height="12" fill="#3f608a"/>
+  <rect x="16" y="13" width="3" height="5" fill="#3f608a"/>
+</svg>
+
     <span>Bibliographies, bibliométrie et impact de la recherche</span>
   </a>
 
   <a href="formation.html">
-    <svg viewBox="0 0 24 24">
-      <path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3z" fill="#3f608a"/>
-      <path d="M6 12.5V15c0 2.2 3 4 6 4s6-1.8 6-4v-2.5l-6 3.2-6-3.2z"
-            fill="#3f608a"/>
-    </svg>
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+  <path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3z"
+        fill="#3f608a"/>
+  <path d="M6 12.5V15c0 2.2 3 4 6 4s6-1.8 6-4v-2.5l-6 3.2-6-3.2z"
+        fill="#3f608a"/>
+</svg>
+
     <span>Formations et accompagnements</span>
   </a>
 
-  <a href="annexe.html">
+ <a href="annexe.html">
     <svg viewBox="0 0 24 24">
-      <path d="M8 12l6-6a3 3 0 014 4l-8 8a5 5 0 11-7-7l7-7"
-            fill="none" stroke="#3f608a" stroke-width="2"/>
-    </svg>
-    <span>Annexe et crédits</span>
+  <path d="M8 12l6-6a3 3 0 014 4l-8 8a5 5 0 11-7-7l7-7"
+        fill="none" stroke="#3f608a" stroke-width="2"/>
+</svg>
+  <span>Annexe et crédits</span>
   </a>
+
 </nav>
+
 <main>
-  <div class="content">
+  <section class="intro">
+    <p>
+      Le libre accès à la connaissance (Open Access) est un mouvement mondial dont l’objectif est l'accès immédiat, libre et gratuit et sans restriction d'usage pour tous, mais dans le respect du droit d’auteur, aux résultats originaux des recherches scientifiques, aux données brutes, aux métadonnées, aux documents sources, aux images et documents multimédia
+    </p>
 
-    <!-- ===================== CHAPITRE 1 ===================== -->
+    <p>
+     En France, dans la continuité de la loi pour la République Numérique (2016) et de l’Appel de Jussieu pour la science ouverte et la bibliodiversité (2017), le plan national pour la science ouverte (2018-2021 puis 2021-2024), crée les conditions pour une « diffusion sans entrave des résultats, des méthodes et des produits de la recherche scientifique », en particulier quand elle est financée sur fonds publics. Le terme de science ouverte désigne non seulement l’accès ouvert aux travaux scientifiques, incluant les processus, les codes et les méthodes, mais également le partage et la réutilisation des résultats.
+    </p>
 
-  <div class="content">
-<section class="chapitre">
-<details id="chap1" open>
-<summary><h2>Annexe : le soutien du Collège de France à l'édition en accès ouvert diamant et aux infrastructures de la science ouverte</h2></summary>
-<p>Les bibliothèques et archives du Collège de France soutiennent les initiatives suivantes :</p>
-<ul class="liste-tiret">
-<li>SPARC Europe : un des principaux acteurs de longue date en Europe d'un accès libre à la recherche et à l'éducation, tant pour la communauté universitaire et éducative que pour l'ensemble de la société.</li>
-<li>Directory of Open Access Books (DOAB : répertorie et donne accès à des ouvrages scientifiques en libre accès évalués par des pairs, et aide les utilisateurs à trouver des éditeurs d'ouvrages en libre accès fiables. Tous les services DOAB sont gratuits et toutes les données sont librement accessibles.</li>
-<li>Directory of Open Access Journals (DOAJ) : index regroupant diverses revues en libre accès du monde entier. Il s'engage à garantir que des contenus de qualité soient accessibles gratuitement en ligne à tous.</li>
-<li>Open Access Publishing in European Networks (OAPEN) : Bibliothèque numérique proposant l'accès en ligne à des ouvrages en libre accès, de niveau universitaire dans le domaine des sciences humaines et sociales.</li>
-<li>Episciences : plateforme qui propose un outil complet pour la gestion de la revue, son hébergement et la diffusion en libre accès de ses contenus. Les articles sont déposés dans une archive ouverte pour être soumis à l'épi-revue. Plateforme développée par le CCSD.</li>
-<li>Openedition Journals : bouquet de revues scientifiques en ligne privilégiant le texte intégral et le libre accès, et couvrant le domaine des sciences humaines et sociales (principalement en langue française). </li>
-<li>Portail HAL-Collège de France : via ce portail le Collège de France soutient HAL et les politiques en science ouverte</li>
-<li>La communauté des usagers francophones d'Omeka : Omeka Classic et Omeka S sont des logiciels libres de gestion et de publication de fonds d'archives, de corpus scientifiques et de collections de documents ou d'objets.</li>
-</ul>
-<p>Les Éditions du Collège de France :</p>
-<ul class="liste-tiret">
-<li>sont partenaires d'OpenEdition depuis 2009 et s'appuient sur ce partenariat pour publier en accès ouvert « diamant » (diffusion en accès ouvert Freemium sur OpenEdition, sans « Book Processing Charges - BPC» ; </li>
-<li>recourent à l'infrastructure nationale de recherche Métopes, outil éditorial au service de la science ouverte, pour la production des ouvrages, et collaborent à son développement ; </li>
-<li>sont membres de l'Alef, Alliance des éditeurs scientifiques français, créée en 2024, dont l'un des objectifs principaux est le développement de l'accès ouvert. </li>
-</ul>
-</details>
+    <p>
+      A l’échelle de l’Union européenne, le Plan S publié en 2018 par une coalition de bailleurs nationaux, dont l’Agence nationale de la recherche (ANR), vise à rendre accessibles dans des revues ou sur des plateformes en libre accès les résultats des recherches qu’ils financent. L’accès immédiat (sans aucun délai ou « embargo »), libre et gratuit, au contenu intégral des articles scientifiques est désormais le plus souvent une exigence des bailleurs de projets de recherche.
+    </p>
+
+    <p>
+      En accord avec ses valeurs et ses missions, le Collège de France est naturellement engagé en faveur d’un accès ouvert et gratuit à la recherche. 
+    </p>  
+    <p>
+      Cet engagement est porté par la Professeure Vinciane Pirenne-Delforge en sa qualité de référente « science ouverte ». Il se décline en un panel de services et d’outils que ce guide vise à rassembler, de même qu’un certain nombre d’autres informations utiles aux membres de la communauté de recherche du Collège de France pour gérer, publier, diffuser et valoriser leurs productions scientifiques (articles, chapitres, livres, présentations, données brutes, métadonnées, etc.). 
+    </p>
 </section>
-<section class="chapitre">
-<details id="chap2" open>
-<summary><h2>Crédits</h2></summary>
-<ul class="liste-tiret">
-<li><a href="https://www.ouvrirlascience.fr/accueil" target="_blank" rel="noopener"> Ouvrir la science</a></li>
-<li><a href="https://www.cirad.fr/collaborer-avec-nous/science-ouverte" target="_blank" rel="noopener"> CIRAD La science ouverte </a></li>
-<li><a href="https://www.science-ouverte.cnrs.fr/" target="_blank" rel="noopener"> CNRS science ouverte </a></li>
-<li> <a href="https://openscience.pasteur.fr/a-propos/" target="_blank" rel="noopener"> Open Science, évolutions, enjeux et pratiques, un blog de l'Institut Pasteur, bibliothèque du CeRIS (Centre de Ressources en Information Scientifique) de l'Institut Pasteur</a></li>
-</details>
-</section>
-    
-   <a href="index.html" class="back-link">⬅ Retour à la page d'accueil</a>
-  </main>
+</main>
 
 <footer>
   <p>
-    <a href="#">Politique de confidentialité</a> |
-    <a href="#">Accessibilité</a> |
-    <a href="#">Mentions légales</a>
+    <a href="/privacy-policy.html">Politique de confidentialité</a> |
+    <a href="/accessibility-statement.html">Accessibilité</a> |
+    <a href="/terms-of-use.html">Mentions légales</a>
   </p>
   <p>&copy; 2026 Collège de France</p>
 </footer>
 
+<script>
+  document.title =
+    document.querySelector("h1")?.innerText +
+    " | Science ouverte au Collège de France";
+</script>
+<script src="auto-links.js"></script>
 </body>
 </html>
+

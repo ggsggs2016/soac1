@@ -1,63 +1,63 @@
-// auto-links.js - soac1/
+// auto-links.js - dossier soac1/
 document.addEventListener('DOMContentLoaded', function() {
-  
-  // Mots-clés et leurs pages de destination
-  // RÈGLE : les mots-clés liés aux tutoriels pointent vers la page services-la-recherche
-  //         les mots-clés de navigation interne conservent leurs destinations d'origine
+
+  // Page courante (ex: "auteur.html", "formation.html", etc.)
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+  // Mots-clés → page thématique
+  // Le lien n'est PAS créé si on est déjà sur la page de destination
   const autoLinks = {
-    // ── Pages principales du menu ──────────────────────────────────────────
-    "identifier en tant qu'auteur": "auteur.html",
-    "droits d'auteur":              "droit.html",
-    "droit d'auteur":               "droit.html",
-    "accès ouvert":                 "ao.html",
-    "open access":                  "ao.html",
-    "archive ouverte":              "deposer.html",
-    "déposer":                      "deposer.html",
-    "dépôt":                        "deposer.html",
-    "publier en accès ouvert":      "publierao.html",
-    "publier":                      "publierao.html",
-    "édition":                      "publierao.html",
-    "bibliométrie":                 "bibliometrie.html",
-    "impact de la recherche":       "bibliometrie.html",
-    "formations":                   "formation.html",
-    "accompagnements":              "formation.html",
 
-    // ── Concepts clés de la science ouverte ────────────────────────────────
-    "science ouverte":              "index.html",
-    "Plan S":                       "ao.html",
-    "loi pour la République Numérique": "droit.html",
-    "ANR":                          "ao.html",
-    "embargo":                      "ao.html",
+    // ── Identifiants → auteur.html ─────────────────────────────────────────
+    "HAL":                        "auteur.html",
+    "IdHAL":                      "auteur.html",
+    "idHAL":                      "auteur.html",
+    "ORCID":                      "auteur.html",
+    "Web of Science":             "auteur.html",
+    "Scopus":                     "auteur.html",
+    "DOI":                        "auteur.html",
 
-    // ── Mots-clés liés aux tutoriels → services-la-recherche ──────────────
-    "HAL":            "https://www.college-de-france.fr/fr/services-la-recherche",
-    "Ramus":          "https://www.college-de-france.fr/fr/services-la-recherche",
-    "APC":            "https://www.college-de-france.fr/fr/services-la-recherche",
-    "Article Processing Charges": "https://www.college-de-france.fr/fr/services-la-recherche",
-    "IdHAL":          "https://www.college-de-france.fr/fr/services-la-recherche",
-    "idHAL":          "https://www.college-de-france.fr/fr/services-la-recherche",
-    "ORCID":          "https://www.college-de-france.fr/fr/services-la-recherche",
-    "Web of Science": "https://www.college-de-france.fr/fr/services-la-recherche",
-    "Scopus":         "https://www.college-de-france.fr/fr/services-la-recherche",
-    "Zotero":         "https://www.college-de-france.fr/fr/services-la-recherche",
-    "DMP":            "https://www.college-de-france.fr/fr/services-la-recherche",
-    "PGD":            "https://www.college-de-france.fr/fr/services-la-recherche",
-    "plan de gestion des données": "https://www.college-de-france.fr/fr/services-la-recherche",
-    "Plan de gestion des données": "https://www.college-de-france.fr/fr/services-la-recherche",
-    "DOI":            "https://www.college-de-france.fr/fr/services-la-recherche",
+    // ── APC → ao.html ──────────────────────────────────────────────────────
+    "APC":                        "ao.html",
+    "Article Processing Charges": "ao.html",
 
-    // ── Autres mots-clés bibliométriques ───────────────────────────────────
-    "OpenAlex":       "bibliometrie.html"
+    // ── Bibliographie → bibliometrie.html ──────────────────────────────────
+    "Zotero":                     "bibliometrie.html",
+    "Ramus":                      "bibliometrie.html",
+    "OpenAlex":                   "bibliometrie.html",
+    "impact de la recherche":     "bibliometrie.html",
+
+    // ── Données / formations → formation.html ──────────────────────────────
+    "DMP":                         "formation.html",
+    "PGD":                         "formation.html",
+    "plan de gestion des données": "formation.html",
+    "Plan de gestion des données": "formation.html",
+    "données de la recherche":     "formation.html",
+
+    // ── Navigation générale ────────────────────────────────────────────────
+    "science ouverte":          "index.html",
+    "droits d'auteur":          "droit.html",
+    "droit d'auteur":           "droit.html",
+    "accès ouvert":             "ao.html",
+    "open access":              "ao.html",
+    "archive ouverte":          "deposer.html",
+    "déposer":                  "deposer.html",
+    "dépôt":                    "deposer.html",
+    "Plan S":                   "ao.html",
+    "ANR":                      "ao.html",
+    "embargo":                  "ao.html",
+    "publier en accès ouvert":  "publierao.html",
+    "bibliométrie":             "bibliometrie.html"
   };
-  
+
   // Sélectionner la zone de contenu principal
-  const contentArea = document.querySelector('main') || 
-                      document.querySelector('.content') || 
+  const contentArea = document.querySelector('main') ||
+                      document.querySelector('.content') ||
                       document.querySelector('body');
-  
+
   // Exclure certaines zones (navigation, footer, liens existants, etc.)
   const excludedSelectors = ['nav', 'header', 'footer', '.menu', 'a', 'script', 'style'];
-  
+
   function shouldProcessNode(node) {
     let parent = node.parentElement;
     while (parent) {
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     return true;
   }
-  
+
   function linkifyContent(element) {
     const walker = document.createTreeWalker(
       element,
@@ -83,42 +83,46 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
     );
-    
+
     const nodesToReplace = [];
     while (walker.nextNode()) {
       nodesToReplace.push(walker.currentNode);
     }
-    
+
     // Garder trace des mots déjà liés sur cette page
     const linkedWords = new Set();
-    
+
     nodesToReplace.forEach(node => {
       let text = node.textContent;
       let modified = false;
       let newHTML = text;
-      
+
       // Trier par longueur décroissante pour éviter les conflits
       const sortedKeywords = Object.keys(autoLinks).sort((a, b) => b.length - a.length);
-      
+
       sortedKeywords.forEach(keyword => {
         const keyLower = keyword.toLowerCase();
-        
+        const destination = autoLinks[keyword];
+
+        // ← Ne pas créer de lien si on est déjà sur la page de destination
+        if (destination === currentPage) return;
+
         // Ne lier que la première occurrence de chaque mot-clé
         if (!linkedWords.has(keyLower)) {
           const regex = new RegExp(`\\b(${keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})\\b`, 'i');
-          
+
           if (regex.test(newHTML)) {
-            newHTML = newHTML.replace(regex, `<a href="${autoLinks[keyword]}" class="auto-link" title="En savoir plus sur ${keyword}">$1</a>`);
+            newHTML = newHTML.replace(regex, `<a href="${destination}" class="auto-link" title="En savoir plus sur ${keyword}">$1</a>`);
             linkedWords.add(keyLower);
             modified = true;
           }
         }
       });
-      
+
       if (modified) {
         const span = document.createElement('span');
         span.innerHTML = newHTML;
-        
+
         const fragment = document.createDocumentFragment();
         while (span.firstChild) {
           fragment.appendChild(span.firstChild);
@@ -127,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
-  
+
   if (contentArea) {
     linkifyContent(contentArea);
   }

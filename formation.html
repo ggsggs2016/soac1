@@ -13,22 +13,16 @@ body {
   line-height: 1.6;
   color: #1a1c1f;
   background: #fff;
-  padding: 0;  /* ← padding: 0 */
+  padding: 0;
 }
 
 a { color: #3f608a; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* ========================================
-   CSS RESPONSIVE BANDEAU COMPLET
-   Logo en haut à gauche + Titre centré + Liens en haut à droite
-   ======================================== */
-
-/* DESKTOP - Style de base */
 header {
   background-image: url('physique1.jpg');
   background-size: cover;
- background-position: center 15%;
+  background-position: center 15%;
   min-height: 300px;
   display: flex;
   align-items: center;
@@ -38,7 +32,6 @@ header {
   color: #fff;
 }
 
-/* Overlay sombre */
 header::before {
   content: '';
   position: absolute;
@@ -50,7 +43,6 @@ header::before {
   z-index: 1;
 }
 
-/* Logo en haut à gauche - POSITION ABSOLUE */
 .logo-link {
   position: absolute;
   top: 20px;
@@ -63,7 +55,6 @@ header .logo {
   width: auto;
 }
 
-/* LIENS EN HAUT À DROITE - SUR LA MÊME LIGNE */
 .header-links {
   position: absolute;
   top: 20px;
@@ -87,7 +78,6 @@ header .logo {
   opacity: 0.8;
 }
 
-/* Titre H1 centré */
 header h1 {
   font-size: 2.8rem;
   font-weight: 700;
@@ -98,170 +88,50 @@ header h1 {
   max-width: 80%;
 }
 
-/* ========================================
-   TABLETTES (max 900px)
-   ======================================== */
 @media (max-width: 900px) {
-  header {
-    min-height: 250px;
-    padding: 1.5rem;
-  }
-  
-  .logo-link {
-    top: 15px;
-    left: 15px;
-  }
-  
-  header .logo {
-    height: 80px;
-  }
-  
-  .header-links {
-    top: 15px;
-    right: 15px;
-    gap: 12px;
-  }
-  
-  .header-links a {
-    font-size: 0.9rem;
-  }
-  
-  header h1 {
-    font-size: 2rem;
-  }
+  header { min-height: 250px; padding: 1.5rem; }
+  .logo-link { top: 15px; left: 15px; }
+  header .logo { height: 80px; }
+  .header-links { top: 15px; right: 15px; gap: 12px; }
+  .header-links a { font-size: 0.9rem; }
+  header h1 { font-size: 2rem; }
 }
 
-/* ========================================
-   TABLETTES PETITES (max 768px)
-   ======================================== */
 @media (max-width: 768px) {
-  header {
-    min-height: 220px;
-    padding: 1.5rem 1rem;
-  }
-  
-  .logo-link {
-    top: 12px;
-    left: 12px;
-  }
-  
-  header .logo {
-    height: 70px;
-  }
-  
-  .header-links {
-    top: 12px;
-    right: 12px;
-    gap: 10px;
-  }
-  
-  .header-links a {
-    font-size: 0.85rem;
-  }
-  
-  header h1 {
-    font-size: 1.6rem;
-    max-width: 85%;
-  }
+  header { min-height: 220px; padding: 1.5rem 1rem; }
+  .logo-link { top: 12px; left: 12px; }
+  header .logo { height: 70px; }
+  .header-links { top: 12px; right: 12px; gap: 10px; }
+  .header-links a { font-size: 0.85rem; }
+  header h1 { font-size: 1.6rem; max-width: 85%; }
 }
 
-/* ========================================
-   MOBILES (max 600px)
-   ======================================== */
 @media (max-width: 600px) {
-  header {
-    min-height: 300px;
-    padding: 1rem;
-    background-size: contain;           /* ← toute la photo visible */
-    background-repeat: no-repeat;       /* ← pas de répétition */
-    background-position: center center;
-  }
-  
-  .logo-link {
-    top: 10px;
-    left: 10px;
-  }
-  
-  header .logo {
-    height: 60px;
-  }
-  
-  /* Liens restent en haut à droite sur mobile */
-  .header-links {
-    top: 10px;
-    right: 10px;
-    flex-direction: column;
-    gap: 5px;
-    align-items: flex-end;
-  }
-  
-  .header-links a {
-    font-size: 0.7rem;
-    text-align: right;
-    line-height: 1.2;
-  }
-  
-  header h1 {
-    font-size: 1.4rem;
-    max-width: 90%;
-    padding-top: 60px;
-  }
+  header { min-height: 300px; padding: 1rem; background-size: contain; background-repeat: no-repeat; background-position: center center; }
+  .logo-link { top: 10px; left: 10px; }
+  header .logo { height: 60px; }
+  .header-links { top: 10px; right: 10px; flex-direction: column; gap: 5px; align-items: flex-end; }
+  .header-links a { font-size: 0.7rem; text-align: right; line-height: 1.2; }
+  header h1 { font-size: 1.4rem; max-width: 90%; padding-top: 60px; }
 }
 
-/* ========================================
-   PETITS MOBILES (max 480px)
-   ======================================== */
 @media (max-width: 480px) {
-  header {
-    min-height: 280px;
-     background-size: contain;          /* ← toute la photo visible */
-    background-repeat: no-repeat;      /* ← pas de répétition */
-    background-position: center center;
-  }
-  
-  .logo-link {
-    top: 8px;
-    left: 8px;
-  }
-  
-  header .logo {
-    height: 50px;
-  }
-  
-  .header-links a {
-    font-size: 0.75rem;
-  }
-  
-  header h1 {
-    font-size: 1.2rem;
-    line-height: 1.3;
-  }
+  header { min-height: 280px; background-size: contain; background-repeat: no-repeat; background-position: center center; }
+  .logo-link { top: 8px; left: 8px; }
+  header .logo { height: 50px; }
+  .header-links a { font-size: 0.75rem; }
+  header h1 { font-size: 1.2rem; line-height: 1.3; }
 }
 
-/* ========================================
-   TRÈS PETITS MOBILES (max 360px)
-   ======================================== */
 @media (max-width: 360px) {
-  header {
-    min-height: 340px;
-     background-size: contain;          /* ← toute la photo visible */
-    background-repeat: no-repeat;      /* ← pas de répétition */
-    background-position: center center;
-  }
-  
-  header .logo {
-    height: 45px;
-  }
-  
-  header h1 {
-    font-size: 1.1rem;
-  }
+  header { min-height: 340px; background-size: contain; background-repeat: no-repeat; background-position: center center; }
+  header .logo { height: 45px; }
+  header h1 { font-size: 1.1rem; }
 }
 
-/* ===== PAVÉ DE NAVIGATION ===== */
 nav {
   display: grid;
- grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin: 2rem auto;
   max-width: 1200px;
@@ -277,15 +147,8 @@ nav a {
   background: #F5F4EF;
 }
 
-nav svg {
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-}
-
-nav span {
-  font-weight: 600;
-}
+nav svg { width: 32px; height: 32px; flex-shrink: 0; }
+nav span { font-weight: 600; }
 
 main {
   display: block;
@@ -294,9 +157,7 @@ main {
   padding: 0 1rem;
 }
 
-.content {
-  min-width: 0;
-}
+.content { min-width: 0; }
 
 section.chapitre {
   margin-bottom: 4rem;
@@ -304,74 +165,24 @@ section.chapitre {
   border-top: 4px solid #3f608a;
 }
 
-h2, h3 {
-  color: #3f608a;
-}
+h2, h3 { color: #3f608a; }
 
-.liste-loupe {
-  list-style: none;
-  padding-left: 0;
-}
+.liste-loupe { list-style: none; padding-left: 0; }
+.liste-loupe li { position: relative; padding-left: 28px; }
+.liste-loupe li::before { content: "🔍"; position: absolute; left: 0; }
 
-.liste-loupe li {
-  position: relative;
-  padding-left: 28px;
-}
+.liste-tiret { list-style: none; padding-left: 0; }
+.liste-tiret li { position: relative; padding-left: 20px; }
+.liste-tiret li::before { content: "–"; position: absolute; left: 0; font-weight: bold; }
 
-.liste-loupe li::before {
-  content: "🔍";
-  position: absolute;
-  left: 0;
-}
+.liste-tiret2 { list-style: none; padding-left: 2ch; }
+.liste-tiret2 li { position: relative; padding-left: 20px; }
+.liste-tiret2 li::before { content: "–"; position: absolute; left: 0; font-weight: bold; }
 
-.liste-tiret {
-  list-style: none;
-  padding-left: 0;
-}
+.liste-alertes { list-style: none; padding-left: 0; color: #c00000; }
+.liste-alertes li { position: relative; padding-left: 22px; }
+.liste-alertes li::before { content: "⚠"; position: absolute; left: 0; }
 
-.liste-tiret li {
-  position: relative;
-  padding-left: 20px;
-}
-
-.liste-tiret li::before {
-  content: "–";
-  position: absolute;
-  left: 0;
-  font-weight: bold;
-}
-.liste-tiret2 {
-  list-style: none;
-  padding-left: 2ch;   /* ← décalage horizontal */
-}
-
-.liste-tiret2 li {
-  position: relative;
-  padding-left: 20px;
-}
-
-.liste-tiret2 li::before {
-  content: "–";
-  position: absolute;
-  left: 0;
-  font-weight: bold;
-}
-  .liste-alertes {
-  list-style: none;
-  padding-left: 0;
-  color: #c00000;
-}
-
-.liste-alertes li {
-  position: relative;
-  padding-left: 22px;
-}
-
-.liste-alertes li::before {
-  content: "⚠";
-  position: absolute;
-  left: 0;
-}
 .bon-a-savoir {
   color: #c00000;
   font-weight: bold;
@@ -389,15 +200,8 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ===== ACCORDÉON ALIGNÉ ===== */
-details {
-  margin-left: 0;
-}
-
-details details {
-  margin-left: 1.5rem;
-}
-
+details { margin-left: 0; }
+details details { margin-left: 1.5rem; }
 details summary {
   cursor: pointer;
   list-style: none;
@@ -405,30 +209,98 @@ details summary {
   align-items: baseline;
   gap: 0.4rem;
 }
-
-details summary::-webkit-details-marker {
-  display: none;
-}
-
-details summary::before {
-  content: "▸";
-  color: #3f608a;
-  font-weight: bold;
-  width: 1em;
-  flex-shrink: 0;
-}
-
-details[open] > summary::before {
-  content: "▾";
-}
-
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▸"; color: #3f608a; font-weight: bold; width: 1em; flex-shrink: 0; }
+details[open] > summary::before { content: "▾"; }
 details summary h2,
 details summary h3,
-details summary h4 {
-  display: inline;
-  margin: 0;
+details summary h4 { display: inline; margin: 0; }
+
+/* Grille tutoriels */
+.tutoriels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
-  /* À ajouter */
+
+.tutoriel-card {
+  border: 1px solid #dde3ec;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  background: #f8f9fc;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  transition: box-shadow 0.2s ease;
+}
+
+.tutoriel-card:hover {
+  box-shadow: 0 2px 8px rgba(63,96,138,0.15);
+}
+
+.tutoriel-card .tuto-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: #3f608a;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tutoriel-card .tuto-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+}
+
+.tutoriel-card .tuto-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.tutoriel-card .tuto-title {
+  font-weight: 600;
+  color: #1a1c1f;
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.tutoriel-card .tuto-meta {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.tutoriel-card a.tuto-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #3f608a;
+}
+
+.tutoriel-card a.tuto-link::after {
+  content: "↓";
+  font-size: 0.9rem;
+}
+
+.tuto-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #dde3ec;
+  color: #3f608a;
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
 
 .auto-link {
   color: #0066cc;
@@ -437,215 +309,340 @@ details summary h4 {
   text-decoration-thickness: 1px;
   transition: all 0.2s ease;
 }
-
-.auto-link:hover {
-  color: #004499;
-  text-decoration-style: solid;
-  text-decoration-thickness: 2px;
-}
-
-.auto-link:visited {
-  color: #551a8b;
-}
+.auto-link:hover { color: #004499; text-decoration-style: solid; text-decoration-thickness: 2px; }
+.auto-link:visited { color: #551a8b; }
 </style>
 </head>
 
 <body>
   <header>
-  <a href="https://www.college-de-france.fr/fr" class="logo-link">
-    <img src="library-logo.png" alt="Collège de France" class="logo">
-  </a>
+    <a href="https://www.college-de-france.fr/fr" class="logo-link">
+      <img src="library-logo.png" alt="Collège de France" class="logo">
+    </a>
     <div class="header-links">
-    <a href="https://college-de-france.hal.science/" target="_blank">HAL-Collège de France</a>
-    <a href="https://www.college-de-france.fr/fr/regles-de-signature-des-publications-scientifiques" target="_blank">Règles de signature des publications scientifiques</a>
-  </div>  
-  <h1>Formations et accompagnements</h1>
-</header>
-<nav>
-  <a href="auteur.html">
-  <svg viewBox="0 0 24 24">
-    <path
-      d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2
-         c-3.3 0-10 1.7-10 5v3h20v-3
-         c0-3.3-6.7-5-10-5z"
-      fill="#3f608a"
-    />
-  </svg>
-  <span>S’identifier en tant qu’auteur</span>
-</a>
+      <a href="https://college-de-france.hal.science/" target="_blank">HAL-Collège de France</a>
+      <a href="https://www.college-de-france.fr/fr/regles-de-signature-des-publications-scientifiques" target="_blank">Règles de signature des publications scientifiques</a>
+    </div>
+    <h1>Formations et accompagnements</h1>
+  </header>
 
-  <a href="droit.html">
-  <svg viewBox="0 0 24 24">
-    <path d="M12 2v18M3 6h18M5 6l-1 4a3 3 0 006 0l-1-4
-             M15 6l-1 4a3 3 0 006 0l-1-4"
-          fill="none" stroke="#3f608a" stroke-width="2"/>
-  </svg>
-  <span>Comprendre et protéger ses droits d'auteur</span>
-</a>
+  <nav>
+    <a href="auteur.html">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z" fill="#3f608a"/>
+      </svg>
+      <span>S'identifier en tant qu'auteur</span>
+    </a>
+    <a href="droit.html">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2v18M3 6h18M5 6l-1 4a3 3 0 006 0l-1-4M15 6l-1 4a3 3 0 006 0l-1-4" fill="none" stroke="#3f608a" stroke-width="2"/>
+      </svg>
+      <span>Comprendre et protéger ses droits d'auteur</span>
+    </a>
+    <a href="ao.html">
+      <svg viewBox="0 0 24 24">
+        <path d="M7 10V7a5 5 0 0110 0" fill="none" stroke="#3f608a" stroke-width="2"/>
+        <rect x="4" y="10" width="16" height="10" rx="2" fill="none" stroke="#3f608a" stroke-width="2"/>
+      </svg>
+      <span>Comprendre l'accès ouvert (open access)</span>
+    </a>
+    <a href="deposer.html">
+      <svg viewBox="0 0 24 24">
+        <path d="M6 15a4 4 0 010-8 5 5 0 019.7-1.5A4 4 0 1118 15H6z" fill="none" stroke="#3f608a" stroke-width="2"/>
+        <path d="M12 16V10M9 13l3-3 3 3" fill="none" stroke="#3f608a" stroke-width="2"/>
+      </svg>
+      <span>Déposer et diffuser dans une archive ouverte</span>
+    </a>
+    <a href="publierao.html">
+      <svg viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" fill="none" stroke="#3f608a" stroke-width="2"/>
+        <path d="M12 6l3 6-3 6-3-6z" fill="#3f608a"/>
+      </svg>
+      <span>Choisir où publier en accès ouvert</span>
+    </a>
+    <a href="edcdf.html">
+      <svg viewBox="0 0 24 24">
+        <rect x="4" y="5" width="14" height="3" fill="#3f608a"/>
+        <rect x="6" y="10" width="14" height="3" fill="#3f608a"/>
+        <rect x="4" y="15" width="14" height="3" fill="#3f608a"/>
+      </svg>
+      <span>La politique d'accès ouvert des éditions du Collège de France</span>
+    </a>
+    <a href="bibliometrie.html">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 20h16" stroke="#3f608a" stroke-width="2"/>
+        <rect x="6" y="10" width="3" height="8" fill="#3f608a"/>
+        <rect x="11" y="6" width="3" height="12" fill="#3f608a"/>
+        <rect x="16" y="13" width="3" height="5" fill="#3f608a"/>
+      </svg>
+      <span>Bibliographies, bibliométrie et impact de la recherche</span>
+    </a>
+    <a href="formation.html">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3z" fill="#3f608a"/>
+        <path d="M6 12.5V15c0 2.2 3 4 6 4s6-1.8 6-4v-2.5l-6 3.2-6-3.2z" fill="#3f608a"/>
+      </svg>
+      <span>Formations et accompagnements</span>
+    </a>
+    <a href="annexe.html">
+      <svg viewBox="0 0 24 24">
+        <path d="M8 12l6-6a3 3 0 014 4l-8 8a5 5 0 11-7-7l7-7" fill="none" stroke="#3f608a" stroke-width="2"/>
+      </svg>
+      <span>Annexe et crédits</span>
+    </a>
+  </nav>
 
-  <a href="ao.html">
-    <svg viewBox="0 0 24 24">
-      <path d="M7 10V7a5 5 0 0110 0" fill="none" stroke="#3f608a" stroke-width="2"/>
-      <rect x="4" y="10" width="16" height="10" rx="2"
-            fill="none" stroke="#3f608a" stroke-width="2"/>
-    </svg>
-    <span>Comprendre l’accès ouvert (open access)</span>
-  </a>
+  <main>
+    <div class="content">
 
-  <a href="deposer.html">
-    <svg viewBox="0 0 24 24">
-      <path d="M6 15a4 4 0 010-8 5 5 0 019.7-1.5A4 4 0 1118 15H6z"
-            fill="none" stroke="#3f608a" stroke-width="2"/>
-      <path d="M12 16V10M9 13l3-3 3 3"
-            fill="none" stroke="#3f608a" stroke-width="2"/>
-    </svg>
-    <span>Déposer et diffuser dans une archive ouverte</span>
-  </a>
+      <!-- ===================== CHAPITRE 1 : FORMATIONS ===================== -->
+      <section class="chapitre">
+        <details id="chap1" open>
+          <summary><h2>Les formations proposées</h2></summary>
+          <p>Les différents services du Collège de France accompagnent les professeurs et leurs équipes à toutes les étapes du cycle de la recherche. À ce titre, ils proposent un ensemble de formations spécialisées visant à renforcer les compétences informationnelles, numériques et scientifiques, dans un contexte de science ouverte.</p>
 
-  <a href="publierao.html">
-    <svg viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="10" fill="none" stroke="#3f608a" stroke-width="2"/>
-      <path d="M12 6l3 6-3 6-3-6z" fill="#3f608a"/>
-    </svg>
-    <span>Choisir où publier en accès ouvert</span>
-  </a>
-<a href="edcdf.html">
-  <svg viewBox="0 0 24 24">
-    <!-- Livre 1 -->
-    <rect x="4" y="5" width="14" height="3" fill="#3f608a"/>    
-    <!-- Livre 2 -->
-    <rect x="6" y="10" width="14" height="3" fill="#3f608a"/>    
-    <!-- Livre 3 -->
-    <rect x="4" y="15" width="14" height="3" fill="#3f608a"/>
-  </svg>
-  <span>La politique d'accès ouvert des éditions du Collège de France</span>
-</a>
-  <a href="bibliometrie.html">
-    <svg viewBox="0 0 24 24">
-      <path d="M4 20h16" stroke="#3f608a" stroke-width="2"/>
-      <rect x="6" y="10" width="3" height="8" fill="#3f608a"/>
-      <rect x="11" y="6" width="3" height="12" fill="#3f608a"/>
-      <rect x="16" y="13" width="3" height="5" fill="#3f608a"/>
-    </svg>
-    <span>Bibliographies, bibliométrie et impact de la recherche</span>
-  </a>
+          <details id="chap1-sec1">
+            <summary><h3>Recherche documentaire et accès à l'information</h3></summary>
+            <ul class="liste-tiret">
+              <li>Présentation de l'organisation des bibliothèques et ses services ;</li>
+              <li>Présentation des stratégies de recherche documentaire ;</li>
+              <li>Présentation des outils d'accès aux ressources à distance ;</li>
+              <li>Présentation des catalogues (collections imprimées et électroniques), des bases de données disciplinaires et des plateformes spécialisées ;</li>
+              <li>Présentation de l'outil Library Mobile.</li>
+            </ul>
+          </details>
 
-  <a href="formation.html">
-    <svg viewBox="0 0 24 24">
-      <path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3z" fill="#3f608a"/>
-      <path d="M6 12.5V15c0 2.2 3 4 6 4s6-1.8 6-4v-2.5l-6 3.2-6-3.2z"
-            fill="#3f608a"/>
-    </svg>
-    <span>Formations et accompagnements</span>
-  </a>
+          <details id="chap1-sec2">
+            <summary><h3>Gestion des références bibliographiques et des identifiants</h3></summary>
+            <ul class="liste-tiret">
+              <li>Prise en main et perfectionnement de <a href="https://www.zotero.org/" target="_blank" rel="noopener">Zotero</a> ;</li>
+              <li>Organisation, partage et citation des références ;</li>
+              <li>Insertion des références dans les documents scientifiques ;</li>
+              <li>Gestion et vérification des DOI via Crossref et DataCite.</li>
+            </ul>
+          </details>
 
-  <a href="annexe.html">
-    <svg viewBox="0 0 24 24">
-      <path d="M8 12l6-6a3 3 0 014 4l-8 8a5 5 0 11-7-7l7-7"
-            fill="none" stroke="#3f608a" stroke-width="2"/>
-    </svg>
-    <span>Annexe et crédits</span>
-  </a>
-</nav>
+          <details id="chap1-sec3">
+            <summary><h3>Science ouverte et identité du chercheur</h3></summary>
+            <ul class="liste-tiret">
+              <li>Dépôt et valorisation des publications dans le <a href="https://college-de-france.hal.science/" target="_blank" rel="noopener">Portail HAL-Collège de France</a> ;</li>
+              <li>Création et gestion des identifiants chercheurs, tels que <a href="https://info.orcid.org/fr/what-is-orcid/" target="_blank" rel="noopener">ORCID</a>, <a href="https://doc.hal.science/identifiant-auteur-idhal-cv/" target="_blank" rel="noopener">ID-HAL</a> ... ;</li>
+              <li>Droits d'auteur, licences et diffusion en accès ouvert.</li>
+            </ul>
+          </details>
 
-   <!-- ===================== CHAPITRE 1 ===================== -->
+          <details id="chap1-sec4">
+            <summary><h3>Bibliométrie et pilotage de la recherche</h3></summary>
+            <ul class="liste-tiret">
+              <li>Principes et usages de la bibliométrie ;</li>
+              <li>Indicateurs de production et de visibilité scientifique ;</li>
+              <li>Outils d'analyse et bases de citation.</li>
+            </ul>
+          </details>
 
-  <div class="content">
-<section class="chapitre">
-<details id="chap1" open>
-<summary><h2>Les formations proposées</h2></summary>
-<p>Les différents services du Collège de France accompagnent les professeurs et leurs équipes à toutes les étapes du cycle de la recherche.  À ce titre, ils proposent un ensemble de formations spécialisées visant à renforcer les compétences informationnelles, numériques et scientifiques, dans un contexte de science ouverte.</p>
-<details id="chap1-sec1">
-  <summary><h3>Recherche documentaire et accès à l’information</h3></summary>
-  <ul class="liste-tiret">
-    <li>Présentation de l’organisation des bibliothèques et ses services ;</li>
-<li>Présentation des stratégies de recherche documentaire ;</li>
-<li>Présentation des outils d’accès aux ressources à distance ;</li>
-<li>Présentation des catalogues (collections imprimées et électroniques), des bases de données disciplinaires et des plateformes spécialisées ;</li>
-    <li>Présentation de l’outil Library Mobile.</li>
-  </ul>
-</details>
-  <details id="chap1-sec2">
-  <summary><h3>Gestion des références bibliographiques et des identifiants</h3></summary>
-  <ul class="liste-tiret">
-    <li>Prise en main et perfectionnement de <a href="https://www.zotero.org/" target="_blank" rel="noopener">Zotero</a> ;</li>
-    <li>Organisation, partage et citation des références ;</li>
-    <li>Insertion des références dans les documents scientifiques ;</li>
-    <li>Gestion et vérification des DOI via Crossref et DataCite.</li>
-  </ul>
-  </details>
-     <details id="chap1-sec3">
-  <summary><h3>Science ouverte et identité du chercheur</h3></summary>
-  <ul class="liste-tiret">
-    <li>Dépôt et valorisation des publications dans le <a href="https://college-de-france.hal.science/" target="_blank" rel="noopener">
-Portail HAL-Collège de France</a> ;</li>
-    <li>Création et gestion des identifiants chercheurs, tels que <a href="https://info.orcid.org/fr/what-is-orcid/" target="_blank" rel="noopener">
-ORCID</a>, <a href="https://doc.hal.science/identifiant-auteur-idhal-cv/" target="_blank" rel="noopener">
-ID-HAL</a> ... ;</li>
-    <li>Droits d’auteur, licences et diffusion en accès ouvert.</li>
-     </ul>
-     </details>
-   <details id="chap1-sec4">
-  <summary><h3>Bibliométrie et pilotage de la recherche</h3></summary>
-  <ul class="liste-tiret">
-    <li>Principes et usages de la bibliométrie ;</li>
-    <li>Indicateurs de production et de visibilité scientifique ;</li>
-    <li>Outils d’analyse et bases de citation.</li>
-  </ul>
-   </details>
-   <details id="chap1-sec5">
-  <summary><h3>Données de la recherche</h3></summary>
-  <ul class="liste-tiret">
-    <li>Sensibilisation à la gestion des données ;</li>
-    <li>Accompagnement à la rédaction des plans de gestion des données (PGD).</li>
-  </ul>
-   </details>
-  <p>Les formations sont proposées tout au long de l’année, sous forme d’ateliers, ou d’accompagnements sur mesure.</p>
-  <p>Contact : pour toute question, contactez-nous à l’adresse suivante :<a href="mailto:scienceouverte@college-de-france.fr">  scienceouverte@college-de-france.fr</a>
-</p>
-</section>
-  </details>
-    
+          <details id="chap1-sec5">
+            <summary><h3>Données de la recherche</h3></summary>
+            <ul class="liste-tiret">
+              <li>Sensibilisation à la gestion des données ;</li>
+              <li>Accompagnement à la rédaction des plans de gestion des données (PGD).</li>
+            </ul>
+          </details>
+
+          <p>Les formations sont proposées tout au long de l'année, sous forme d'ateliers, ou d'accompagnements sur mesure.</p>
+          <p>Contact : pour toute question, contactez-nous à l'adresse suivante : <a href="mailto:scienceouverte@college-de-france.fr">scienceouverte@college-de-france.fr</a></p>
+        </details>
+      </section>
+
+      <!-- ===================== CHAPITRE 2 : TUTORIELS ===================== -->
+      <section class="chapitre">
+        <details id="chap2" open>
+          <summary><h2>Tutoriels</h2></summary>
+          <p>Le service des ressources en ligne, bibliométrie et appui à la recherche met à disposition des tutoriels et guides pratiques accessibles depuis la page <a href="https://www.college-de-france.fr/fr/services-la-recherche" target="_blank" rel="noopener">Services à la recherche</a> du site du Collège de France.</p>
+
+          <div class="tutoriels-grid">
+
+            <div class="tutoriel-card">
+              <div class="tuto-icon">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 13h8v1.5H8V13zm0 3h8v1.5H8V16zm0-6h4v1.5H8V10z"/></svg>
+              </div>
+              <div class="tuto-body">
+                <span class="tuto-tag">Ramus</span>
+                <span class="tuto-title">Ramus : la production scientifique des chaires et équipes du Collège de France</span>
+                <span class="tuto-meta">PDF · 118,83 Ko</span>
+                <a href="https://www.college-de-france.fr/fr/services-la-recherche" target="_blank" rel="noopener" class="tuto-link">Télécharger</a>
+              </div>
+            </div>
+
+            <div class="tutoriel-card">
+              <div class="tuto-icon">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 13h8v1.5H8V13zm0 3h8v1.5H8V16zm0-6h4v1.5H8V10z"/></svg>
+              </div>
+              <div class="tuto-body">
+                <span class="tuto-tag">APC</span>
+                <span class="tuto-title">Tutoriel APC (Article Processing Charges)</span>
+                <span class="tuto-meta">PDF · 2,14 Mo</span>
+                <a href="https://www.college-de-france.fr/fr/services-la-recherche" target="_blank" rel="noopener" class="tuto-link">Télécharger</a>
+              </div>
+            </div>
+
+            <div class="tutoriel-card">
+              <div class="tuto-icon">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 13h8v1.5H8V13zm0 3h8v1.5H8V16zm0-6h4v1.5H8V10z"/></svg>
+              </div>
+              <div class="tuto-body">
+                <span class="tuto-tag">IdHAL</span>
+                <span class="tuto-title">Guide de création d'un idHAL</span>
+                <span class="tuto-meta">PDF · 592,52 Ko</span>
+                <a href="https://www.college-de-france.fr/fr/services-la-recherche" target="_blank" rel="noopener" class="tuto-link">Télécharger</a>
+              </div>
+            </div>
+
+            <div class="tutoriel-card">
+              <div class="tuto-icon">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 13h8v1.5H8V13zm0 3h8v1.5H8V16zm0-6h4v1.5H8V10z"/></svg>
+              </div>
+              <div class="tuto-body">
+                <span class="tuto-tag">HAL</span>
+                <span class="tuto-title">Guide pour l'importation par lot dans HAL avec X2HAL</span>
+                <span class="tuto-meta">PDF · 1,06 Mo</span>
+                <a href="https://www.college-de-france.fr/fr/services-la-recherche" target="_blank" rel="noopener" class="tuto-link">Télécharger</a>
+              </div>
+            </div>
+
+            <div class="tutoriel-card">
+              <div class="tuto-icon">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 13h8v1.5H8V13zm0 3h8v1.5H8V16zm0-6h4v1.5H8V10z"/></svg>
+              </div>
+              <div class="tuto-body">
+                <span class="tuto-tag">Identifiants</span>
+                <span class="tuto-title">Lier entre eux les identifiants chercheurs – Managing IDs</span>
+                <span class="tuto-meta">PDF · 1,03 Mo</span>
+                <a href="https://www.college-de-france.fr/fr/services-la-recherche" target="_blank" rel="noopener" class="tuto-link">Télécharger</a>
+              </div>
+            </div>
+
+            <div class="tutoriel-card">
+              <div class="tuto-icon">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 13h8v1.5H8V13zm0 3h8v1.5H8V16zm0-6h4v1.5H8V10z"/></svg>
+              </div>
+              <div class="tuto-body">
+                <span class="tuto-tag">ORCID · HAL · Scopus · WoS</span>
+                <span class="tuto-title">Lier les IDs ORCID, Web of Science, HAL, Scopus, Publons</span>
+                <span class="tuto-meta">PDF · 63,74 Ko</span>
+                <a href="https://www.college-de-france.fr/fr/services-la-recherche" target="_blank" rel="noopener" class="tuto-link">Télécharger</a>
+              </div>
+            </div>
+
+            <div class="tutoriel-card">
+              <div class="tuto-icon">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 13h8v1.5H8V13zm0 3h8v1.5H8V16zm0-6h4v1.5H8V10z"/></svg>
+              </div>
+              <div class="tuto-body">
+                <span class="tuto-tag">Zotero</span>
+                <span class="tuto-title">Tutoriel Zotero</span>
+                <span class="tuto-meta">PDF · 984,17 Ko</span>
+                <a href="https://www.college-de-france.fr/fr/services-la-recherche" target="_blank" rel="noopener" class="tuto-link">Télécharger</a>
+              </div>
+            </div>
+
+            <div class="tutoriel-card">
+              <div class="tuto-icon">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 13h8v1.5H8V13zm0 3h8v1.5H8V16zm0-6h4v1.5H8V10z"/></svg>
+              </div>
+              <div class="tuto-body">
+                <span class="tuto-tag">HAL</span>
+                <span class="tuto-title">Guide au dépôt de ses publications dans HAL</span>
+                <span class="tuto-meta">PDF · 595,72 Ko</span>
+                <a href="https://www.college-de-france.fr/fr/services-la-recherche" target="_blank" rel="noopener" class="tuto-link">Télécharger</a>
+              </div>
+            </div>
+
+            <div class="tutoriel-card">
+              <div class="tuto-icon">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 13h8v1.5H8V13zm0 3h8v1.5H8V16zm0-6h4v1.5H8V10z"/></svg>
+              </div>
+              <div class="tuto-body">
+                <span class="tuto-tag">ORCID · HAL</span>
+                <span class="tuto-title">Importer des publications HAL dans ORCID</span>
+                <span class="tuto-meta">PDF · 405,77 Ko</span>
+                <a href="https://www.college-de-france.fr/fr/services-la-recherche" target="_blank" rel="noopener" class="tuto-link">Télécharger</a>
+              </div>
+            </div>
+
+            <div class="tutoriel-card">
+              <div class="tuto-icon">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 13h8v1.5H8V13zm0 3h8v1.5H8V16zm0-6h4v1.5H8V10z"/></svg>
+              </div>
+              <div class="tuto-body">
+                <span class="tuto-tag">DMP · PGD</span>
+                <span class="tuto-title">Data Management Plan, plan de gestion de données et OPIDoR</span>
+                <span class="tuto-meta">PDF · 1,38 Mo</span>
+                <a href="https://www.college-de-france.fr/fr/services-la-recherche" target="_blank" rel="noopener" class="tuto-link">Télécharger</a>
+              </div>
+            </div>
+
+            <div class="tutoriel-card">
+              <div class="tuto-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14.93V15a1 1 0 00-2 0v1.93A8.001 8.001 0 014.07 13H6a1 1 0 000-2H4.07A8.001 8.001 0 0111 4.07V6a1 1 0 002 0V4.07A8.001 8.001 0 0119.93 11H18a1 1 0 000 2h1.93A8.001 8.001 0 0113 16.93z"/></svg>
+              </div>
+              <div class="tuto-body">
+                <span class="tuto-tag">Science ouverte</span>
+                <span class="tuto-title">Science ouverte et accès ouvert, petit manuel pour chercheurs et chercheuses (épisode 1)</span>
+                <a href="https://www.college-de-france.fr/fr/services-la-recherche" target="_blank" rel="noopener" class="tuto-link">Consulter</a>
+              </div>
+            </div>
+
+            <div class="tutoriel-card">
+              <div class="tuto-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14.93V15a1 1 0 00-2 0v1.93A8.001 8.001 0 014.07 13H6a1 1 0 000-2H4.07A8.001 8.001 0 0111 4.07V6a1 1 0 002 0V4.07A8.001 8.001 0 0119.93 11H18a1 1 0 000 2h1.93A8.001 8.001 0 0113 16.93z"/></svg>
+              </div>
+              <div class="tuto-body">
+                <span class="tuto-tag">Science ouverte</span>
+                <span class="tuto-title">Science ouverte et accès ouvert, petit manuel pour chercheurs et chercheuses (épisode 2)</span>
+                <a href="https://www.college-de-france.fr/fr/services-la-recherche" target="_blank" rel="noopener" class="tuto-link">Consulter</a>
+              </div>
+            </div>
+
+            <div class="tutoriel-card">
+              <div class="tuto-icon">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 13h8v1.5H8V13zm0 3h8v1.5H8V16zm0-6h4v1.5H8V10z"/></svg>
+              </div>
+              <div class="tuto-body">
+                <span class="tuto-tag">DOI</span>
+                <span class="tuto-title">Le DOI, pour qui, pourquoi et comment ?</span>
+                <a href="https://www.college-de-france.fr/fr/services-la-recherche" target="_blank" rel="noopener" class="tuto-link">Consulter</a>
+              </div>
+            </div>
+
+            <div class="tutoriel-card">
+              <div class="tuto-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14.93V15a1 1 0 00-2 0v1.93A8.001 8.001 0 014.07 13H6a1 1 0 000-2H4.07A8.001 8.001 0 0111 4.07V6a1 1 0 002 0V4.07A8.001 8.001 0 0119.93 11H18a1 1 0 000 2h1.93A8.001 8.001 0 0113 16.93z"/></svg>
+              </div>
+              <div class="tuto-body">
+                <span class="tuto-tag">HAL · Archives ouvertes</span>
+                <span class="tuto-title">HAL, Academia, ResearchGate : comment choisir ?</span>
+                <a href="https://www.college-de-france.fr/fr/services-la-recherche" target="_blank" rel="noopener" class="tuto-link">Consulter</a>
+              </div>
+            </div>
+
+          </div><!-- fin tutoriels-grid -->
+        </details>
+      </section>
+
+    </div><!-- fin .content -->
+
     <a href="https://ggsggs2016.github.io/soac1/" class="back-link">⬅ Retour à la page d'accueil</a>
   </main>
 
-<footer>
-  <p>
-    <a href="#">Politique de confidentialité</a> |
-    <a href="#">Accessibilité</a> |
-    <a href="#">Mentions légales</a>
-  </p>
-  <p>&copy; 2026 Collège de France</p>
-</footer>
-<script src="auto-links.js"></script>
+  <footer>
+    <p>
+      <a href="#">Politique de confidentialité</a> |
+      <a href="#">Accessibilité</a> |
+      <a href="#">Mentions légales</a>
+    </p>
+    <p>&copy; 2026 Collège de France</p>
+  </footer>
+
+  <script src="auto-links.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>S’identifier en tant qu’auteur  | Science ouverte au Collège de France</title>
+<title>S'identifier en tant qu'auteur  | Science ouverte au Collège de France</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -13,18 +13,12 @@ body {
   line-height: 1.6;
   color: #1a1c1f;
   background: #fff;
-  padding: 0;  /* ← padding: 0 */
+  padding: 0;
 }
 
 a { color: #3f608a; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* ========================================
-   CSS RESPONSIVE BANDEAU COMPLET
-   Logo en haut à gauche + Titre centré + Liens en haut à droite
-   ======================================== */
-
-/* DESKTOP - Style de base */
 header {
   background-image: url('physique1.jpg');
   background-size: cover;
@@ -38,7 +32,6 @@ header {
   color: #fff;
 }
 
-/* Overlay sombre */
 header::before {
   content: '';
   position: absolute;
@@ -50,7 +43,6 @@ header::before {
   z-index: 1;
 }
 
-/* Logo en haut à gauche - POSITION ABSOLUE */
 .logo-link {
   position: absolute;
   top: 20px;
@@ -63,7 +55,6 @@ header .logo {
   width: auto;
 }
 
-/* LIENS EN HAUT À DROITE - SUR LA MÊME LIGNE */
 .header-links {
   position: absolute;
   top: 20px;
@@ -87,7 +78,6 @@ header .logo {
   opacity: 0.8;
 }
 
-/* Titre H1 centré */
 header h1 {
   font-size: 2.8rem;
   font-weight: 700;
@@ -98,169 +88,55 @@ header h1 {
   max-width: 80%;
 }
 
-/* ========================================
-   TABLETTES (max 900px)
-   ======================================== */
 @media (max-width: 900px) {
-  header {
-    min-height: 250px;
-    padding: 1.5rem;
-  }
-  
-  .logo-link {
-    top: 15px;
-    left: 15px;
-  }
-  
-  header .logo {
-    height: 80px;
-  }
-  
-  .header-links {
-    top: 15px;
-    right: 15px;
-    gap: 12px;
-  }
-  
-  .header-links a {
-    font-size: 0.9rem;
-  }
-  
-  header h1 {
-    font-size: 2rem;
-  }
+  header { min-height: 250px; padding: 1.5rem; }
+  .logo-link { top: 15px; left: 15px; }
+  header .logo { height: 80px; }
+  .header-links { top: 15px; right: 15px; gap: 12px; }
+  .header-links a { font-size: 0.9rem; }
+  header h1 { font-size: 2rem; }
 }
 
-/* ========================================
-   TABLETTES PETITES (max 768px)
-   ======================================== */
 @media (max-width: 768px) {
-  header {
-    min-height: 220px;
-    padding: 1.5rem 1rem;
-  }
-  
-  .logo-link {
-    top: 12px;
-    left: 12px;
-  }
-  
-  header .logo {
-    height: 70px;
-  }
-  
-  .header-links {
-    top: 12px;
-    right: 12px;
-    gap: 10px;
-  }
-  
-  .header-links a {
-    font-size: 0.85rem;
-  }
-  
-  header h1 {
-    font-size: 1.6rem;
-    max-width: 85%;
-  }
+  header { min-height: 220px; padding: 1.5rem 1rem; }
+  .logo-link { top: 12px; left: 12px; }
+  header .logo { height: 70px; }
+  .header-links { top: 12px; right: 12px; gap: 10px; }
+  .header-links a { font-size: 0.85rem; }
+  header h1 { font-size: 1.6rem; max-width: 85%; }
 }
 
-/* ========================================
-   MOBILES (max 600px)
-   ======================================== */
 @media (max-width: 600px) {
   header {
-    min-height: 300px;
-    padding: 1rem;
-     background-size: contain;           /* ← toute la photo visible */
-    background-repeat: no-repeat;       /* ← pas de répétition */
+    min-height: 300px; padding: 1rem;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center center;
   }
-  
-  .logo-link {
-    top: 10px;
-    left: 10px;
-  }
-  
-  header .logo {
-    height: 60px;
-  }
-  
-  /* Liens restent en haut à droite sur mobile */
-  .header-links {
-    top: 10px;
-    right: 10px;
-    flex-direction: column;
-    gap: 5px;
-    align-items: flex-end;
-  }
-  
-  .header-links a {
-    font-size: 0.7rem;
-    text-align: right;
-    line-height: 1.2;
-  }
-  
-  header h1 {
-    font-size: 1.4rem;
-    max-width: 90%;
-    padding-top: 60px;
-  }
+  .logo-link { top: 10px; left: 10px; }
+  header .logo { height: 60px; }
+  .header-links { top: 10px; right: 10px; flex-direction: column; gap: 5px; align-items: flex-end; }
+  .header-links a { font-size: 0.7rem; text-align: right; line-height: 1.2; }
+  header h1 { font-size: 1.4rem; max-width: 90%; padding-top: 60px; }
 }
 
-/* ========================================
-   PETITS MOBILES (max 480px)
-   ======================================== */
 @media (max-width: 480px) {
-  header {
-    min-height: 280px;
-     background-size: contain;           /* ← toute la photo visible */
-    background-repeat: no-repeat;       /* ← pas de répétition */
-    background-position: center center;
-  }
-  
-  .logo-link {
-    top: 8px;
-    left: 8px;
-  }
-  
-  header .logo {
-    height: 50px;
-  }
-  
-  .header-links a {
-    font-size: 0.75rem;
-  }
-  
-  header h1 {
-    font-size: 1.2rem;
-    line-height: 1.3;
-  }
+  header { min-height: 280px; background-size: contain; background-repeat: no-repeat; background-position: center center; }
+  .logo-link { top: 8px; left: 8px; }
+  header .logo { height: 50px; }
+  .header-links a { font-size: 0.75rem; }
+  header h1 { font-size: 1.2rem; line-height: 1.3; }
 }
 
-/* ========================================
-   TRÈS PETITS MOBILES (max 360px)
-   ======================================== */
 @media (max-width: 360px) {
-  header {
-      min-height: 340px;
-     background-size: contain;          /* ← toute la photo visible */
-    background-repeat: no-repeat;      /* ← pas de répétition */
-    background-position: center center;
-  }
-  
-  header .logo {
-    height: 45px;
-  }
-  
-  header h1 {
-    font-size: 1.1rem;
-  }
+  header { min-height: 340px; background-size: contain; background-repeat: no-repeat; background-position: center center; }
+  header .logo { height: 45px; }
+  header h1 { font-size: 1.1rem; }
 }
-/* ===== PAVÉ DE NAVIGATION ===== */
+
 nav {
   display: grid;
- grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin: 2rem auto;
   max-width: 1200px;
@@ -276,26 +152,11 @@ nav a {
   background: #F5F4EF;
 }
 
-nav svg {
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-}
+nav svg { width: 32px; height: 32px; flex-shrink: 0; }
+nav span { font-weight: 600; }
 
-nav span {
-  font-weight: 600;
-}
-
-main {
-  display: block;
-  width: 100%;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-.content {
-  min-width: 0;
-}
+main { display: block; width: 100%; margin: 2rem auto; padding: 0 1rem; }
+.content { min-width: 0; }
 
 section.chapitre {
   margin-bottom: 4rem;
@@ -303,74 +164,24 @@ section.chapitre {
   border-top: 4px solid #3f608a;
 }
 
-h2, h3 {
-  color: #3f608a;
-}
+h2, h3 { color: #3f608a; }
 
-.liste-loupe {
-  list-style: none;
-  padding-left: 0;
-}
+.liste-loupe { list-style: none; padding-left: 0; }
+.liste-loupe li { position: relative; padding-left: 28px; }
+.liste-loupe li::before { content: "🔍"; position: absolute; left: 0; }
 
-.liste-loupe li {
-  position: relative;
-  padding-left: 28px;
-}
+.liste-tiret { list-style: none; padding-left: 0; }
+.liste-tiret li { position: relative; padding-left: 20px; }
+.liste-tiret li::before { content: "–"; position: absolute; left: 0; font-weight: bold; }
 
-.liste-loupe li::before {
-  content: "🔍";
-  position: absolute;
-  left: 0;
-}
+.liste-tiret2 { list-style: none; padding-left: 2ch; }
+.liste-tiret2 li { position: relative; padding-left: 20px; }
+.liste-tiret2 li::before { content: "–"; position: absolute; left: 0; font-weight: bold; }
 
-.liste-tiret {
-  list-style: none;
-  padding-left: 0;
-}
+.liste-alertes { list-style: none; padding-left: 0; color: #c00000; }
+.liste-alertes li { position: relative; padding-left: 22px; }
+.liste-alertes li::before { content: "⚠"; position: absolute; left: 0; }
 
-.liste-tiret li {
-  position: relative;
-  padding-left: 20px;
-}
-
-.liste-tiret li::before {
-  content: "–";
-  position: absolute;
-  left: 0;
-  font-weight: bold;
-}
-.liste-tiret2 {
-  list-style: none;
-  padding-left: 2ch;   /* ← décalage horizontal */
-}
-
-.liste-tiret2 li {
-  position: relative;
-  padding-left: 20px;
-}
-
-.liste-tiret2 li::before {
-  content: "–";
-  position: absolute;
-  left: 0;
-  font-weight: bold;
-}
-.liste-alertes {
-  list-style: none;
-  padding-left: 0;
-  color: #c00000;
-}
-
-.liste-alertes li {
-  position: relative;
-  padding-left: 22px;
-}
-
-.liste-alertes li::before {
-  content: "⚠";
-  position: absolute;
-  left: 0;
-}
 .bon-a-savoir {
   color: #c00000;
   font-weight: bold;
@@ -381,53 +192,17 @@ h2, h3 {
   margin: 1rem 0;
 }
 
-footer {
-  background: #f2f2f2;
-  padding: 2rem;
-  text-align: center;
-  font-size: 0.9rem;
-}
+footer { background: #f2f2f2; padding: 2rem; text-align: center; font-size: 0.9rem; }
 
-/* ===== ACCORDÉON ALIGNÉ ===== */
-details {
-  margin-left: 0;
-}
-
-details details {
-  margin-left: 1.5rem;
-}
-
-details summary {
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  align-items: baseline;
-  gap: 0.4rem;
-}
-
-details summary::-webkit-details-marker {
-  display: none;
-}
-
-details summary::before {
-  content: "▸";
-  color: #3f608a;
-  font-weight: bold;
-  width: 1em;
-  flex-shrink: 0;
-}
-
-details[open] > summary::before {
-  content: "▾";
-}
-
+details { margin-left: 0; }
+details details { margin-left: 1.5rem; }
+details summary { cursor: pointer; list-style: none; display: flex; align-items: baseline; gap: 0.4rem; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▸"; color: #3f608a; font-weight: bold; width: 1em; flex-shrink: 0; }
+details[open] > summary::before { content: "▾"; }
 details summary h2,
 details summary h3,
-details summary h4 {
-  display: inline;
-  margin: 0;
-}
-  /* À ajouter */
+details summary h4 { display: inline; margin: 0; }
 
 .auto-link {
   color: #0066cc;
@@ -435,6 +210,7 @@ details summary h4 {
   text-decoration-style: dotted;
   text-decoration-thickness: 1px;
   transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .auto-link:hover {
@@ -443,9 +219,7 @@ details summary h4 {
   text-decoration-thickness: 2px;
 }
 
-.auto-link:visited {
-  color: #551a8b;
-}
+.auto-link:visited { color: #551a8b; }
 </style>
 </head>
 
@@ -454,53 +228,40 @@ details summary h4 {
   <a href="https://www.college-de-france.fr/fr" class="logo-link">
     <img src="library-logo.png" alt="Collège de France" class="logo">
   </a>
-    <div class="header-links">
+  <div class="header-links">
     <a href="https://college-de-france.hal.science/" target="_blank">HAL-Collège de France</a>
     <a href="https://www.college-de-france.fr/fr/regles-de-signature-des-publications-scientifiques" target="_blank">Règles de signature des publications scientifiques</a>
   </div>  
-  <h1>S’identifier en tant qu’auteur </h1>
+  <h1>S'identifier en tant qu'auteur </h1>
 </header>
+
 <nav>
   <a href="auteur.html">
-  <svg viewBox="0 0 24 24">
-    <path
-      d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2
-         c-3.3 0-10 1.7-10 5v3h20v-3
-         c0-3.3-6.7-5-10-5z"
-      fill="#3f608a"
-    />
-  </svg>
-  <span>S’identifier en tant qu’auteur</span>
-</a>
-
- <a href="droit.html">
-  <svg viewBox="0 0 24 24">
-    <path d="M12 2v18M3 6h18M5 6l-1 4a3 3 0 006 0l-1-4
-             M15 6l-1 4a3 3 0 006 0l-1-4"
-          fill="none" stroke="#3f608a" stroke-width="2"/>
-  </svg>
-  <span>Comprendre et protéger ses droits d'auteur</span>
-</a>
-
+    <svg viewBox="0 0 24 24">
+      <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z" fill="#3f608a"/>
+    </svg>
+    <span>S'identifier en tant qu'auteur</span>
+  </a>
+  <a href="droit.html">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 2v18M3 6h18M5 6l-1 4a3 3 0 006 0l-1-4M15 6l-1 4a3 3 0 006 0l-1-4" fill="none" stroke="#3f608a" stroke-width="2"/>
+    </svg>
+    <span>Comprendre et protéger ses droits d'auteur</span>
+  </a>
   <a href="ao.html">
     <svg viewBox="0 0 24 24">
       <path d="M7 10V7a5 5 0 0110 0" fill="none" stroke="#3f608a" stroke-width="2"/>
-      <rect x="4" y="10" width="16" height="10" rx="2"
-            fill="none" stroke="#3f608a" stroke-width="2"/>
+      <rect x="4" y="10" width="16" height="10" rx="2" fill="none" stroke="#3f608a" stroke-width="2"/>
     </svg>
-    <span>Comprendre l’accès ouvert (open access)</span>
+    <span>Comprendre l'accès ouvert (open access)</span>
   </a>
-
   <a href="deposer.html">
     <svg viewBox="0 0 24 24">
-      <path d="M6 15a4 4 0 010-8 5 5 0 019.7-1.5A4 4 0 1118 15H6z"
-            fill="none" stroke="#3f608a" stroke-width="2"/>
-      <path d="M12 16V10M9 13l3-3 3 3"
-            fill="none" stroke="#3f608a" stroke-width="2"/>
+      <path d="M6 15a4 4 0 010-8 5 5 0 019.7-1.5A4 4 0 1118 15H6z" fill="none" stroke="#3f608a" stroke-width="2"/>
+      <path d="M12 16V10M9 13l3-3 3 3" fill="none" stroke="#3f608a" stroke-width="2"/>
     </svg>
     <span>Déposer et diffuser dans une archive ouverte</span>
   </a>
-
   <a href="publierao.html">
     <svg viewBox="0 0 24 24">
       <circle cx="12" cy="12" r="10" fill="none" stroke="#3f608a" stroke-width="2"/>
@@ -508,17 +269,14 @@ details summary h4 {
     </svg>
     <span>Choisir où publier en accès ouvert</span>
   </a>
-<a href="edcdf.html">
-  <svg viewBox="0 0 24 24">
-    <!-- Livre 1 -->
-    <rect x="4" y="5" width="14" height="3" fill="#3f608a"/>    
-    <!-- Livre 2 -->
-    <rect x="6" y="10" width="14" height="3" fill="#3f608a"/>    
-    <!-- Livre 3 -->
-    <rect x="4" y="15" width="14" height="3" fill="#3f608a"/>
-  </svg>
-  <span>La politique d'accès ouvert des éditions du Collège de France</span>
-</a>
+  <a href="edcdf.html">
+    <svg viewBox="0 0 24 24">
+      <rect x="4" y="5" width="14" height="3" fill="#3f608a"/>
+      <rect x="6" y="10" width="14" height="3" fill="#3f608a"/>
+      <rect x="4" y="15" width="14" height="3" fill="#3f608a"/>
+    </svg>
+    <span>La politique d'accès ouvert des éditions du Collège de France</span>
+  </a>
   <a href="bibliometrie.html">
     <svg viewBox="0 0 24 24">
       <path d="M4 20h16" stroke="#3f608a" stroke-width="2"/>
@@ -528,20 +286,16 @@ details summary h4 {
     </svg>
     <span>Bibliographies, bibliométrie et impact de la recherche</span>
   </a>
-
   <a href="formation.html">
     <svg viewBox="0 0 24 24">
       <path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3z" fill="#3f608a"/>
-      <path d="M6 12.5V15c0 2.2 3 4 6 4s6-1.8 6-4v-2.5l-6 3.2-6-3.2z"
-            fill="#3f608a"/>
+      <path d="M6 12.5V15c0 2.2 3 4 6 4s6-1.8 6-4v-2.5l-6 3.2-6-3.2z" fill="#3f608a"/>
     </svg>
     <span>Formations et accompagnements</span>
   </a>
-
   <a href="annexe.html">
     <svg viewBox="0 0 24 24">
-      <path d="M8 12l6-6a3 3 0 014 4l-8 8a5 5 0 11-7-7l7-7"
-            fill="none" stroke="#3f608a" stroke-width="2"/>
+      <path d="M8 12l6-6a3 3 0 014 4l-8 8a5 5 0 11-7-7l7-7" fill="none" stroke="#3f608a" stroke-width="2"/>
     </svg>
     <span>Annexe et crédits</span>
   </a>
@@ -549,192 +303,200 @@ details summary h4 {
 
 <main>
   <div class="content">
+
 <!-- ===================== CHAPITRE 1 ===================== -->
 <section class="chapitre">
 <details id="chap1" open>
 <summary><h2>Rédiger une affiliation</h2></summary>
 <p>
-L’affiliation d’un auteur décrit son appartenance à une structure de recherche et/ou d’enseignement supérieur. La mention d’une affiliation dans une publication permet ainsi d’identifier sans équivoque les publications de l’établissement de recherche et/ou d’enseignement supérieur auquel l’auteur appartient. 
+L'affiliation d'un auteur décrit son appartenance à une structure de recherche et/ou d'enseignement supérieur. La mention d'une affiliation dans une publication permet ainsi d'identifier sans équivoque les publications de l'établissement de recherche et/ou d'enseignement supérieur auquel l'auteur appartient. 
 </p>
 <p>
-La forme utilisée dans les publications et dans les bases de données pour décrire les affiliations des auteurs est appelée « adresse » ou « signature ». Les classements et les évaluations nationales ou internationales des établissements de recherche et d’enseignement supérieur sont effectués à partir de cette « adresse » ou « signature » dans les bases de données internationales, comme les bases bibliométriques (OpenAlex, Web of Science®, Scopus par exemple) qui indexent les publications scientifiques. 
+La forme utilisée dans les publications et dans les bases de données pour décrire les affiliations des auteurs est appelée « adresse » ou « signature ». Les classements et les évaluations nationales ou internationales des établissements de recherche et d'enseignement supérieur sont effectués à partir de cette « adresse » ou « signature » dans les bases de données internationales, comme les bases bibliométriques (OpenAlex, Web of Science®, Scopus par exemple) qui indexent les publications scientifiques. 
 </p>
 <p>
-<b>La rédaction d’une affiliation est ainsi essentielle non seulement à la reconnaissance des auteurs, mais également à leur visibilité</b> comme à celle des structures de recherche auxquelles ils appartiennent.
+<b>La rédaction d'une affiliation est ainsi essentielle non seulement à la reconnaissance des auteurs, mais également à leur visibilité</b> comme à celle des structures de recherche auxquelles ils appartiennent.
 </p>
 <ul class="liste-loupe">
 <li>
-<b>Les règles d’écriture préconisées par le Collège de France pour la signature des auteurs appartenant à sa communauté de recherche sont accessibles en cliquant sur le lien suivant 
+<b>Les règles d'écriture préconisées par le Collège de France pour la signature des auteurs appartenant à sa communauté de recherche sont accessibles en cliquant sur le lien suivant 
 <a href="https://www.college-de-france.fr/fr/regles-de-signature-des-publications-scientifiques" class="regles-signature">
-Règles de signature des publications scientifiques</a></b> (page accessible sur le site internet de l’établissement, sous l’onglet « Recherche »). Un outil est mis à disposition en pied de page permettant aux auteurs de générer leur signature scientifique en fonction de leur appartenance. Le respect de ces règles, qui permettent de normaliser les affiliations de l’ensemble des membres de la communauté de recherche du Collège de France, offre les meilleures garanties pour la reconnaissance exhaustive de leurs travaux. Ainsi, dans les cas où l’éditeur d’une publication imposerait ses propres règles d’écriture des affiliations, il est recommandé de s’y conformer sans renoncer au respect des mentions obligatoires préconisées par le Collège de France.
+Règles de signature des publications scientifiques</a></b> (page accessible sur le site internet de l'établissement, sous l'onglet « Recherche »). Un outil est mis à disposition en pied de page permettant aux auteurs de générer leur signature scientifique en fonction de leur appartenance. Le respect de ces règles, qui permettent de normaliser les affiliations de l'ensemble des membres de la communauté de recherche du Collège de France, offre les meilleures garanties pour la reconnaissance exhaustive de leurs travaux. Ainsi, dans les cas où l'éditeur d'une publication imposerait ses propres règles d'écriture des affiliations, il est recommandé de s'y conformer sans renoncer au respect des mentions obligatoires préconisées par le Collège de France.
 </li>
 </ul>
 </details>
 </section>
 
-   <!-- ===================== CHAPITRE 2 ===================== -->
+<!-- ===================== CHAPITRE 2 ===================== -->
 <section class="chapitre">
 <details id="chap2" open>
 <summary><h2>Utiliser un identifiant persistant</h2></summary>
-    <p>
-      Les identifiants persistants (Persistent IDentifier ou PID en anglais) sont des éléments structurants de la diffusion de données en accès ouvert, dans le respect des principes FAIR (Facile à trouver, Accessible, Interopérable, Réutilisable). Ils permettent en effet d’identifier de manière univoque les productions scientifiques, de les retrouver et de lier entre eux les auteurs, les institutions, les publications et les données qui y sont attachées. Deux types d’identifiants persistants sont utilisés : les « identifiants contributeur » pour les auteurs et les institutions et les « identifiants objet » pour les productions scientifiques (publications, données de recherche et logiciels). 
+<p>
+Les identifiants persistants (Persistent IDentifier ou PID en anglais) sont des éléments structurants de la diffusion de données en accès ouvert, dans le respect des principes FAIR (Facile à trouver, Accessible, Interopérable, Réutilisable). Ils permettent en effet d'identifier de manière univoque les productions scientifiques, de les retrouver et de lier entre eux les auteurs, les institutions, les publications et les données qui y sont attachées. Deux types d'identifiants persistants sont utilisés : les « identifiants contributeur » pour les auteurs et les institutions et les « identifiants objet » pour les productions scientifiques (publications, données de recherche et logiciels). 
 </p>
+
 <details id="chap2-sec1">
 <summary><h3>Les identifiants contributeur (ou identifiants auteur ou identifiants chercheur)</h3></summary>
 <p>
-Un identifiant contributeur, ou identifiant auteur, est un code alphanumérique unique persistant, attribué à tout auteur de production scientifique (articles, brevets, jeux de données scientifiques, projets financés etc.). Ce code permet d’identifier de façon univoque l’auteur dans un environnement numérique donné, qu’il s’agisse d’une base de données institutionnelle, nationale ou internationale (entrepôt de données européen Zenodo, archive ouverte française HAL, etc.) ou d’une base de données bibliographique (OpenAlex, Web of Science, Scopus etc.)
+Un identifiant contributeur, ou identifiant auteur, est un code alphanumérique unique persistant, attribué à tout auteur de production scientifique (articles, brevets, jeux de données scientifiques, projets financés etc.). Ce code permet d'identifier de façon univoque l'auteur dans un environnement numérique donné, qu'il s'agisse d'une base de données institutionnelle, nationale ou internationale (entrepôt de données européen Zenodo, archive ouverte française HAL, etc.) ou d'une base de données bibliographique (OpenAlex, Web of Science, Scopus etc.)
 </p>
 <p>Un identifiant contributeur permet :</p>
 <ul class="liste-tiret">
-<li>d’éviter les confusions fréquentes d’homonymie,</li>
-<li>de rassembler, le cas échéant, les différentes identités sous lesquelles l’auteur se présente ou signe ses publications,</li>
-<li>de relier entre elles les productions scientifiques de l’auteur gérées par différentes sources d’information,</li>
-<li>d’éviter à l’auteur de ressaisir les informations le concernant (nom, prénom, affiliation, …) dans les profils créés dans les bases de données qu’il utilise,</li>
+<li>d'éviter les confusions fréquentes d'homonymie,</li>
+<li>de rassembler, le cas échéant, les différentes identités sous lesquelles l'auteur se présente ou signe ses publications,</li>
+<li>de relier entre elles les productions scientifiques de l'auteur gérées par différentes sources d'information,</li>
+<li>d'éviter à l'auteur de ressaisir les informations le concernant (nom, prénom, affiliation, …) dans les profils créés dans les bases de données qu'il utilise,</li>
 <li>de constituer une unique entrée de recherche dans les bases de données qui ont adopté cet identifiant.</li>
 </ul>
 <ul class="liste-loupe">
 <li>
-Une chercheuse ou un chercheur peut posséder plusieurs identifiants (ORCID, Web of Science, Scopus, HAL, etc.) qu’il est possible de lier entre eux pour gagner du temps ou pour avoir plus de visibilité et plus de poids en bibliométrie.
+Une chercheuse ou un chercheur peut posséder plusieurs identifiants (<a href="#orcid" class="auto-link" onclick="ouvrirSection('orcid')">ORCID</a>, Web of Science, Scopus, HAL, etc.) qu'il est possible de lier entre eux pour gagner du temps ou pour avoir plus de visibilité et plus de poids en bibliométrie.
 </li>
-</ul >
+</ul>
+
 <details id="orcid">
- <summary><h4>L’ID-ORCID</h4></summary>
-<p><a href="https://orcid.org/" target="_blank" rel="noopener"> ORCID</a> (Open Researcher and Contributor ID) est une organisation internationale à but non lucratif dont le siège est aux États-Unis. ORCID gère un répertoire central (Registry) d’identifiants chercheurs<a href="https://orcid.org/" target="_blank" rel="noopener"> ORCIDID</a> qui rassemble, pour les chercheurs qui s’y sont inscrits, l’ensemble des données relatives à leurs profils : institutions successives d’affiliation (Emploi ou Employment en anglais), cursus d’enseignement (Education and qualifications), récompenses reçues (Invited positions and distinctions), adhésion à des organisations (Membership and service), projets financés (Financement ou Funding), ou encore publications (Travaux ou Works).</p>
-<p><b>Le système d’identifiant ORCID est persistant, international et gratuit.</b></p>
-<p>
-Il est relié à de multiples sources d’information telles que : 
+<summary><h4>L'ID-ORCID</h4></summary>
+<p><a href="https://orcid.org/" target="_blank" rel="noopener">ORCID</a> (Open Researcher and Contributor ID) est une organisation internationale à but non lucratif dont le siège est aux États-Unis. ORCID gère un répertoire central (Registry) d'identifiants chercheurs <a href="https://orcid.org/" target="_blank" rel="noopener">ORCIDID</a> qui rassemble, pour les chercheurs qui s'y sont inscrits, l'ensemble des données relatives à leurs profils : institutions successives d'affiliation (Emploi ou Employment en anglais), cursus d'enseignement (Education and qualifications), récompenses reçues (Invited positions and distinctions), adhésion à des organisations (Membership and service), projets financés (Financement ou Funding), ou encore publications (Travaux ou Works).</p>
+<p><b>Le système d'identifiant ORCID est persistant, international et gratuit.</b></p>
+<p>Il est relié à de multiples sources d'information telles que :</p>
 <ul class="liste-tiret">
 <li>des bases de données bibliographiques (OpenAlex, Scopus, Web of Science®) ;</li>
-<li>des éditeurs de revues ou d’ouvrages (ou Publishers) (Elsevier, Springer, Wiley, Tylor&Francis, PLoS, OpenEdition etc.) ;</li>
-<li>des entrepôts de publications et/ou de données (HAL, ArXiv, OpenAIRE, Dryad, Figshare…) ; </li>
+<li>des éditeurs de revues ou d'ouvrages (ou Publishers) (Elsevier, Springer, Wiley, Tylor&amp;Francis, PLoS, OpenEdition etc.) ;</li>
+<li>des entrepôts de publications et/ou de données (HAL, ArXiv, OpenAIRE, Dryad, Figshare…) ;</li>
 <li>des agences de financement (World Health Organization, Wellcome Trust, Institut National du Cancer, etc.).</li>
 </ul>
-</p>
 <p>
-L’ID-ORCID peut ainsi être utilisé pour le référencement ou l’auto-archivage des publications, pour la soumission d’un article à une revue, pour une réponse à un appel à projet, pour la révision d’un article ou encore pour le dépôt d’un jeu de données dans un entrepôt de données. Par l’utilisation systématique de l’identifiant ID-ORCID, toutes les productions issues l’activité scientifique du chercheur peuvent ainsi être reliées entre elles.
+L'ID-ORCID peut ainsi être utilisé pour le référencement ou l'auto-archivage des publications, pour la soumission d'un article à une revue, pour une réponse à un appel à projet, pour la révision d'un article ou encore pour le dépôt d'un jeu de données dans un entrepôt de données. Par l'utilisation systématique de l'identifiant ID-ORCID, toutes les productions issues l'activité scientifique du chercheur peuvent ainsi être reliées entre elles.
+</p>
 <ul class="liste-loupe">
 <li>
-L’inscription à ORCID est gratuite. Elle peut être effectuée à partir du site internet ORCID sur la page « s’inscrire » accessible en cliquant sur le lien suivant ORCID / s'inscrire. Une rubrique d’assistance est accessible en cliquant que le lien suivant How do I register for an ORCID ID. 
+L'inscription à ORCID est gratuite. Elle peut être effectuée à partir du site internet ORCID sur la page « s'inscrire » accessible en cliquant sur le lien suivant ORCID / s'inscrire. Une rubrique d'assistance est accessible en cliquant que le lien suivant How do I register for an ORCID ID. 
 </li>
 </ul>
 <div class="bon-a-savoir">Bon à savoir : ORCID peut être relié à HAL, Scopus et Web of Science.</div>
-<p>
-Pour être accompagné dans cette démarche, écrivez à : <a href="mailto: scienceouverte@college-de-france.fr "> scienceouverte@college-de-france.fr</a></p>
+<p>Pour être accompagné dans cette démarche, écrivez à : <a href="mailto:scienceouverte@college-de-france.fr">scienceouverte@college-de-france.fr</a></p>
 </details>
+
 <details id="idhal">
-<summary><h4>L’IdHAL</h4></summary>
+<summary><h4>L'IdHAL</h4></summary>
 <p>
-<a href="https://hal.science/" target="_blank" rel="noopener"> HAL (Hyper Articles en Ligne)</a> est un portail institutionnel, archive ouverte multidisciplinaire française maintenue et hébergée par le Centre pour la Communication Scientifique Directe (CCSD), unité d’appui à la recherche commune au Centre national de la recherche scientifique (CNRS), à l’Institut national de recherche pour l'agriculture, l'alimentation et l'environnement (INRAe), l’Institut national de la recherche en informatique et automatique (Inria) et l’Université de Lyon.</p>
+<a href="https://hal.science/" target="_blank" rel="noopener">HAL (Hyper Articles en Ligne)</a> est un portail institutionnel, archive ouverte multidisciplinaire française maintenue et hébergée par le Centre pour la Communication Scientifique Directe (CCSD), unité d'appui à la recherche commune au Centre national de la recherche scientifique (CNRS), à l'Institut national de recherche pour l'agriculture, l'alimentation et l'environnement (INRAe), l'Institut national de la recherche en informatique et automatique (Inria) et l'Université de Lyon.</p>
 <p>HAL permet de partager en accès libre tous types de publications. HAL est accessible gratuitement et librement pour tous.
-L’<a href="https://doc.hal.science/identifiant-auteur-idhal-cv/" target="_blank" rel="noopener"> IdHAL</a> est l'identifiant unique proposé par HAL, composé par défaut du prénom et du nom de l’auteur une fois son compte personnel créé sur la plateforme HAL. Il est possible de le modifier (rubrique « Mon profil ») et de gérer les « formes auteurs » (signatures) qui y sont associées (rubrique « Formes auteurs »). La création d’un compte personnel et d’un identifiant HAL s’effectue sur le site HAL, via le bouton « connexion » situé en haut à droite de la page d’accueil, accessible en cliquant sur le lien suivant <a href="https://hal.science/" target="_blank" rel="noopener"> Connexion HAL</a>.</p>
+L'<a href="https://doc.hal.science/identifiant-auteur-idhal-cv/" target="_blank" rel="noopener">IdHAL</a> est l'identifiant unique proposé par HAL, composé par défaut du prénom et du nom de l'auteur une fois son compte personnel créé sur la plateforme HAL. Il est possible de le modifier (rubrique « Mon profil ») et de gérer les « formes auteurs » (signatures) qui y sont associées (rubrique « Formes auteurs »). La création d'un compte personnel et d'un identifiant HAL s'effectue sur le site HAL, via le bouton « connexion » situé en haut à droite de la page d'accueil, accessible en cliquant sur le lien suivant <a href="https://hal.science/" target="_blank" rel="noopener">Connexion HAL</a>.</p>
 <ul class="liste-loupe">
 <li>
-Une fois l’IdHAL créé, il est possible de le lier avec l’identifiant ORCID qui doit pour cela être saisi dans l’espace de gestion IdHAL via le bouton de connexion à ORCID qui s’affiche. Il est également possible pour un chercheur de créer un compte ORCID à partir d’un compte HAL et d’envoyer à partir de HAL les références de ses publications dans son profil ORCID.
+Une fois l'IdHAL créé, il est possible de le lier avec l'identifiant <a href="#orcid" class="auto-link" onclick="ouvrirSection('orcid')">ORCID</a> qui doit pour cela être saisi dans l'espace de gestion IdHAL via le bouton de connexion à ORCID qui s'affiche. Il est également possible pour un chercheur de créer un compte <a href="#orcid" class="auto-link" onclick="ouvrirSection('orcid')">ORCID</a> à partir d'un compte HAL et d'envoyer à partir de HAL les références de ses publications dans son profil ORCID.
 </li>
 </ul>
-<p>Pour être accompagné dans cette démarche, écrivez-nous : <a href="mailto: scienceouverte@college-de-france.fr "> scienceouverte@college-de-france.fr</a></p>
+<p>Pour être accompagné dans cette démarche, écrivez-nous : <a href="mailto:scienceouverte@college-de-france.fr">scienceouverte@college-de-france.fr</a></p>
 </details>
 </details>
+
 <details id="chap2-sec2">
 <summary><h3>Les identifiants liés aux bases bibliométriques</h3></summary>
-  <div class="bon-a-savoir">Bon à savoir : bases bibliométriques et science ouverte :</div>
+<div class="bon-a-savoir">Bon à savoir : bases bibliométriques et science ouverte :</div>
 <p>
-Le Collège de France a accès via l’abonnement de l’Université PSL, dont il est membre associé, aux bases de données bibliographiques des éditeurs commerciaux Clarivate Analytics (Web of Science®) et Elsevier (Scopus). 
-La place occupée par ces plateformes commerciales, utilisées depuis longtemps par les institutions de recherche pour analyser leurs productions scientifiques et se comparer, est aujourd’hui remise en question sous l’impulsion du mouvement en faveur de la science ouverte. En 2024, plus de 30 organisations impliquées dans le financement, l’évaluation ou la réalisation de la recherche ont ainsi signé la <a href="https://barcelona-declaration.org/downloads/barcelonadeclaration_fran%C3%A7ais.pdf"class="regles-signature">Déclaration de Barcelone</a> sur l’information de recherche ouverte, par laquelle elles se sont engagées à prendre l’initiative de transformer la manière dont l’information sur la recherche est produite et utilisée. Un nombre croissant d’universités et d’établissements de recherche, parmi lesquels Sorbonne Université et le CNRS, s’affranchissent depuis progressivement des produits bibliométriques propriétaires tels que Web of Science® et Scopus,  pour soutenir et consolider de nouveaux outils ouverts et participatifs, notamment l’outil <a href="https://openalex.org/"class="regles-signature">OpenAlex</a>. En cohérence avec son engagement en faveur d’un accès ouvert aux données relatives à la recherche, le Collège de France accompagne l’amélioration du référencement des publications de sa communauté de recherche dans OpenAlex.</p>
+Le Collège de France a accès via l'abonnement de l'Université PSL, dont il est membre associé, aux bases de données bibliographiques des éditeurs commerciaux Clarivate Analytics (Web of Science®) et Elsevier (Scopus). 
+La place occupée par ces plateformes commerciales, utilisées depuis longtemps par les institutions de recherche pour analyser leurs productions scientifiques et se comparer, est aujourd'hui remise en question sous l'impulsion du mouvement en faveur de la science ouverte. En 2024, plus de 30 organisations impliquées dans le financement, l'évaluation ou la réalisation de la recherche ont ainsi signé la <a href="https://barcelona-declaration.org/downloads/barcelonadeclaration_fran%C3%A7ais.pdf" class="regles-signature">Déclaration de Barcelone</a> sur l'information de recherche ouverte, par laquelle elles se sont engagées à prendre l'initiative de transformer la manière dont l'information sur la recherche est produite et utilisée. Un nombre croissant d'universités et d'établissements de recherche, parmi lesquels Sorbonne Université et le CNRS, s'affranchissent depuis progressivement des produits bibliométriques propriétaires tels que Web of Science® et Scopus, pour soutenir et consolider de nouveaux outils ouverts et participatifs, notamment l'outil <a href="https://openalex.org/" class="regles-signature">OpenAlex</a>. En cohérence avec son engagement en faveur d'un accès ouvert aux données relatives à la recherche, le Collège de France accompagne l'amélioration du référencement des publications de sa communauté de recherche dans OpenAlex.</p>
+
 <details id="researcherid">
 <summary><h4>ResearcherID (Web of Science® – WoS)</h4></summary>
 <p>
-<a href="https://clarivate.com/academia-government/scientific-and-academic-research/research-discovery-and-referencing/web-of-science/" target="_blank" rel="noopener"> Web of Science®</a> est une plateforme commerciale (sur abonnement) de bases de données bibliographiques scientifiques gérée par la société américaine Clarivate Analytics. Web of Science® signale tous types de littérature scientifique (articles scientifiques, actes de colloque, chapitres de livre, etc.). 
-La plateforme permet de calculer des indicateurs de visibilité, d’effectuer des recherches selon plusieurs critères (sujet, auteur, titre de l’article ou de la publication, etc.), de générer des indicateurs bibliométriques et d’effectuer des recherches par citations (nombre d’articles citant la référence et nombre d’articles cités par les auteurs). 
+<a href="https://clarivate.com/academia-government/scientific-and-academic-research/research-discovery-and-referencing/web-of-science/" target="_blank" rel="noopener">Web of Science®</a> est une plateforme commerciale (sur abonnement) de bases de données bibliographiques scientifiques gérée par la société américaine Clarivate Analytics. Web of Science® signale tous types de littérature scientifique (articles scientifiques, actes de colloque, chapitres de livre, etc.). 
+La plateforme permet de calculer des indicateurs de visibilité, d'effectuer des recherches selon plusieurs critères (sujet, auteur, titre de l'article ou de la publication, etc.), de générer des indicateurs bibliométriques et d'effectuer des recherches par citations (nombre d'articles citant la référence et nombre d'articles cités par les auteurs). 
 </p>
 <p>
-Pour s’inscrire, il convient d’activer le bouton « Register » (S'inscrire) en haut de la page WoS, d’entrer une adresse e-mail, de créer un mot de passe, puis de renseigner un nom. Une fois inscrit, il est possible de se connecter à l'aide du bouton « Sign In » (Se connecter) ou « Login » (Connexion) avec les identifiants créés, de personnaliser son compte, d’enregistrer ses recherches ou encore de créer des alertes. Le profil de chercheur se crée à partir de la rubrique « My Researcher Profile » (Mon profil de chercheur), « Créer un ResearcherID ». Cet identifiant unique permet d'associer ses publications au profil du chercheur.</p>
+Pour s'inscrire, il convient d'activer le bouton « Register » (S'inscrire) en haut de la page WoS, d'entrer une adresse e-mail, de créer un mot de passe, puis de renseigner un nom. Une fois inscrit, il est possible de se connecter à l'aide du bouton « Sign In » (Se connecter) ou « Login » (Connexion) avec les identifiants créés, de personnaliser son compte, d'enregistrer ses recherches ou encore de créer des alertes. Le profil de chercheur se crée à partir de la rubrique « My Researcher Profile » (Mon profil de chercheur), « Créer un ResearcherID ». Cet identifiant unique permet d'associer ses publications au profil du chercheur.</p>
 <ul class="liste-loupe">
 <li>
-Les identifiants ResearcherID (WoS) et ID-ORCID peuvent être reliés entre eux soit à partir du site ORCID soit via la plateforme WoS et les données de publication peuvent ainsi être synchronisées entre les deux bases.
+Les identifiants ResearcherID (WoS) et <a href="#orcid" class="auto-link" onclick="ouvrirSection('orcid')">ID-ORCID</a> peuvent être reliés entre eux soit à partir du site ORCID soit via la plateforme WoS et les données de publication peuvent ainsi être synchronisées entre les deux bases.
 </li>
 </ul>
-<p>Pour être accompagné dans cette démarche, écrivez-nous : <a href="mailto: scienceouverte@college-de-france.fr "> scienceouverte@college-de-france.fr</a></p>
-<p>
+<p>Pour être accompagné dans cette démarche, écrivez-nous : <a href="mailto:scienceouverte@college-de-france.fr">scienceouverte@college-de-france.fr</a></p>
 </details>
+
 <details id="scopusid">
-<summary><h4>L’ID-Scopus</h4></summary>
-<p><a href="https://www.elsevier.com/fr-fr/products/scopus" target="_blank" rel="noopener"> Scopus</a> est une base de données bibliographique scientifique de l’éditeur commercial néerlandais Elsevier accessible sur abonnement payant, un accès gratuit étant toutefois ouvert aux pays les moins avancés via le portail <a href="https://portal.research4life.org/" target="_blank" rel="noopener"> Research4Life</a>. Scopus signale tous types de littérature scientifique (articles scientifiques, actes de colloque, chapitres de livre, etc.) et offre a priori une meilleure couverture des sciences humaines et sociales et des journaux non anglophones que Web of Science®.</p>
-<p>La plateforme propose le calcul d’indicateurs de visibilité, ainsi que des outils bibliométriques additionnels pour analyser les références bibliographiques selon différents critères : auteur, organisme d’affiliation, pays d’affiliation, type de documents, langue, année de publication, revue, thématique. Elle propose également des outils de parangonnage (benchmarking) permettant aux institutions d’analyser leurs stratégies de recherche sous différents aspects (classements, partenariats, impacts sur la société, financement, etc.).</p>
+<summary><h4>L'ID-Scopus</h4></summary>
+<p><a href="https://www.elsevier.com/fr-fr/products/scopus" target="_blank" rel="noopener">Scopus</a> est une base de données bibliographique scientifique de l'éditeur commercial néerlandais Elsevier accessible sur abonnement payant, un accès gratuit étant toutefois ouvert aux pays les moins avancés via le portail <a href="https://portal.research4life.org/" target="_blank" rel="noopener">Research4Life</a>. Scopus signale tous types de littérature scientifique (articles scientifiques, actes de colloque, chapitres de livre, etc.) et offre a priori une meilleure couverture des sciences humaines et sociales et des journaux non anglophones que Web of Science®.</p>
+<p>La plateforme propose le calcul d'indicateurs de visibilité, ainsi que des outils bibliométriques additionnels pour analyser les références bibliographiques selon différents critères : auteur, organisme d'affiliation, pays d'affiliation, type de documents, langue, année de publication, revue, thématique. Elle propose également des outils de parangonnage (benchmarking) permettant aux institutions d'analyser leurs stratégies de recherche sous différents aspects (classements, partenariats, impacts sur la société, financement, etc.).</p>
 <p><b>Scopus crée automatiquement un identifiant chercheur (Author Identifier Number)</b> pour chaque chercheur-auteur identifié à partir des références bibliographiques enregistrées dans sa base de données. Un chercheur est ainsi susceptible de se voir attribuer plusieurs identifiants, dès lors que la signature de ses publications ne serait pas normalisée (prénom unique ou plusieurs prénoms, changement de nom pour les femmes, etc.). Il est en ce cas possible de demander à Scopus de les regrouper.</p>
 <ul class="liste-loupe">
 <li>
-<b>Les identifiants Scopus Author Identifier Number et ID-ORCID peuvent être reliés entre eux par un service web dédié Scopus to ORCID, soit à partir de la base Scopus, en reliant les publications à l’ID-ORCID</b>, soit à partir du site ORCID, en reliant l’ID-ORCID à l’identifiant Scopus.
+<b>Les identifiants Scopus Author Identifier Number et <a href="#orcid" class="auto-link" onclick="ouvrirSection('orcid')">ID-ORCID</a> peuvent être reliés entre eux par un service web dédié Scopus to ORCID, soit à partir de la base Scopus, en reliant les publications à l'<a href="#orcid" class="auto-link" onclick="ouvrirSection('orcid')">ID-ORCID</a></b>, soit à partir du site ORCID, en reliant l'<a href="#orcid" class="auto-link" onclick="ouvrirSection('orcid')">ID-ORCID</a> à l'identifiant Scopus.
 </li>
 </ul>
-<p>Pour être accompagné dans cette démarche, écrivez-nous : <a href="mailto: scienceouverte@college-de-france.fr "> scienceouverte@college-de-france.fr</a></p>
-<p>
- <div class="bon-a-savoir">Bon à savoir : optimiser les liens entre identifiants.</div>
-</p>
-<p>Grâce au lien établi entre l’IdHAL et l’ID-ORCID, le signalement des publications dans HAL permet d’en envoyer automatiquement les références dans la base ORCID à partir de laquelle les bases Web of Science® et Scopus peuvent à leur tour être synchronisées, via les liens établis entre l’ID-ORCID et les identifiants ResearchID d’une part et l’ID-Scopus d‘autre part. Le dépôt de ses publications dans HAL permet donc au chercheur, si ses différents identifiants sont liés entre eux, de synchroniser non seulement son profil ORCID, mais également les comptes qu’il a le cas échéant créés sur les bases Web of Science® et Scopus.</p>
+<p>Pour être accompagné dans cette démarche, écrivez-nous : <a href="mailto:scienceouverte@college-de-france.fr">scienceouverte@college-de-france.fr</a></p>
+<div class="bon-a-savoir">Bon à savoir : optimiser les liens entre identifiants.</div>
+<p>Grâce au lien établi entre l'IdHAL et l'<a href="#orcid" class="auto-link" onclick="ouvrirSection('orcid')">ID-ORCID</a>, le signalement des publications dans HAL permet d'en envoyer automatiquement les références dans la base ORCID à partir de laquelle les bases Web of Science® et Scopus peuvent à leur tour être synchronisées, via les liens établis entre l'<a href="#orcid" class="auto-link" onclick="ouvrirSection('orcid')">ID-ORCID</a> et les identifiants ResearchID d'une part et l'ID-Scopus d'autre part. Le dépôt de ses publications dans HAL permet donc au chercheur, si ses différents identifiants sont liés entre eux, de synchroniser non seulement son profil ORCID, mais également les comptes qu'il a le cas échéant créés sur les bases Web of Science® et Scopus.</p>
 </details>
 </details>
+
 <details id="chap2-sec3">
 <summary><h3>Les identifiants objet</h3></summary>
+
 <details id="doi">
-<summary><h4>Le DOI (Digital Object Identifier), identifiant numérique d’objet</h4></summary>
-<p>Le DOI est un code alphanumérique associé à une production scientifique de manière permanente : il permet de l’identifier de façon fiable et durable et de la décrire sans ambigüité.</p>
-<p>Le <a href="https://archibibscdf.hypotheses.org/7340" target="_blank" rel="noopener"> DOI</a> fournit un lien durable à des ressources de tous types : publications, données ou collections issues de la recherche (tableaux ou bases de données herbiers, banques de gênes, zoothèques). Stable, il ne changera pas si la ressource est renommée ou déplacée.</p>
-<p>Le DOI facilite l’identification et la citation d’une ressource en lui associant des métadonnées (auteur ou créateur, titre, mots-clés, résumé, éditeur, langue, date de publication, source, droits de propriété de la ressource, localisation, conditions d’accès, etc.).</p>
+<summary><h4>Le DOI (Digital Object Identifier), identifiant numérique d'objet</h4></summary>
+<p>Le DOI est un code alphanumérique associé à une production scientifique de manière permanente : il permet de l'identifier de façon fiable et durable et de la décrire sans ambigüité.</p>
+<p>Le <a href="https://archibibscdf.hypotheses.org/7340" target="_blank" rel="noopener">DOI</a> fournit un lien durable à des ressources de tous types : publications, données ou collections issues de la recherche (tableaux ou bases de données herbiers, banques de gênes, zoothèques). Stable, il ne changera pas si la ressource est renommée ou déplacée.</p>
+<p>Le DOI facilite l'identification et la citation d'une ressource en lui associant des métadonnées (auteur ou créateur, titre, mots-clés, résumé, éditeur, langue, date de publication, source, droits de propriété de la ressource, localisation, conditions d'accès, etc.).</p>
 <p>
-Le DOI d’une ressource peut uniquement être attribué par une entité juridique, publique ou privée (organisme déclarant) qui peut être :
+Le DOI d'une ressource peut uniquement être attribué par une entité juridique, publique ou privée (organisme déclarant) qui peut être :
+</p>
 <ul class="liste-tiret">
 <li>le producteur et gestionnaire de la ressource, par exemple un organisme de recherche qui édite et diffuse les publications scientifiques, les jeux ou bases de données de ses chercheurs ;</li>
-<li>l’éditeur qui publie la ressource (revues scientifiques, éditeurs d’ouvrages, etc.) ;</li>
-<li>le gestionnaire et le diffuseur de la ressource, par exemple une plateforme, liée à une organisation internationale par exemple,  proposant d’héberger et de rendre accessibles des ressources déposées par des institutions ou des chercheurs.</li>
+<li>l'éditeur qui publie la ressource (revues scientifiques, éditeurs d'ouvrages, etc.) ;</li>
+<li>le gestionnaire et le diffuseur de la ressource, par exemple une plateforme, liée à une organisation internationale par exemple, proposant d'héberger et de rendre accessibles des ressources déposées par des institutions ou des chercheurs.</li>
 </ul>
-</p>
 <ul class="liste-loupe">
 <li>
-La demande de DOI doit ainsi être effectuée de manière institutionnelle : autrement dit, un chercheur ne peut pas effectuer une demande d’attribution de DOI en son nom mais seulement au titre de son rattachement à une institution ou à un laboratoire.
+La demande de DOI doit ainsi être effectuée de manière institutionnelle : autrement dit, un chercheur ne peut pas effectuer une demande d'attribution de DOI en son nom mais seulement au titre de son rattachement à une institution ou à un laboratoire.
 </li>
 </ul>
 <p>
-Pour obtenir des DOI, l’organisme déclarant doit être abonné (adhésion payante) à une agence d’enregistrement de DOI (DOI Registration Agencies, RAs) déclarée auprès de l’organisation à but non lucratif IDF (International DOI Foundation), organe de gouvernance de ces agences. 
-L’abonné s’engage à la gratuité et à l’intégrité des métadonnées fournies, à l’accès à une page web donnant des informations sur la ressource et ses conditions d'accès, et à la disponibilité des métadonnées enregistrées.</p>
-<p><a href="https://www.crossref.org/" target="_blank" rel="noopener"> CrossRef</a> (agence d’attribution des DOI), <a href="https://www.medra.org/" target="_blank" rel="noopener"> mEDRA</a> ou <a href="https://datacite.org/" target="_blank" rel="noopener"> Datacite</a> sont les principales agences ou plateformes qui dès les années 2000 ont été chargées de délivrer ces identifiants persistants. 
-En France, l’Institut de l’information scientifique et technique (Inist) représentant le CNRS est le relais français de l’agence Datacite. Une demande d’attribution d’un DOI peut ainsi être effectuée sur le portail PID OPIDoR de l’Inist, qui permet également d’identifier les autres plateformes d’attribution.
+Pour obtenir des DOI, l'organisme déclarant doit être abonné (adhésion payante) à une agence d'enregistrement de DOI (DOI Registration Agencies, RAs) déclarée auprès de l'organisation à but non lucratif IDF (International DOI Foundation), organe de gouvernance de ces agences. 
+L'abonné s'engage à la gratuité et à l'intégrité des métadonnées fournies, à l'accès à une page web donnant des informations sur la ressource et ses conditions d'accès, et à la disponibilité des métadonnées enregistrées.</p>
+<p><a href="https://www.crossref.org/" target="_blank" rel="noopener">CrossRef</a> (agence d'attribution des DOI), <a href="https://www.medra.org/" target="_blank" rel="noopener">mEDRA</a> ou <a href="https://datacite.org/" target="_blank" rel="noopener">Datacite</a> sont les principales agences ou plateformes qui dès les années 2000 ont été chargées de délivrer ces identifiants persistants. 
+En France, l'Institut de l'information scientifique et technique (Inist) représentant le CNRS est le relais français de l'agence Datacite. Une demande d'attribution d'un DOI peut ainsi être effectuée sur le portail PID OPIDoR de l'Inist, qui permet également d'identifier les autres plateformes d'attribution.
 </p>
 <ul class="liste-loupe">
 <li>
-La plateforme européenne de dépôt d’archives et de données ouvertes ZENODO fournit un DOI aux données déposées qui n’en disposent pas. Certains entrepôts de données attribuent automatiquement un DOI aux données publiées. 
+La plateforme européenne de dépôt d'archives et de données ouvertes ZENODO fournit un DOI aux données déposées qui n'en disposent pas. Certains entrepôts de données attribuent automatiquement un DOI aux données publiées. 
 </li>
 </ul>
 </details>
+
 <details id="autres-id">
-<summary><h4>Les autres identifiants numériques d’objet</h4></summary>
-<p>Si le DOI est le système d’identification persistant le plus largement utilisé, d’autres identifiants existent :
-L’<b>ISBN (International Standard Book Number)</b> et l’<b>ISSN (International Standard Serial Number)</b> sont des numéros normalisés permettant l’identification univoque des ouvrages, d’une part, et des publications en série (revues) d’autre part. <b>Il est possible d’attribuer à la fois un ISBN ou un ISSN et un DOI</b>, identifiant qui présente toutefois l’avantage d’être « résolvable » et associé à une action sur internet : la résolution d’un DOI sur internet consiste à retrouver les métadonnées (description, localisation) associées à une ressource à partir de son DOI. Cliquer sur un DOI permet ainsi d’afficher la page de description de la ressource, cette page donnant ensuite accès à la ressource. Dès lors qu’on publie sous forme numérique, attribuer un DOI est indispensable.</p>
-<div class="bon-a-savoir">Bon à savoir : les identifiants persistants liés à l’univers des bibliothèques :</div>
-<p>D’autres identifiants, issus de l’univers des bibliothèques, permettent d’éviter, dans les catalogues, les problèmes d’homonymie et de changement de nom, et de faciliter la liaison entre un contributeur et ses publications.</p>
-<p><b>Le système universitaire de documentation (Sudoc)</b>, catalogue collectif français réalisé par les bibliothèques et centres de documentation de l'enseignement supérieur et de la recherche, attribue automatiquement des identifiants <b>IdRef (Identifiants et Référentiels)</b> dès lors que l’auteur a soutenu une thèse ou apparaît dans un catalogue de l’Abes (agence bibliographique de l'enseignement supérieur).</p>
-<p><b>La Bibliothèque nationale de France (BnF) attribue aux ressources qu’elle crée des identifiants ARK (Archival Resource Key)</b>, format persistant « résolvable » créé par la California Digital Library (CDL) et permettant d’identifier un objet ou un contributeur.  À la différence du système des DOI, géré par l’International DOI Foundation (IDF) et fondé sur des abonnements payants, la gestion des ARK est décentralisée et gratuite, étant à la charge de l’institution qui le met en œuvre. 
-La BnF intègre également à ses ressources des identifiants <b>ISNI (International Standard Name Identifier)</b>. L’ISNI permet d’identifier au niveau international les identités publiques des personnes ou des organismes impliqués dans la création, la production ou la gestion et la distribution de contenus intellectuels et artistiques. Les personnes identifiées peuvent être, par exemple, l’auteur, l’éditeur, le traducteur ou l’illustrateur.</p>
+<summary><h4>Les autres identifiants numériques d'objet</h4></summary>
+<p>Si le <a href="#doi" class="auto-link" onclick="ouvrirSection('doi')">DOI</a> est le système d'identification persistant le plus largement utilisé, d'autres identifiants existent :
+L'<b>ISBN (International Standard Book Number)</b> et l'<b>ISSN (International Standard Serial Number)</b> sont des numéros normalisés permettant l'identification univoque des ouvrages, d'une part, et des publications en série (revues) d'autre part. <b>Il est possible d'attribuer à la fois un ISBN ou un ISSN et un <a href="#doi" class="auto-link" onclick="ouvrirSection('doi')">DOI</a></b>, identifiant qui présente toutefois l'avantage d'être « résolvable » et associé à une action sur internet : la résolution d'un <a href="#doi" class="auto-link" onclick="ouvrirSection('doi')">DOI</a> sur internet consiste à retrouver les métadonnées (description, localisation) associées à une ressource à partir de son <a href="#doi" class="auto-link" onclick="ouvrirSection('doi')">DOI</a>. Cliquer sur un <a href="#doi" class="auto-link" onclick="ouvrirSection('doi')">DOI</a> permet ainsi d'afficher la page de description de la ressource, cette page donnant ensuite accès à la ressource. Dès lors qu'on publie sous forme numérique, attribuer un <a href="#doi" class="auto-link" onclick="ouvrirSection('doi')">DOI</a> est indispensable.</p>
+<div class="bon-a-savoir">Bon à savoir : les identifiants persistants liés à l'univers des bibliothèques :</div>
+<p>D'autres identifiants, issus de l'univers des bibliothèques, permettent d'éviter, dans les catalogues, les problèmes d'homonymie et de changement de nom, et de faciliter la liaison entre un contributeur et ses publications.</p>
+<p><b>Le système universitaire de documentation (Sudoc)</b>, catalogue collectif français réalisé par les bibliothèques et centres de documentation de l'enseignement supérieur et de la recherche, attribue automatiquement des identifiants <b>IdRef (Identifiants et Référentiels)</b> dès lors que l'auteur a soutenu une thèse ou apparaît dans un catalogue de l'Abes (agence bibliographique de l'enseignement supérieur).</p>
+<p><b>La Bibliothèque nationale de France (BnF) attribue aux ressources qu'elle crée des identifiants ARK (Archival Resource Key)</b>, format persistant « résolvable » créé par la California Digital Library (CDL) et permettant d'identifier un objet ou un contributeur. À la différence du système des <a href="#doi" class="auto-link" onclick="ouvrirSection('doi')">DOI</a>, géré par l'International DOI Foundation (IDF) et fondé sur des abonnements payants, la gestion des ARK est décentralisée et gratuite, étant à la charge de l'institution qui le met en œuvre. 
+La BnF intègre également à ses ressources des identifiants <b>ISNI (International Standard Name Identifier)</b>. L'ISNI permet d'identifier au niveau international les identités publiques des personnes ou des organismes impliqués dans la création, la production ou la gestion et la distribution de contenus intellectuels et artistiques. Les personnes identifiées peuvent être, par exemple, l'auteur, l'éditeur, le traducteur ou l'illustrateur.</p>
 <ul class="liste-loupe">
-<li>L’URL (Uniform Resource Locator) est un pointeur (locator) pour localiser une ressource sur internet et en obtenir une représentation, par exemple une page web. L’identifiant numérique d’objet s’en distingue par le fait qu’il est persistant et qu’il identifie la ressource plutôt que sa localisation. Pour les contenus scientifiques, il relève toutefois des bonnes pratiques que les URL utilisées soient « persistants » (qu’elles se conforment à certaines règles leur permettant une plus grande stabilité, et que, en cas de changement, des redirections soient effectuées vers les nouvelles localisations de la publication).
+<li>L'URL (Uniform Resource Locator) est un pointeur (locator) pour localiser une ressource sur internet et en obtenir une représentation, par exemple une page web. L'identifiant numérique d'objet s'en distingue par le fait qu'il est persistant et qu'il identifie la ressource plutôt que sa localisation. Pour les contenus scientifiques, il relève toutefois des bonnes pratiques que les URL utilisées soient « persistants » (qu'elles se conforment à certaines règles leur permettant une plus grande stabilité, et que, en cas de changement, des redirections soient effectuées vers les nouvelles localisations de la publication).
 </li>
 </ul>
-</p>
+</details>
 </details>
 </details>
 </section>
+
 <!-- ===================== CHAPITRE 3 ===================== -->
 <section class="chapitre">
 <details id="chap3" open>
 <summary><h2>Le Research Organization Registry ID (ROR ID), identifiant persistant des institutions et organismes de recherche</h2></summary>
-<p>Créé en 2019 par un consortium comprenant notamment <a href="https://www.crossref.org/" target="_blank" rel="noopener"> CrossRef</a>, <a href="https://datacite.org/" target="_blank" rel="noopener"> Datacite</a> et la <a href="https://cdlib.org/" target="_blank" rel="noopener"> California Digital Library</a>, le <a href="https://ror.org/" target="_blank" rel="noopener"> Research Organization Registry (ROR)</a> est un registre international ouvert et interopérable conçu pour identifier de manière univoque et persistante les organismes de recherche et de financement de la recherche à l’échelle mondiale.</p>
-<p>Un identifiant ROR (ROR ID) unique et persistant est attribué à chaque organisme enregistré dans le ROR. Il est associé à des métadonnées normalisées, telles que le nom officiel de l’organisme, ses variantes linguistiques, sa localisation et ses relations institutionnelles.</p>
-<p>Le ROR ID est l'identifiant par défaut pris en charge dans les métadonnées Crossref DOI, DataCite DOI et ORCID (voir les chapitres « L’ID ORCID » et « Le DOI (Digital Object Identifier, identifiant numérique d’objet »). Il permet d’identifier sans ambiguïté les institutions et de relier les organismes de recherche aux chercheurs et aux résultats de la recherche. Il facilite l’interopérabilité entre les bases de données et la traçabilité des affiliations institutionnelles dans les communications scientifiques. 
-Le ROR ID est utilisé dans les bases de données bibliographiques et autres plateformes de publication, les plateformes de gestion des bailleurs de fonds et d’autres systèmes d’information de recherche pour lever toute ambiguïté sur les affiliations et faciliter les partenariats et le partage de données.</p>
-<p>En contribuant à la standardisation des identifiants institutionnels, le ROR ID permet de réduire les erreurs et les doublons dans les métadonnées. Il tient ainsi un rôle essentiel dans l’amélioration de la qualité des données de recherche, le suivi de la production scientifique et l’analyse des collaborations internationales.</p>
-<p>L' ID ROR du Collège de France est <a href="https://ror.org/04ex24z53" target="_blank" rel="noopener"> 04ex24z53</a>, consultable en cliquant <a href="https://ror.org/04ex24z53" target="_blank" rel="noopener"> ici</a></p>
-</sectio>
-    <a href="https://ggsggs2016.github.io/soac1/" class="back-link">⬅ Retour à la page d'accueil</a>
+<p>Créé en 2019 par un consortium comprenant notamment <a href="https://www.crossref.org/" target="_blank" rel="noopener">CrossRef</a>, <a href="https://datacite.org/" target="_blank" rel="noopener">Datacite</a> et la <a href="https://cdlib.org/" target="_blank" rel="noopener">California Digital Library</a>, le <a href="https://ror.org/" target="_blank" rel="noopener">Research Organization Registry (ROR)</a> est un registre international ouvert et interopérable conçu pour identifier de manière univoque et persistante les organismes de recherche et de financement de la recherche à l'échelle mondiale.</p>
+<p>Un identifiant ROR (ROR ID) unique et persistant est attribué à chaque organisme enregistré dans le ROR. Il est associé à des métadonnées normalisées, telles que le nom officiel de l'organisme, ses variantes linguistiques, sa localisation et ses relations institutionnelles.</p>
+<p>Le ROR ID est l'identifiant par défaut pris en charge dans les métadonnées Crossref <a href="#doi" class="auto-link" onclick="ouvrirSection('doi')">DOI</a>, DataCite <a href="#doi" class="auto-link" onclick="ouvrirSection('doi')">DOI</a> et <a href="#orcid" class="auto-link" onclick="ouvrirSection('orcid')">ORCID</a>. Il permet d'identifier sans ambiguïté les institutions et de relier les organismes de recherche aux chercheurs et aux résultats de la recherche. Il facilite l'interopérabilité entre les bases de données et la traçabilité des affiliations institutionnelles dans les communications scientifiques. 
+Le ROR ID est utilisé dans les bases de données bibliographiques et autres plateformes de publication, les plateformes de gestion des bailleurs de fonds et d'autres systèmes d'information de recherche pour lever toute ambiguïté sur les affiliations et faciliter les partenariats et le partage de données.</p>
+<p>En contribuant à la standardisation des identifiants institutionnels, le ROR ID permet de réduire les erreurs et les doublons dans les métadonnées. Il tient ainsi un rôle essentiel dans l'amélioration de la qualité des données de recherche, le suivi de la production scientifique et l'analyse des collaborations internationales.</p>
+<p>L' ID ROR du Collège de France est <a href="https://ror.org/04ex24z53" target="_blank" rel="noopener">04ex24z53</a>, consultable en cliquant <a href="https://ror.org/04ex24z53" target="_blank" rel="noopener">ici</a></p>
+</details>
+</section>
+
+<a href="https://ggsggs2016.github.io/soac1/" class="back-link">⬅ Retour à la page d'accueil</a>
 </div>  
 </main>
 
@@ -746,7 +508,20 @@ Le ROR ID est utilisé dans les bases de données bibliographiques et autres pla
   </p>
   <p>&copy; 2026 Collège de France</p>
 </footer>
+
 <script>
+function ouvrirSection(id) {
+  const target = document.getElementById(id);
+  if (!target) return;
+  // Ouvre tous les <details> parents en remontant
+  let el = target;
+  while (el) {
+    if (el.tagName === 'DETAILS') el.open = true;
+    el = el.parentElement;
+  }
+  setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+}
+
 document.querySelectorAll('.index a').forEach(link => {
   link.addEventListener('click', e => {
     const id = link.getAttribute('href').substring(1);
@@ -761,7 +536,3 @@ document.querySelectorAll('.index a').forEach(link => {
 <script src="auto-links.js"></script>
 </body>
 </html>
-
-
-
-

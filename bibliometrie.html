@@ -288,7 +288,9 @@ nav a {
   border-radius: 6px;
   background: #F5F4EF;
 }
-
+nav a:last-child:nth-child(3n+1) {
+  grid-column: 2;
+}
 nav svg {
   width: 32px;
   height: 32px;
@@ -541,7 +543,16 @@ details summary h4 {
     </svg>
     <span>Bibliographies, bibliométrie et impact de la recherche</span>
   </a>
-
+<a href="donnees_recherche.html">
+  <svg viewBox="0 0 24 24">
+    <ellipse cx="12" cy="5" rx="8" ry="3" fill="none" stroke="#3f608a" stroke-width="2"/>
+    <ellipse cx="12" cy="19" rx="8" ry="3" fill="none" stroke="#3f608a" stroke-width="2"/>
+    <line x1="4" y1="5" x2="4" y2="19" stroke="#3f608a" stroke-width="2"/>
+    <line x1="20" y1="5" x2="20" y2="19" stroke="#3f608a" stroke-width="2"/>
+    <line x1="4" y1="11" x2="20" y2="11" stroke="#3f608a" stroke-width="1.5" stroke-dasharray="3 2"/>
+    <line x1="4" y1="15" x2="20" y2="15" stroke="#3f608a" stroke-width="1.5" stroke-dasharray="3 2"/>
+  </svg>
+  <span>Les données de la recherche et la science ouverte</span>
   <a href="formation.html">
     <svg viewBox="0 0 24 24">
       <path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3z" fill="#3f608a"/>

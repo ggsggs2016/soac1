@@ -260,7 +260,7 @@ header h1 {
 /* ===== PAVÉ DE NAVIGATION ===== */
 nav {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); 
+  grid-template-columns: repeat(3, 1fr); 
   gap: 1rem;
   margin: 2rem auto;
   max-width: 1200px;
@@ -274,6 +274,9 @@ nav a {
   border: 1px solid #ddd;
   border-radius: 6px;
   background: #F5F4EF;
+}
+nav a:last-child:nth-child(3n+1) {
+  grid-column: 2;
 }
 
 nav svg {

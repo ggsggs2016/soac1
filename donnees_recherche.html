@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les données de la recherche et la science ouverte | Science ouverte au Collège de France</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  margin: 0;
+  line-height: 1.6;
+  color: #1a1c1f;
+  background: #fff;
+  padding: 0;
+}
+
+a { color: #3f608a; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ========================================
+   CSS RESPONSIVE BANDEAU COMPLET
+   ======================================== */
+
+header {
+  background-image: url('physique1.jpg');
+  background-size: cover;
+  background-position: center 15%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  color: #fff;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 60, 120, 0.75),
+    rgba(0, 60, 120, 0.40)
+  );
+  z-index: 1;
+}
+
+.logo-link {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+}
+
+header .logo {
+  height: 100px;
+  width: auto;
+}
+
+.header-links {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+}
+
+.header-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.header-links a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+  z-index: 2;
+  line-height: 1.2;
+  max-width: 80%;
+}
+
+@media (max-width: 900px) {
+  header { min-height: 250px; padding: 1.5rem; }
+  .logo-link { top: 15px; left: 15px; }
+  header .logo { height: 80px; }
+  .header-links { top: 15px; right: 15px; gap: 12px; }
+  .header-links a { font-size: 0.9rem; }
+  header h1 { font-size: 2rem; }
+}
+
+@media (max-width: 768px) {
+  header { min-height: 220px; padding: 1.5rem 1rem; }
+  .logo-link { top: 12px; left: 12px; }
+  header .logo { height: 70px; }
+  .header-links { top: 12px; right: 12px; gap: 10px; }
+  .header-links a { font-size: 0.85rem; }
+  header h1 { font-size: 1.6rem; max-width: 85%; }
+}
+
+@media (max-width: 600px) {
+  header {
+    min-height: 300px;
+    padding: 1rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .logo-link { top: 10px; left: 10px; }
+  header .logo { height: 60px; }
+  .header-links {
+    top: 10px;
+    right: 10px;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-end;
+  }
+  .header-links a { font-size: 0.7rem; text-align: right; line-height: 1.2; }
+  header h1 { font-size: 1.4rem; max-width: 90%; padding-top: 60px; }
+}
+
+@media (max-width: 480px) {
+  header {
+    min-height: 280px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .logo-link { top: 8px; left: 8px; }
+  header .logo { height: 50px; }
+  .header-links a { font-size: 0.75rem; }
+  header h1 { font-size: 1.2rem; line-height: 1.3; }
+}
+
+@media (max-width: 360px) {
+  header {
+    min-height: 340px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  header .logo { height: 45px; }
+  header h1 { font-size: 1.1rem; }
+}
+
+/* ===== PAVÉ DE NAVIGATION ===== */
+nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #F5F4EF;
+}
+
+nav svg {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+nav span { font-weight: 600; }
+
+main {
+  display: block;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.content { min-width: 0; }
+
+section.chapitre {
+  margin-bottom: 4rem;
+  padding-top: 2rem;
+  border-top: 4px solid #3f608a;
+}
+
+h2, h3 { color: #3f608a; }
+
+.liste-loupe {
+  list-style: none;
+  padding-left: 0;
+}
+
+.liste-loupe li {
+  position: relative;
+  padding-left: 28px;
+}
+
+.liste-loupe li::before {
+  content: "🔍";
+  position: absolute;
+  left: 0;
+}
+
+.liste-tiret {
+  list-style: none;
+  padding-left: 0;
+}
+
+.liste-tiret li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.liste-tiret li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.liste-tiret2 {
+  list-style: none;
+  padding-left: 2ch;
+}
+
+.liste-tiret2 li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.liste-tiret2 li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.liste-alertes {
+  list-style: none;
+  padding-left: 0;
+  color: #c00000;
+}
+
+.liste-alertes li {
+  position: relative;
+  padding-left: 22px;
+}
+
+.liste-alertes li::before {
+  content: "⚠";
+  position: absolute;
+  left: 0;
+}
+
+.bon-a-savoir {
+  color: #c00000;
+  font-weight: bold;
+  background: #fff3f3;
+  padding: 0.4rem 0.6rem;
+  border-left: 4px solid #c00000;
+  display: inline-block;
+  margin: 1rem 0;
+}
+
+footer {
+  background: #f2f2f2;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ===== ACCORDÉON ALIGNÉ ===== */
+details { margin-left: 0; }
+details details { margin-left: 1.5rem; }
+
+details summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+details summary::-webkit-details-marker { display: none; }
+
+details summary::before {
+  content: "▸";
+  color: #3f608a;
+  font-weight: bold;
+  width: 1em;
+  flex-shrink: 0;
+}
+
+details[open] > summary::before { content: "▾"; }
+
+details summary h2,
+details summary h3,
+details summary h4 {
+  display: inline;
+  margin: 0;
+}
+
+.auto-link {
+  color: #0066cc;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+  transition: all 0.2s ease;
+}
+
+.auto-link:hover {
+  color: #004499;
+  text-decoration-style: solid;
+  text-decoration-thickness: 2px;
+}
+
+.auto-link:visited { color: #551a8b; }
+</style>
+</head>
+
+<body>
+  <header>
+    <a href="https://www.college-de-france.fr/fr" class="logo-link">
+      <img src="library-logo.png" alt="Collège de France" class="logo">
+    </a>
+    <div class="header-links">
+      <a href="https://college-de-france.hal.science/" target="_blank">HAL-Collège de France</a>
+      <a href="https://www.college-de-france.fr/fr/regles-de-signature-des-publications-scientifiques" target="_blank">Règles de signature des publications scientifiques</a>
+    </div>
+    <h1>Les données de la recherche et la science ouverte</h1>
+  </header>
+
+  <nav>
+    <a href="auteur.html">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z" fill="#3f608a"/>
+      </svg>
+      <span>S'identifier en tant qu'auteur</span>
+    </a>
+
+    <a href="droit.html">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2v18M3 6h18M5 6l-1 4a3 3 0 006 0l-1-4M15 6l-1 4a3 3 0 006 0l-1-4" fill="none" stroke="#3f608a" stroke-width="2"/>
+      </svg>
+      <span>Comprendre et protéger ses droits d'auteur</span>
+    </a>
+
+    <a href="ao.html">
+      <svg viewBox="0 0 24 24">
+        <path d="M7 10V7a5 5 0 0110 0" fill="none" stroke="#3f608a" stroke-width="2"/>
+        <rect x="4" y="10" width="16" height="10" rx="2" fill="none" stroke="#3f608a" stroke-width="2"/>
+      </svg>
+      <span>Comprendre l'accès ouvert (open access)</span>
+    </a>
+
+    <a href="deposer.html">
+      <svg viewBox="0 0 24 24">
+        <path d="M6 15a4 4 0 010-8 5 5 0 019.7-1.5A4 4 0 1118 15H6z" fill="none" stroke="#3f608a" stroke-width="2"/>
+        <path d="M12 16V10M9 13l3-3 3 3" fill="none" stroke="#3f608a" stroke-width="2"/>
+      </svg>
+      <span>Déposer et diffuser dans une archive ouverte</span>
+    </a>
+
+    <a href="publierao.html">
+      <svg viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" fill="none" stroke="#3f608a" stroke-width="2"/>
+        <path d="M12 6l3 6-3 6-3-6z" fill="#3f608a"/>
+      </svg>
+      <span>Choisir où publier en accès ouvert</span>
+    </a>
+
+    <a href="edcdf.html">
+      <svg viewBox="0 0 24 24">
+        <rect x="4" y="5" width="14" height="3" fill="#3f608a"/>
+        <rect x="6" y="10" width="14" height="3" fill="#3f608a"/>
+        <rect x="4" y="15" width="14" height="3" fill="#3f608a"/>
+      </svg>
+      <span>La politique d'accès ouvert des éditions du Collège de France</span>
+    </a>
+
+    <a href="bibliometrie.html">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 20h16" stroke="#3f608a" stroke-width="2"/>
+        <rect x="6" y="10" width="3" height="8" fill="#3f608a"/>
+        <rect x="11" y="6" width="3" height="12" fill="#3f608a"/>
+        <rect x="16" y="13" width="3" height="5" fill="#3f608a"/>
+      </svg>
+      <span>Bibliographies, bibliométrie et impact de la recherche</span>
+    </a>
+
+    <a href="formation.html">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3z" fill="#3f608a"/>
+        <path d="M6 12.5V15c0 2.2 3 4 6 4s6-1.8 6-4v-2.5l-6 3.2-6-3.2z" fill="#3f608a"/>
+      </svg>
+      <span>Formations et accompagnements</span>
+    </a>
+
+    <a href="annexe.html">
+      <svg viewBox="0 0 24 24">
+        <path d="M8 12l6-6a3 3 0 014 4l-8 8a5 5 0 11-7-7l7-7" fill="none" stroke="#3f608a" stroke-width="2"/>
+      </svg>
+      <span>Annexe et crédits</span>
+    </a>
+  </nav>
+
+  <main>
+    <div class="content">
+
+      <!-- ===================== INTRO ===================== -->
+      <section class="chapitre">
+        <p>Les données de recherche correspondent à des éléments factuels — qu'il s'agisse de chiffres, de textes, d'images ou de sons — servant de sources primaires dans les travaux scientifiques et reconnus par la communauté comme indispensables à la validation des résultats (<a href="https://www.oecd.org/fr/sti/inno/38500823.pdf" target="_blank" rel="noopener">OCDE, 2007</a>). Elles occupent aujourd'hui une place centrale dans la production scientifique. Comme les publications, elles s'inscrivent également dans la démarche de <a href="https://www.unesco.org/fr/open-science" target="_blank" rel="noopener">science ouverte (Open Science)</a>, qui vise à rendre les résultats accessibles à tous afin de favoriser la reproductibilité, la transparence et la réutilisation des travaux scientifiques.</p>
+        <p>Dans cette perspective, les chercheuses et les chercheurs doivent :</p>
+        <ul class="liste-tiret">
+          <li>Assurer une gestion rigoureuse des données afin d'en faciliter la valorisation à l'issue du projet ;</li>
+          <li>Documenter les données conformément aux <a href="https://www.go-fair.org/fair-principles/" target="_blank" rel="noopener">principes FAIR</a> (Faciles à trouver, Accessibles, Interopérables et Réutilisables) pour en optimiser le partage et la réutilisation ;</li>
+          <li>Rendre les données ouvertes « autant que possible » et les restreindre « autant que nécessaire » afin de concilier transparence scientifique et respect des contraintes juridiques, éthiques ou de confidentialité.</li>
+        </ul>
+        <p>Les données de recherche ouvertes (Open data) désignent des données produites dans le cadre d'activités de recherche qui sont rendues librement accessibles, utilisables, modifiables et partageables par tous, sous réserve éventuelle de conditions minimales (comme la citation de la source).</p>
+      </section>
+
+      <!-- ===================== CHAPITRE 1 ===================== -->
+      <section class="chapitre">
+        <details id="chap1" open>
+          <summary><h2>Les jeux de données</h2></summary>
+
+          <p>Un jeu de données désigne un ensemble structuré de données collectées, produites ou compilées dans le cadre d'une activité de recherche, organisé de manière cohérente afin de pouvoir être analysé, partagé et réutilisé. Il peut s'agir, par exemple, d'un tableau de mesures expérimentales, d'un corpus de textes, d'images annotées, de relevés de capteurs ou encore de bases de données complexes.</p>
+          <p>Un jeu de données est généralement accompagné de <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/" target="_blank" rel="noopener">métadonnées</a> décrivant son contenu, son contexte de production, ses méthodes de collecte et ses conditions d'utilisation, ce qui permet d'en garantir la compréhension et la réutilisation par d'autres chercheurs.</p>
+          <p>Dans le cadre de la <a href="https://www.unesco.org/fr/open-science" target="_blank" rel="noopener">science ouverte</a>, la qualité d'un jeu de données repose sur sa structuration, sa documentation et sa conformité aux <a href="https://www.go-fair.org/fair-principles/" target="_blank" rel="noopener">principes FAIR</a> (Findable, Accessible, Interoperable, Reusable), afin d'assurer sa visibilité, son accessibilité et sa réutilisation à long terme.</p>
+          <p>→ <a href="https://opendatahandbook.org/guide/fr/what-is-open-data/" target="_blank" rel="noopener">Les Données de la recherche ouvertes (Open data)</a></p>
+
+          <details id="chap1-sec1">
+            <summary><h3>Data paper ou Article de données</h3></summary>
+            <p>Dans ce contexte, pour donner de la visibilité et valoriser les données, il est possible de publier un article scientifique, de type <em>Data paper</em>, qui explicite et informe la communauté scientifique de l'existence, de la disponibilité, de la qualité et du potentiel de ces données pour la recherche et l'innovation.</p>
+            <p>Le Data paper est ainsi une forme de publication scientifique dédiée à la description détaillée d'un jeu de données. Contrairement à un article classique centré sur l'analyse et les résultats, il met l'accent sur les méthodes de collecte, de traitement, de structuration et de validation des données, ainsi que sur les conditions de leur réutilisation.</p>
+            <p>Son objectif est de rendre les données compréhensibles, accessibles et réutilisables par d'autres chercheurs, tout en assurant une reconnaissance académique aux producteurs de données. Le data paper s'inscrit pleinement dans la démarche de science ouverte et contribue à la diffusion et à la valorisation des données de recherche.</p>
+            <ul class="liste-loupe">
+              <li>Les équipes et les professeurs du Collège de France peuvent déposer leurs data papers sur le <a href="https://hal.science/" target="_blank" rel="noopener">Portail HAL</a> de l'institution. Pour toute assistance, écrivez à <a href="mailto:scienceouverte@college-de-france.fr">scienceouverte@college-de-france.fr</a></li>
+            </ul>
+          </details>
+        </details>
+      </section>
+
+      <!-- ===================== CHAPITRE 2 ===================== -->
+      <section class="chapitre">
+        <details id="chap2" open>
+          <summary><h2>Le plan de gestion des données (PGD) : un outil structurant de la science ouverte</h2></summary>
+
+          <p>Le <a href="https://dmp.opidor.fr/" target="_blank" rel="noopener">plan de gestion des données (PGD, ou Data Management Plan – DMP)</a> s'impose comme un instrument central de la politique de science ouverte. Le PGD est un document évolutif qui décrit l'ensemble du cycle de vie des données produites dans un projet de recherche : leur collecte, leur organisation, leur documentation, leur stockage, leur partage et leur archivage à long terme. Il vise à anticiper les enjeux techniques, juridiques et éthiques liés aux données, tout en garantissant leur qualité, leur sécurité et leur réutilisabilité.</p>
+
+          <details id="chap2-sec1">
+            <summary><h3>Ce que doit contenir un PGD</h3></summary>
+            <p>Le DMP doit :</p>
+            <ul class="liste-tiret">
+              <li>Définir et décrire les données ;</li>
+              <li>Identifier les risques liés à la gestion des données ;</li>
+              <li>Assurer la sécurité et la préservation des données sur le long terme ;</li>
+              <li>Identifier les responsabilités, les rôles de chacun dans la gestion des données ;</li>
+              <li>Planifier les ressources et compétences nécessaires à cette gestion ;</li>
+              <li>Donner accès à des données fiables afin d'assurer la reproductibilité de la recherche et permettre à d'autres de les comprendre et de les utiliser ;</li>
+              <li>Anticiper les coûts liés au projet : ressources humaines, logiciels/équipement pour la préparation des données et leur documentation, frais pour l'archivage des données, leur volumétrie, type et nature.</li>
+            </ul>
+            <p>Un PGD est un outil indispensable pour :</p>
+            <ul class="liste-tiret">
+              <li><strong>Les Financeurs</strong> : optimisation et retour d'investissement basé sur la réutilisabilité des données ;</li>
+              <li><strong>Les Organismes de recherche</strong> : utilisation de données et reproductibilité de la recherche ;</li>
+              <li><strong>Les Chercheurs</strong> : efficacité, baisse des coûts et des risques, sauvegarde des données.</li>
+            </ul>
+            <ul class="liste-alertes">
+              <li>Dans le cadre de projets <a href="https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en" target="_blank" rel="noopener">Horizon Europe</a> et <a href="https://anr.fr/" target="_blank" rel="noopener">ANR</a>, la rédaction du PGD est <strong>obligatoire</strong>.</li>
+              <li>Le PGD doit adopter les <a href="https://www.go-fair.org/fair-principles/" target="_blank" rel="noopener">principes FAIR</a> et favorise une meilleure planification des ressources nécessaires à la gestion des données.</li>
+            </ul>
+          </details>
+
+          <details id="chap2-sec2">
+            <summary><h3>Le rôle de OPIDoR dans l'élaboration des PGD</h3></summary>
+            <p>Dans le contexte français, la mise en œuvre des plans de gestion des données est facilitée par <a href="https://opidor.fr/" target="_blank" rel="noopener">OPIDoR</a> (Optimisation du Partage et de l'Interopérabilité des Données de la Recherche). Cette plateforme propose notamment l'outil <a href="https://dmp.opidor.fr/" target="_blank" rel="noopener">DMP OPIDoR</a>, qui accompagne les chercheurs dans la rédaction, la structuration et la mise à jour de leur PGD.</p>
+            <p>OPIDoR offre des modèles de plans adaptés aux exigences des principaux financeurs (<a href="https://anr.fr/" target="_blank" rel="noopener">ANR</a>, <a href="https://ec.europa.eu/info/index_fr" target="_blank" rel="noopener">Commission européenne</a>), ainsi que des guides et recommandations permettant d'intégrer les bonnes pratiques en matière de gestion des données. L'outil favorise également la standardisation des PGD tout en laissant une certaine flexibilité selon les disciplines.</p>
+            <ul class="liste-loupe">
+              <li>Pour toute assistance, écrivez à <a href="mailto:scienceouverte@college-de-france.fr">scienceouverte@college-de-france.fr</a></li>
+            </ul>
+          </details>
+        </details>
+      </section>
+
+      <!-- ===================== CHAPITRE 3 ===================== -->
+      <section class="chapitre">
+        <details id="chap3" open>
+          <summary><h2>Les infrastructures de diffusion : réservoirs de données et plateformes publiques</h2></summary>
+
+          <p>Les réservoirs de données (<em>data repositories</em>) constituent des infrastructures essentielles permettant de stocker, préserver et diffuser les données de la recherche. Ils garantissent leur accessibilité, leur traçabilité et leur pérennité dans le temps, tout en favorisant leur réutilisation dans des contextes scientifiques variés.</p>
+          <p>On distingue plusieurs types d'entrepôts :</p>
+          <ul class="liste-tiret">
+            <li><strong>Généralistes</strong>, tels que <a href="https://zenodo.org/" target="_blank" rel="noopener">Zenodo</a> ou <a href="https://figshare.com/" target="_blank" rel="noopener">Figshare</a> ;</li>
+            <li><strong>Disciplinaires</strong>, adaptés à des domaines spécifiques (par exemple <a href="https://www.ncbi.nlm.nih.gov/genbank/" target="_blank" rel="noopener">GenBank</a> pour la biologie) ;</li>
+            <li><strong>Institutionnels</strong>, portés par des universités ou organismes de recherche.</li>
+          </ul>
+          <p>Ces plateformes permettent l'attribution d'<a href="https://www.doi.org/" target="_blank" rel="noopener">identifiants persistants (DOI)</a>, facilitant la citation et la traçabilité des données. En France, certaines infrastructures spécialisées, comme <a href="https://nakala.fr/" target="_blank" rel="noopener">Nakala</a>, illustrent une approche adaptée aux spécificités disciplinaires, notamment dans les sciences humaines et sociales.</p>
+          <ul class="liste-loupe">
+            <li>La liste des entrepôts se trouve sur <a href="https://cat.opidor.fr/index.php/Entrep%C3%B4t_de_donn%C3%A9es" target="_blank" rel="noopener">cat.opidor.fr</a>. Pour toute assistance, écrivez à <a href="mailto:scienceouverte@college-de-france.fr">scienceouverte@college-de-france.fr</a></li>
+          </ul>
+
+          <details id="chap3-sec1">
+            <summary><h3>La plateforme Data.gouv.fr</h3></summary>
+            <p>Parmi les entrepôts, la plateforme <a href="https://www.data.gouv.fr/" target="_blank" rel="noopener">Data.gouv.fr</a> constitue le portail officiel français de diffusion des données publiques et s'inscrit pleinement dans la politique nationale d'open data. Pilotée par <a href="https://www.etalab.gouv.fr/" target="_blank" rel="noopener">Etalab</a>, département de la <a href="https://www.numerique.gouv.fr/dinum/" target="_blank" rel="noopener">direction interministérielle du numérique (DINUM)</a>, elle vise à centraliser, structurer et rendre accessibles les données produites par les administrations, les collectivités territoriales, ainsi que par certains acteurs de la recherche.</p>
+            <p>Elle permet :</p>
+            <ul class="liste-tiret">
+              <li>la mise à disposition de jeux de données variés (statistiques, géographiques, environnementales, économiques, etc.) ;</li>
+              <li>leur téléchargement libre et gratuit dans des formats ouverts (CSV, JSON, etc.) ;</li>
+              <li>leur réutilisation.</li>
+            </ul>
+            <ul class="liste-alertes">
+              <li>Il est fortement conseillé d'utiliser des entrepôts disciplinaires et d'utiliser Data.gouv.fr uniquement s'il est impossible de trouver un entrepôt disciplinaire adapté.</li>
+            </ul>
+            <ul class="liste-loupe">
+              <li>Pour toute assistance, écrivez à <a href="mailto:scienceouverte@college-de-france.fr">scienceouverte@college-de-france.fr</a></li>
+            </ul>
+          </details>
+        </details>
+      </section>
+
+      <!-- ===================== CHAPITRE 4 ===================== -->
+      <section class="chapitre">
+        <details id="chap4" open>
+          <summary><h2>Cadre juridique des données de la recherche</h2></summary>
+
+          <p>La gestion et la diffusion des données de la recherche s'inscrivent dans un cadre juridique structurant. Plusieurs dimensions doivent être prises en compte.</p>
+          <p>D'une part, le droit d'auteur peut s'appliquer à certaines données lorsqu'elles présentent un caractère original, notamment dans le cas de bases de données structurées ou de corpus annotés. D'autre part, le <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener">RGPD</a> encadre strictement le traitement des données à caractère personnel, imposant des obligations en matière de sécurité, de finalité et de minimisation.</p>
+          <p>Les licences de diffusion (<a href="https://creativecommons.org/licenses/?lang=fr" target="_blank" rel="noopener">Creative Commons</a>, <a href="https://opendatacommons.org/licenses/" target="_blank" rel="noopener">Open Data Commons</a>) définissent les conditions de réutilisation des données ouvertes. Ces dispositifs s'inscrivent dans le prolongement de la <a href="https://www.legifrance.gouv.fr/loda/id/JORFTEXT000033202746/" target="_blank" rel="noopener">loi pour une République numérique (2016)</a>, qui encourage l'ouverture des données tout en prévoyant certaines limitations liées à la sécurité, à la confidentialité et aux contraintes juridiques et éthiques.</p>
+          <ul class="liste-loupe">
+            <li>Pour toute assistance, écrivez à <a href="mailto:scienceouverte@college-de-france.fr">scienceouverte@college-de-france.fr</a></li>
+          </ul>
+        </details>
+      </section>
+
+      <!-- ===================== CHAPITRE 5 ===================== -->
+      <section class="chapitre">
+        <details id="chap5" open>
+          <summary><h2>HAL et ORCID et les données de la recherche</h2></summary>
+
+          <p>Dans cet écosystème, certaines infrastructures ne stockent pas directement les données mais jouent un rôle clé dans leur circulation et leur valorisation. C'est le cas de <a href="https://hal.science/" target="_blank" rel="noopener">HAL</a> et de <a href="https://orcid.org/" target="_blank" rel="noopener">ORCID</a>.</p>
+          <p>HAL, en tant qu'archive ouverte, permet le dépôt et la diffusion des publications scientifiques et leur articulation avec des jeux de données déposés dans des entrepôts externes. Elle contribue ainsi à la visibilité et à la « trouvabilité » des données, sans en assurer directement l'hébergement. HAL permet aussi le dépôt et la diffusion des data papers.</p>
+          <p>ORCID, quant à lui, fournit un identifiant unique aux chercheurs, permettant d'associer de manière fiable les productions scientifiques — y compris les données — à leurs auteurs. Il renforce ainsi la traçabilité et la reconnaissance des contributions scientifiques.</p>
+          <ul class="liste-loupe">
+            <li>Pour toute assistance, écrivez à <a href="mailto:scienceouverte@college-de-france.fr">scienceouverte@college-de-france.fr</a></li>
+          </ul>
+        </details>
+      </section>
+
+      <!-- ===================== CHAPITRE 6 ===================== -->
+      <section class="chapitre">
+        <details id="chap6" open>
+          <summary><h2>Les enjeux éthiques : protection, anonymisation et responsabilité</h2></summary>
+
+          <p>L'ouverture des données de la recherche soulève des enjeux éthiques fondamentaux, en particulier lorsqu'elles impliquent des données personnelles ou sensibles.</p>
+          <p>Le cadre du <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener">RGPD</a> impose des principes stricts, mais son application peut s'heurter avec les objectifs de la science ouverte. L'anonymisation apparaît alors comme une solution intermédiaire, bien qu'elle présente des limites importantes, notamment en termes de réidentification et de perte de qualité des données.</p>
+          <p>Les données sensibles (santé, opinions, etc.) nécessitent une vigilance accrue et des dispositifs spécifiques de protection. Dans ce contexte, les chercheurs sont amenés à développer une responsabilité élargie, intégrant des dimensions éthiques, sociales et politiques dans la gestion des données.</p>
+          <p>Cette approche réflexive, parfois qualifiée de « care des données », souligne que la gestion des données ne relève pas uniquement de contraintes techniques ou juridiques, mais engage des choix scientifiques et sociétaux.</p>
+          <ul class="liste-loupe">
+            <li>Pour toute assistance, écrivez à <a href="mailto:scienceouverte@college-de-france.fr">scienceouverte@college-de-france.fr</a></li>
+          </ul>
+        </details>
+      </section>
+
+      <a href="https://ggsggs2016.github.io/soac1/" class="back-link">⬅ Retour à la page d'accueil</a>
+    </div>
+  </main>
+
+  <footer>
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+      <!-- Logos à gauche -->
+      <div style="display: flex; align-items: center; gap: 3rem;">
+        <a href="https://www.college-de-france.fr/fr" target="_blank" rel="noopener" title="Collège de France">
+          <img src="cdf-logo.svg" alt="Collège de France" style="height: 50px; width: auto;">
+        </a>
+        <a href="https://www.psl.eu/" target="_blank" rel="noopener" title="Membre associé PSL Université Paris">
+          <img src="psl-logo.svg" alt="PSL Université Paris" style="height: 50px; width: auto;">
+        </a>
+      </div>
+      <!-- Liens à droite -->
+      <div>
+        <a href="https://www.college-de-france.fr/fr/acces-et-contacts">Accès et contacts</a> |
+        <a href="https://www.college-de-france.fr/fr/mentions-legales">Mentions légales</a> |
+        <a href="https://www.college-de-france.fr/fr/declaration-accessibilite">Accessibilité non conforme</a>
+      </div>
+    </div>
+    <p style="margin-top: 1rem; font-size: 0.7rem;">
+      Ce contenu est mis à disposition selon les termes de la
+      <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.fr" target="_blank" rel="noopener">
+        Licence Creative Commons CC BY-NC 4.0 Attribution – Utilisation non commerciale 4.0 International
+      </a>.
+    </p>
+  </footer>
+
+  <script src="auto-links.js"></script>
+</body>
+</html>

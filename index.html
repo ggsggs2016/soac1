@@ -354,7 +354,7 @@ header h1 {
     <a href="https://college-de-france.hal.science/" target="_blank">HAL-Collège de France</a>
     <a href="https://www.college-de-france.fr/fr/regles-de-signature-des-publications-scientifiques" target="_blank">Règles de signature des publications scientifiques</a>
   </div>  
-  <h1>Le Collège de France et la science ouverte</h1>
+  <h1>Science ouverte au Collège de France</h1>
 </header>
 
 <nav>
@@ -514,11 +514,10 @@ header h1 {
 </footer>
 
 <script>
-  document.title =
-    document.querySelector("h1")?.innerText +
-    " | Science ouverte au Collège de France";
+  const h1 = document.querySelector("h1")?.innerText;
+  const site = "Science ouverte au Collège de France";
+  document.title = (h1 && h1 !== site) ? h1 + " | " + site : site;
 </script>
-<script src="auto-links.js"></script>
 </body>
 </html>
 
